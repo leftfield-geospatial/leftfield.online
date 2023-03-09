@@ -1,2 +1,3 @@
 # leftfield.online
-Leftfield website.
+
+A sphinx repository for generating the [Leftfield Geospatial site](https://leftfield.online).
