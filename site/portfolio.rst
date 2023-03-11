@@ -2,6 +2,7 @@ Portfolio
 =========
 
 .. grid:: 2
+    :gutter: 1
 
     .. grid-item-card:: ``homonim``
 
@@ -23,5 +24,4 @@ Portfolio
 
         Extending to the biome.
 
-    .. grid-item-card::
 
