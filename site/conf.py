@@ -48,7 +48,8 @@ html_theme_options = {
     },
     "navbar_align": "right",
     "show_prev_next": False,
-    "search_bar_text": "Search the site..."
+    "search_bar_text": "Search the site...",
+    "footer_items": ["copyright", "sphinx-version", "theme-version"],
 }
 
 html_static_path = ['_static']
