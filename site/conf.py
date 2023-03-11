@@ -29,40 +29,33 @@ autosectionlabel_prefix_document = True
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'pydata_sphinx_theme'
-# html_theme = "sphinx_book_theme"
-html_static_path = ['_static']
-
-# pygments_style = "sphinx"
 
 # -- Theme specific configuration ---------------------------------------------
+# NOTE on pydata_sphinx_theme versions:
+# - 0.13.0 does not do navbar_align="center" properly, and makes an unnecessary scrollbar with any LHS sidebar menu
+# - 0.12.0 does navbar_align="center" ok-ish, and makes an unnecessary scrollbar with any LHS sidebar menu
+# - 0.11.0 makes a neat-looking LHS line (not scrollbar) with any LHS sidebar menu, some param name changes
+# - 0.9.0 is used by numpy
+
+html_theme = 'pydata_sphinx_theme'
+
 html_theme_options = {
-    # book theme options
-    # "repository_url": "https://github.com/dugalh",  # TODO: make leftfield profile/company
-    # "use_repository_button": True,
-    "primary_sidebar_end": [],
-    "secondary_sidebar_items": [], # ["page-toc", "edit-this-page", "sourcelink"],
+    "secondary_sidebar_items": [], #["page-toc"], # ["page-toc", "edit-this-page", "sourcelink"],
     "logo": {
-        "image": "_static/logo.jpg",
+        # "image_light": "logo.jpg",
+        # "image_dark": "logo.jpg",
         "text": "Leftfield\nGeospatial",
     },
-    "navbar_align": "content",
-    "article_header_start": [], #"navbar-nav"
-    "article_header_end": [],
-    # from bokeh
-    # "navbar_align": "left",
-    # "navbar_start": ["navbar-logo"],
-    # "navbar_end": ["navbar-icon-links"],
-    # "show_nav_level": 2,
-    # "show_toc_level": 1,
-    # "pygment_light_style": "xcode",
-    # "pygment_dark_style": "xcode",
+    "navbar_align": "right",
     "show_prev_next": False,
-    "announcement": "Here's a <a href='https://pydata.org'>PyData Announcement!</a>",
+    "search_bar_text": "Search the site..."
 }
 
-# remove all primary (LHS) sidebars
+html_static_path = ['_static']
+html_css_files = ['leftfield.scss', ]
+html_context = {"default_mode": "dark"}
+
 html_sidebars = {
-  "**": ["page-toc"]
+  "**": [] #["search-field.html", "sidebar-nav-bs.html"]
 }
 

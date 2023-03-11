@@ -1,7 +1,7 @@
 Portfolio
 =========
 
-.. grid::
+.. grid:: 2
 
     .. grid-item-card:: ``homonim``
 
@@ -14,8 +14,6 @@ Portfolio
     .. grid-item-card:: ``simple-ortho``
 
         Fast and simple orthorectification of aerial imagery.
-
-.. grid::
 
     .. grid-item-card:: Mapping Thicket Aboveground Carbon
 
