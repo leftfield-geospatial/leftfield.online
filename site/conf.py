@@ -50,6 +50,14 @@ html_theme_options = {
     "show_prev_next": False,
     "search_bar_text": "Search the site...",
     "footer_items": ["copyright", "sphinx-version", "theme-version"],
+    "icon_links": [
+        {
+            "name": "GitHub",
+            "url": "https://github.com/dugalh",
+            "icon": "fa-brands fa-github",
+            "type": "fontawesome",
+        },
+    ]
 }
 
 html_static_path = ['_static']
