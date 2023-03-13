@@ -3,6 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+.. rst-class:: center
+
 ====================
 Leftfield Geospatial
 ====================
@@ -19,28 +21,44 @@ Leftfield Geospatial
 
     .. grid-item-card::
 
-      Leftfield is a software development consultancy specialising in geospatial and earth observation applications.  It is run by Dugal Harris, an electronic engineer and geographer with 20+ years experience in remote sensing, machine learning and related fields.  Leftfield supports the open source model and is the creator and maintainer of the |geedim|_, |homonim|_ projects.  Take a look at the :doc:`portfolio <portfolio>` to see examples of past work.
+        :fas:`door-open` **Welcome**
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-      Leftfield aims to be involved in work that contributes toward a sane and vibrant living planet.  Please get in touch if you would like to find out more.
+        Leftfield is a software development consultancy specialising in geospatial and earth observation applications.  We can help with:
+
+        * Creating robust and efficient operational software.
+        * Researching novel solutions.
+        * Documentation and publication.
+
+        Through it's work, Leftfield aims to contribute toward a sane and vibrant living planet.  We support the open source model and use it where appropriate.  Please get :doc:`in touch <contact>` if you would like to find out more.
 
 .. grid:: 3
     :gutter: 1
 
-    .. grid-item-card:: Portfolio
+    .. grid-item-card::
         :link: portfolio
         :link-type: doc
 
-        An overview of past projects.
+        :fas:`book-open` **Portfolio**
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    .. grid-item-card:: Profile
+        A brief showcase of past projects.
+
+    .. grid-item-card::
         :link: profile
         :link-type: doc
 
-        Services and background.
+        :fas:`address-card` **Profile**
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    .. grid-item-card:: Contact
+        Some background on experience and skills.
+
+    .. grid-item-card::
         :link: contact
         :link-type: doc
+
+        :fas:`envelope` **Contact**
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
         Get in touch.
 
