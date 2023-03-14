@@ -34,7 +34,7 @@ Portfolio
         **Search, composite and download GEE imagery**
         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-        .. image:: _static/portfolio/geedim-thumbnail.jpg
+        .. image:: _static/portfolio/geedim-thumbnail.webp
             :align: left
             :width: 150
             :class: dark-light

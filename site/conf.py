@@ -5,9 +5,11 @@
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
-
+from datetime import datetime
+year = datetime.now().year
+year_str = str(year) if (year == 2023) else f'2023-{year}'
 project = 'Leftfield Geospatial'
-copyright = '2023, Leftfield Geospatial'
+copyright = f'{year_str}, Leftfield Geospatial.  All rights reserved.'
 author = 'Leftfield Geospatial'
 
 # -- General configuration ---------------------------------------------------
