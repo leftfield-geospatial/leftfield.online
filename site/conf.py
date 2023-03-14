@@ -9,7 +9,7 @@ from datetime import datetime
 year = datetime.now().year
 year_str = str(year) if (year == 2023) else f'2023-{year}'
 project = 'Leftfield Geospatial'
-copyright = f'{year_str}, Leftfield Geospatial.  All rights reserved.'
+copyright = f'{year_str}, Leftfield Geospatial.  All rights reserved'
 author = 'Leftfield Geospatial'
 
 # -- General configuration ---------------------------------------------------
