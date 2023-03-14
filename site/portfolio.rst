@@ -18,10 +18,14 @@ Portfolio
         :link: portfolio/homonim
         :link-type: doc
 
-        **Surface reflectance correction**
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **Correct any image to surface reflectance**
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-        Harmonising satellite images.
+        .. image:: _static/portfolio/homonim-thumbnail.webp
+            :align: center
+            :class: dark-light
+
+        An end-user and research tool for correcting any remotely sensed imagery to surface reflectance.
 
     .. grid-item-card::
         :link: portfolio/geedim
@@ -30,7 +34,12 @@ Portfolio
         **Search, composite and download GEE imagery**
         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-        Search, composite and download Google Earth Engine imagery.
+        .. image:: _static/portfolio/geedim-thumbnail.jpg
+            :align: left
+            :width: 150
+            :class: dark-light
+
+        A command line tool and `python <https://www.python.org/>`_ library for searching, compositing and downloading `Google Earth Engine <https://earthengine.google.com/>`_ (GEE) imagery, without size limits.
 
     .. grid-item-card::
         :link: portfolio/simple-ortho

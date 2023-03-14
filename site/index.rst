@@ -42,7 +42,7 @@ Leftfield Geospatial
         :fas:`book-open` **Portfolio**
         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-        A brief showcase of past projects.
+        A brief showcase of recent projects.
 
     .. grid-item-card::
         :link: profile
