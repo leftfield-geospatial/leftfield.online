@@ -26,8 +26,8 @@ Leftfield Geospatial
 
         Leftfield is a small research and software development company, specialising in geospatial and earth observation applications.  We can help with:
 
-        * Creating robust and efficient operational software.
-        * Research and design of novel solutions.
+        * Creating robust, efficient operational software.
+        * Applied research and novel method design.
         * Documentation and publication.
 
         Through it's work, Leftfield aims to contribute toward a sane and vibrant living planet.  We support the open source model and use it where appropriate.  Please get :doc:`in touch <contact>` if you would like to find out more.
