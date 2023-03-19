@@ -39,7 +39,7 @@ Portfolio
             :width: 150
             :class: dark-light
 
-        A command line tool and `python <https://www.python.org/>`_ library for searching, compositing and downloading `Google Earth Engine <https://earthengine.google.com/>`_ (GEE) imagery, without size limits.  Supports cloud and shadow masking.
+        A command line tool and `python <https://www.python.org/>`_ library for searching, compositing and downloading `Google Earth Engine <gee>`_ (GEE) imagery.  Supports cloud and shadow masking.
 
     .. grid-item-card::
         :link: portfolio/simple-ortho
@@ -59,28 +59,29 @@ Portfolio
         :link: portfolio/thicket-agc
         :link-type: doc
 
-        **Mapping aboveground carbon in thicket**
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **Farm-scale aboveground carbon mapping in thicket**
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
         .. image:: _static/portfolio/thicket-agc-thumbnail.webp
             :align: center
             :class: dark-light
             :height: 90
 
-        Mapping thicket aboveground carbon.
+        A machine learning method for mapping aboveground carbon in thicket, developed on data from a small site in the Baviaanskloof, South Africa.
 
     .. grid-item-card::
         :link: portfolio/biome-wide-thicket-agc
         :link-type: doc
 
-        **Biome-wide aboveground carbon mapping**
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **Biome-wide aboveground carbon mapping in thicket**
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
         .. image:: _static/portfolio/biome-wide-thicket-agc-thumbnail.webp
             :align: center
             :height: 90
             :class: dark-light
 
-        Proof-of-concept model and web application for extending the local aboveground carbon model to the thicket biome.
+        Proof-of-concept using `Google Earth Engine <gee>`_ for extending aboveground carbon mapping to the thicket biome, South Africa.
 
 
+.. _gee: https://earthengine.google.com
