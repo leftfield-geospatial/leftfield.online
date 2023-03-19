@@ -59,8 +59,8 @@ Portfolio
         :link: portfolio/thicket-agc
         :link-type: doc
 
-        **Farm-scale aboveground carbon mapping in thicket**
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **Farm-scale aboveground carbon mapping**
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
         .. image:: _static/portfolio/thicket-agc-thumbnail.webp
             :align: center
@@ -73,8 +73,8 @@ Portfolio
         :link: portfolio/biome-wide-thicket-agc
         :link-type: doc
 
-        **Biome-wide aboveground carbon mapping in thicket**
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **Biome-wide aboveground carbon mapping**
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
         .. image:: _static/portfolio/biome-wide-thicket-agc-thumbnail.webp
             :align: center
