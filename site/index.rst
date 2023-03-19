@@ -51,7 +51,7 @@ Leftfield Geospatial
         :fas:`address-card` **Profile**
         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-        Some background on experience and skills.
+        Background on experience and skills.
 
     .. grid-item-card::
         :link: contact

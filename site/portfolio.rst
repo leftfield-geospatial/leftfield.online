@@ -39,7 +39,7 @@ Portfolio
             :width: 150
             :class: dark-light
 
-        A command line tool and `python <https://www.python.org/>`_ library for searching, compositing and downloading `Google Earth Engine <https://earthengine.google.com/>`_ (GEE) imagery, without size limits.
+        A command line tool and `python <https://www.python.org/>`_ library for searching, compositing and downloading `Google Earth Engine <https://earthengine.google.com/>`_ (GEE) imagery, without size limits.  Supports cloud and shadow masking.
 
     .. grid-item-card::
         :link: portfolio/simple-ortho
@@ -48,7 +48,12 @@ Portfolio
         **Simple and fast orthorectification**
         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-        Fast and simple orthorectification of aerial imagery.
+        .. image:: _static/portfolio/simple-ortho-thumbnail.webp
+            :align: center
+            :height: 90
+            :class: dark-light
+
+        An command line tool and `python <https://www.python.org/>`_ library for efficient orthorectification of aerial imagery, with known camera model and DEM.
 
     .. grid-item-card::
         :link: portfolio/thicket-agc
