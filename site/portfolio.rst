@@ -53,14 +53,19 @@ Portfolio
             :height: 90
             :class: dark-light
 
-        An command line tool and `python <https://www.python.org/>`_ library for efficient orthorectification of aerial imagery, with known camera model and DEM.
+        An command line tool and `python <https://www.python.org/>`_ library for efficient orthorectification of aerial imagery.
 
     .. grid-item-card::
         :link: portfolio/thicket-agc
         :link-type: doc
 
-        **Mapping carbon density in thicket**
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **Mapping aboveground carbon in thicket**
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+        .. image:: _static/portfolio/thicket-agc-thumbnail.webp
+            :align: center
+            :class: dark-light
+            :height: 90
 
         Mapping thicket aboveground carbon.
 
@@ -68,9 +73,14 @@ Portfolio
         :link: portfolio/biome-wide-thicket-agc
         :link-type: doc
 
-        **Biome-wide carbon density mapping**
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **Biome-wide aboveground carbon mapping**
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-        Extending to the biome.
+        .. image:: _static/portfolio/biome-wide-thicket-agc-thumbnail.webp
+            :align: center
+            :height: 90
+            :class: dark-light
+
+        Proof-of-concept model and web application for extending the local aboveground carbon model to the thicket biome.
 
 
