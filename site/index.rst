@@ -24,7 +24,7 @@ Leftfield Geospatial
         :fas:`door-open` **Welcome**
         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-        Welcome to Leftfield, a small research and software development company, specialising in geospatial and earth observation applications; and providing expert assistance with:
+        Welcome to Leftfield, a small research and software development company, specialising in geospatial and earth observation applications.  Expert assistance can be provided with:
 
         * Creating robust, efficient operational software.
         * Applied research and novel method design.
