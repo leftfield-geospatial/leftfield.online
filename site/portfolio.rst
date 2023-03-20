@@ -25,7 +25,7 @@ Portfolio
             :align: center
             :class: dark-light
 
-        An end-user and research tool for correcting any remotely sensed imagery to surface reflectance.
+        An end-user and research tool for correcting remotely sensed imagery to surface reflectance, or harmonising surface reflectance between different sensors.
 
     .. grid-item-card::
         :link: portfolio/geedim
@@ -39,7 +39,7 @@ Portfolio
             :width: 150
             :class: dark-light
 
-        A command line tool and `python <https://www.python.org/>`_ library for searching, compositing and downloading `Google Earth Engine <gee>`_ (GEE) imagery.  Supports cloud and shadow masking.
+        A command line tool and `python <https://www.python.org/>`_ library for searching, compositing and downloading `Google Earth Engine <gee>`_ (GEE) imagery.  Supports cloud and shadow masking, and cloud/shadow-free compositing.
 
     .. grid-item-card::
         :link: portfolio/simple-ortho
