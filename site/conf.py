@@ -51,7 +51,8 @@ html_theme_options = {
     "navbar_align": "right",
     "show_prev_next": False,
     "search_bar_text": "Search the site...",
-    "footer_items": ["copyright", "sphinx-version", "theme-version"],
+    "footer_start": ["copyright", "sphinx-version"],
+    "footer_end": ["theme-version"],
     "icon_links": [
         {
             "name": "GitHub",

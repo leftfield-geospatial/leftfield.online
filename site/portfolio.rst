@@ -25,7 +25,7 @@ Portfolio
             :align: center
             :class: dark-light
 
-        An end-user and research tool for correcting remotely sensed imagery to surface reflectance, or harmonising surface reflectance between different sensors.
+        An end-user and research tool for harmonisation and surface reflectance correction of remotely sensed imagery.
 
     .. grid-item-card::
         :link: portfolio/geedim
