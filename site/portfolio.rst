@@ -48,7 +48,7 @@ Portfolio
         **Simple and fast orthorectification**
         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-        .. image:: _static/portfolio/simple-ortho-thumbnail.webp
+        .. image:: _static/portfolio/simple_ortho-thumbnail.webp
             :align: center
             :height: 90
             :class: dark-light
@@ -62,7 +62,7 @@ Portfolio
         **Farm-scale aboveground carbon mapping**
         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-        .. image:: _static/portfolio/thicket-agc-thumbnail.webp
+        .. image:: _static/portfolio/thicket_agc-thumbnail.webp
             :align: center
             :class: dark-light
             :height: 90
@@ -76,7 +76,7 @@ Portfolio
         **Biome-wide aboveground carbon mapping**
         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-        .. image:: _static/portfolio/biome-wide-thicket-agc-thumbnail.webp
+        .. image:: _static/portfolio/biome_wide_thicket_agc-thumbnail.webp
             :align: center
             :height: 90
             :class: dark-light
