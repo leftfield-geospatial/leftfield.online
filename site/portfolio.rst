@@ -18,8 +18,8 @@ Portfolio
         :link: portfolio/homonim
         :link-type: doc
 
-        **Correct any image to surface reflectance**
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **Correct imagery to surface reflectance**
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
         .. image:: _static/portfolio/homonim-thumbnail.webp
             :align: center

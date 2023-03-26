@@ -1,12 +1,12 @@
 // @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap');
 // navbar height
 
-.navbar-brand img {
-   height: 75px;
-}
-.navbar-brand {
-   height: 75px;
-}
+// .navbar-brand img {
+//    height: 75px;
+// }
+// .navbar-brand {
+//    height: 75px;
+// }
 .navbar-nav {
     font-size: 1.5rem;
 //     margin: 1rem 1rem;
@@ -23,11 +23,13 @@
 html {
   // Header height will impact the top offset for many sections
   // Article header is 66% of Header
-//   --pst-header-height: 4rem;
+//   --pst-header-height: 8rem;
 //   --pst-header-article-height: calc(var(--pst-header-height) * 2 / 3);
 //   --pst-sidebar-secondary: 17rem;
+    --pst-header-height: 75px;
+    --pst-header-article-height: 75px;
 
   // base font size - applied at body/html level
-//    --pst-font-size-base: 0.5rem;
-  --pst-font-size-base: 14px;
+//     --pst-font-size-base: 0.5rem;
+    --pst-font-size-base: 14px;
 }

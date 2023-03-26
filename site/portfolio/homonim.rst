@@ -1,5 +1,5 @@
-Surface reflectance correction and harmonisation
-------------------------------------------------
+Correct imagery to surface reflectance
+--------------------------------------
 
 This method uses a fusion, or *harmonisation*, approach to correct imagery to approximate surface reflectance.  A concurrent and co-located reference reflectance image is required with which to fuse the source.  Since its `initial conception <https://doi.org/10.1080/01431161.2018.1528404>`_ with my PhD supervisor, `Adriaan van Niekerk <https://www0.sun.ac.za/cga/adriaan-van-niekerk-director/>`_, it has evolved into the |homonim|_ package, and proved effective for a `range of imagery and problems <https://homonim.readthedocs.io/en/latest/case_studies.html>`_.
 
@@ -17,12 +17,12 @@ Example
 
 A mosaic of `NGI <https://ngi.dalrrd.gov.za/index.php/what-we-do/aerial-photography-and-imagery>`_ aerial imagery before and after correction with |homonim|_.
 
-.. image:: ../_static/portfolio/homonim-source_mosaic.webp
+.. figure:: ../_static/portfolio/homonim-source_mosaic.webp
     :align: center
     :class: dark-light
     :height: 220
 
-.. image:: ../_static/portfolio/homonim-corrected_mosaic.webp
+.. figure:: ../_static/portfolio/homonim-corrected_mosaic.webp
     :align: center
     :class: dark-light
     :height: 220

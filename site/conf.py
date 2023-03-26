@@ -44,15 +44,16 @@ html_theme = 'pydata_sphinx_theme'
 html_theme_options = {
     "secondary_sidebar_items": [], #["page-toc"], # ["page-toc", "edit-this-page", "sourcelink"],
     "logo": {
-        # "image_light": "logo.jpg",
-        # "image_dark": "logo.jpg",
-        "text": "Leftfield\nGeospatial",
+        "image_light": "logo2-light.svg",
+        "image_dark": "logo2-dark.svg",
+        # "text": "Leftfield\nGeospatial",
     },
     "navbar_align": "right",
     "show_prev_next": False,
     "search_bar_text": "Search the site...",
-    "footer_start": ["copyright", "sphinx-version"],
-    "footer_end": ["theme-version"],
+    "footer_items": ["copyright", "sphinx-version"],
+    # "footer_start": ["copyright", "sphinx-version"],
+    # "footer_end": ["theme-version"],
     "icon_links": [
         {
             "name": "GitHub",

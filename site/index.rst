@@ -62,8 +62,3 @@ Leftfield Geospatial
 
         Get in touch.
 
-
-.. |geedim| replace:: ``geedim``
-.. _geedim: https://github.com/dugalh/geedim
-.. |homonim| replace:: ``homonim``
-.. _homonim: https://github.com/dugalh/homonim
