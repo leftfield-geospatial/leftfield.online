@@ -18,6 +18,7 @@
 .center h2 {
     text-align: center;
 }
+// .center {text-align: center;}
 
 html {
   // Header height will impact the top offset for many sections
@@ -34,7 +35,9 @@ html {
 
     // prefer Segoe UI which is a windows system font and used for svg logo
     --pst-font-family-base: Segoe UI, var(--pst-font-family-base-system);
+//     --sd-color-card-border-hover: hsla(131, 99%, 66%, 1);
 }
+
 
 html[data-theme="light"] {
     --pst-color-primary: #106ed1ff;
@@ -42,4 +45,12 @@ html[data-theme="light"] {
 
 html[data-theme="dark"] {
     --pst-color-primary: #2f8cefff;
+}
+
+:root[data-theme="light"] {
+    --sd-color-card-border-hover: #106ed1ff;
+}
+
+:root[data-theme="dark"] {
+    --sd-color-card-border-hover: #2f8cefff;
 }
