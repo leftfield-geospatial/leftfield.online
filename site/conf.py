@@ -44,8 +44,8 @@ html_theme = 'pydata_sphinx_theme'
 html_theme_options = {
     "secondary_sidebar_items": [], #["page-toc"], # ["page-toc", "edit-this-page", "sourcelink"],
     "logo": {
-        "image_light": "logo2-light.svg",
-        "image_dark": "logo2-dark.svg",
+        "image_light": "leftfield-logo-light.svg",
+        "image_dark": "leftfield-logo-dark.svg",
         # "text": "Leftfield\nGeospatial",
     },
     "navbar_align": "right",
