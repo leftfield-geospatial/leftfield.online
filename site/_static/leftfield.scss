@@ -1,4 +1,3 @@
-// @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap');
 // navbar height
 
 // .navbar-brand img {
@@ -32,4 +31,15 @@ html {
   // base font size - applied at body/html level
 //     --pst-font-size-base: 0.5rem;
     --pst-font-size-base: 14px;
+
+    // prefer Segoe UI which is a windows system font and used for svg logo
+    --pst-font-family-base: Segoe UI, var(--pst-font-family-base-system);
+}
+
+html[data-theme="light"] {
+    --pst-color-primary: #106ed1ff;
+}
+
+html[data-theme="dark"] {
+    --pst-color-primary: #2f8cefff;
 }
