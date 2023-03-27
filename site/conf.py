@@ -40,6 +40,7 @@ autosectionlabel_prefix_document = True
 # - 0.9.0 is used by numpy
 
 html_theme = 'pydata_sphinx_theme'
+html_title = f'{project}'
 html_static_path = ['_static']
 html_css_files = ['leftfield.css', ]
 html_context = {"default_mode": "dark"}
