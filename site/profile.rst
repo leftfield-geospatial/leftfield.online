@@ -1,5 +1,7 @@
-Profile
-=======
+.. rst-class:: center
+
+**Profile**
+===========
 
 .. card::
 

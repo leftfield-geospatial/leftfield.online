@@ -1,5 +1,7 @@
-Portfolio
-=========
+.. rst-class:: center
+
+**Portfolio**
+=============
 
 .. toctree::
    :maxdepth: 1

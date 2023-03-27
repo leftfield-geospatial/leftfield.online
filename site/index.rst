@@ -5,9 +5,9 @@
 
 .. rst-class:: center
 
-====================
-Leftfield Geospatial
-====================
+========================
+**Leftfield Geospatial**
+========================
 
 .. toctree::
    :maxdepth: 1

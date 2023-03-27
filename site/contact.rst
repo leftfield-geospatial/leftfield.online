@@ -1,5 +1,7 @@
-Contact
-=======
+.. rst-class:: center
+
+**Contact**
+===========
 
 .. grid:: 2
 
