@@ -40,6 +40,11 @@ autosectionlabel_prefix_document = True
 # - 0.9.0 is used by numpy
 
 html_theme = 'pydata_sphinx_theme'
+html_static_path = ['_static']
+html_css_files = ['leftfield.css', ]
+html_context = {"default_mode": "dark"}
+html_favicon = "_static/leftfield-icon.svg"
+html_sourcelink_suffix = ""
 
 html_theme_options = {
     "secondary_sidebar_items": [], #["page-toc"], # ["page-toc", "edit-this-page", "sourcelink"],
@@ -64,9 +69,6 @@ html_theme_options = {
     ]
 }
 
-html_static_path = ['_static']
-html_css_files = ['leftfield.scss', ]
-html_context = {"default_mode": "dark"}
 
 html_sidebars = {
   "**": [] #["search-field.html", "sidebar-nav-bs.html"]
