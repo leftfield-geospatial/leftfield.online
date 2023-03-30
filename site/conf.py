@@ -17,7 +17,8 @@ author = 'Leftfield Geospatial'
 
 extensions = [
     "sphinx.ext.autosectionlabel",
-    "sphinx_design"
+    "sphinx_design",
+    "sphinx_favicon",
 ]
 
 # Make sure the target is unique
@@ -41,11 +42,14 @@ autosectionlabel_prefix_document = True
 
 html_theme = 'pydata_sphinx_theme'
 html_title = f'{project}'
-html_static_path = ['_static']
+html_static_path = ['_static', '_static/favicons']
 html_css_files = ['leftfield.css', ]
 html_context = {"default_mode": "dark"}
-html_favicon = "_static/leftfield-icon.webp"
+html_favicon = "_static/favicons/favicon.svg"
 html_sourcelink_suffix = ""
+html_sidebars = {
+  "**": [] #["search-field.html", "sidebar-nav-bs.html"]
+}
 
 html_theme_options = {
     "secondary_sidebar_items": [], #["page-toc"], # ["page-toc", "edit-this-page", "sourcelink"],
@@ -71,7 +75,19 @@ html_theme_options = {
 }
 
 
-html_sidebars = {
-  "**": [] #["search-field.html", "sidebar-nav-bs.html"]
-}
+# -- option for the favicon extention ------------------------------------------
+# see https://sphinx-favicon.readthedocs.io for more information about the
+# sphinx-favicon extension
+favicons = [
+    "favicon.svg",
+    {"rel": "shortcut icon", "sizes": "any", "href": "favicon.ico"},
+    # "favicon-16x16.png",
+    # "favicon-32x32.png",
+    {"rel": "apple-touch-icon", "href": "apple-touch-icon.png",},
+    {"rel": "mask-icon", "href": "safari-pinned-tab.svg", "color": "#808080"},
+    {"rel": "manifest", "href": "manifest.json"},
+    # {"meta name": "theme-color", "content=":"#ffffff"},
+]
 
+# -- Options for images --------------------------------------------------------
+images_config = {"download": False}
