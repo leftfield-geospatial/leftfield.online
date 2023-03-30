@@ -23,7 +23,7 @@
         **Correct imagery to surface reflectance**
         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-        .. image:: _static/portfolio/homonim-thumbnail.webp
+        .. image:: _images/homonim-thumbnail.webp
             :align: center
             :class: dark-light
 
@@ -36,7 +36,7 @@
         **Search, composite and download GEE imagery**
         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-        .. image:: _static/portfolio/geedim-thumbnail.webp
+        .. image:: _images/geedim-thumbnail.webp
             :align: left
             :width: 150
             :class: dark-light
@@ -50,7 +50,7 @@
         **Simple and fast orthorectification**
         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-        .. image:: _static/portfolio/simple_ortho-thumbnail.webp
+        .. image:: _images/simple_ortho-thumbnail.webp
             :align: center
             :height: 90
             :class: dark-light
@@ -64,7 +64,7 @@
         **Farm-scale aboveground carbon mapping**
         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-        .. image:: _static/portfolio/thicket_agc-thumbnail.webp
+        .. image:: _images/thicket_agc-thumbnail.webp
             :align: center
             :class: dark-light
             :height: 90
@@ -78,7 +78,7 @@
         **Biome-wide aboveground carbon mapping**
         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-        .. image:: _static/portfolio/biome_wide_thicket_agc-thumbnail.webp
+        .. image:: _images/biome_wide_thicket_agc-thumbnail.webp
             :align: center
             :height: 90
             :class: dark-light

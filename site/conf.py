@@ -44,14 +44,14 @@ html_title = f'{project}'
 html_static_path = ['_static']
 html_css_files = ['leftfield.css', ]
 html_context = {"default_mode": "dark"}
-html_favicon = "_static/leftfield-icon.svg"
+html_favicon = "_static/leftfield-icon.webp"
 html_sourcelink_suffix = ""
 
 html_theme_options = {
     "secondary_sidebar_items": [], #["page-toc"], # ["page-toc", "edit-this-page", "sourcelink"],
     "logo": {
-        "image_light": "leftfield-logo-light.svg",
-        "image_dark": "leftfield-logo-dark.svg",
+        "image_light": "leftfield-logo_light.webp",
+        "image_dark": "leftfield-logo_dark.webp",
         # "text": "Leftfield\nGeospatial",
     },
     "navbar_align": "right",

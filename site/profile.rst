@@ -5,7 +5,7 @@
 
 .. card::
 
-    .. image:: _static/profile.jpg
+    .. image:: _images/profile.jpg
        :align: left
        :height: 200
        :width: 200
