@@ -1,43 +1,27 @@
-// navbar height
-
-// .navbar-brand img {
-//    height: 75px;
-// }
-// .navbar-brand {
-//    height: 75px;
-// }
 .navbar-nav {
-    font-size: 1.5rem;
-//     margin: 1rem 1rem;
-    margin-right: 1rem;
+    font-size: 1.5rem;    /* section link font size */
+    margin-right: 1rem;   /* space between section headings and icon links */
 }
 .bd-footer {
-    font-size: 0.8rem;
+    font-size: 0.8rem;    /* footer font size */
 }
+/* center h1 and h2 */
 .center h1,
 .center h2 {
     text-align: center;
 }
-// .center {text-align: center;}
 
 html {
-  // Header height will impact the top offset for many sections
-  // Article header is 66% of Header
-//   --pst-header-height: 8rem;
-//   --pst-header-article-height: calc(var(--pst-header-height) * 2 / 3);
-//   --pst-sidebar-secondary: 17rem;
-    --pst-header-height: 75px;
-    --pst-header-article-height: 75px;
+    /* Header height will impact the top offset for many sections
+    Article header is 66% of Header by default
+    Note 1rem = 16px by default */
+    --pst-header-height: 5.6rem;    /* height of nav bar */
+    --pst-header-article-height: 1rem;  /* space between navbar and start of page */
 
-  // base font size - applied at body/html level
-//     --pst-font-size-base: 0.5rem;
-    --pst-font-size-base: 14px;
-
-    // prefer Segoe UI which is a windows system font and used for svg logo
+    /* prefer Segoe UI which is a windows system font and used for Leftfield logo */
     --pst-font-family-base: Segoe UI, var(--pst-font-family-base-system);
-//     --sd-color-card-border-hover: hsla(131, 99%, 66%, 1);
+    --pst-font-size-base: 0.9rem;
 }
-
 
 html[data-theme="light"] {
     --pst-color-primary: #106ed1ff;
