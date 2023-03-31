@@ -1,6 +1,7 @@
 .navbar-nav {
     font-size: 1.5rem;    /* section link font size */
-    margin-right: 1rem;   /* space between section links and icon links / components */
+    margin-right: 1rem;   /* space between right-aligned section links and icon links / components */
+    margin-left: 1rem;    /* space between logo and left-aligned section links */
 }
 .bd-footer {
     font-size: 0.8rem;    /* footer font size */

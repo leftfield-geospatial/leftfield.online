@@ -16,9 +16,9 @@ author = 'Leftfield Geospatial'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
-    "sphinx.ext.autosectionlabel",
-    "sphinx_design",
-    "sphinx_favicon",
+    'sphinx.ext.autosectionlabel',
+    'sphinx_design',
+    'sphinx_favicon',
 ]
 
 # Make sure the target is unique
@@ -35,40 +35,42 @@ autosectionlabel_prefix_document = True
 
 # -- Theme specific configuration ---------------------------------------------
 # NOTE on pydata_sphinx_theme versions:
-# - 0.13.0 does not do navbar_align="center" properly, and makes an unnecessary scrollbar with any LHS sidebar menu
-# - 0.12.0 does navbar_align="center" ok-ish, and makes an unnecessary scrollbar with any LHS sidebar menu
+# - 0.13.0 does not do navbar_align='center' properly, and makes an unnecessary scrollbar with any LHS sidebar menu
+# - 0.12.0 does navbar_align='center' ok-ish, and makes an unnecessary scrollbar with any LHS sidebar menu
 # - 0.11.0 makes a neat-looking LHS line (not scrollbar) with any LHS sidebar menu, some param name changes
 # - 0.9.0 is used by numpy
 
 html_theme = 'pydata_sphinx_theme'
 html_title = f'{project}'
 html_static_path = ['_static', '_static/favicons']
-html_css_files = ['leftfield.css', ]
-html_context = {"default_mode": "dark"}
-html_favicon = "_static/favicons/favicon.svg"
+html_css_files = ['leftfield.css']
+html_context = {'default_mode': 'dark'}
+html_favicon = '_static/favicons/favicon.svg'
 html_sourcelink_suffix = ""
 html_sidebars = {
-  "**": []
+  '**': []
 }
+# copy favicon.ico to build root
+html_extra_path = ['_static/favicons/favicon.ico', ]
 
 html_theme_options = {
-    "secondary_sidebar_items": [],
-    "logo": {
-        "image_light": "leftfield-logo_light.webp",
-        "image_dark": "leftfield-logo_dark.webp",
+    'secondary_sidebar_items': [],
+    'logo': {
+        'image_light': 'leftfield-logo_light.webp',
+        'image_dark': 'leftfield-logo_dark.webp',
     },
-    "navbar_align": "center",
-    "show_prev_next": False,
-    "search_bar_text": "Search the site...",
-    # "footer_items": ["copyright", "sphinx-version"],  # <= v0.12
-    "footer_start": ["copyright", "sphinx-version"],
-    "footer_end": ["theme-version"],
-    "icon_links": [
+    'navbar_align': 'right',
+    'show_prev_next': False,
+    'search_bar_text': 'Search the site...',
+    # 'footer_items': ['copyright', 'sphinx-version'],  # <= v0.12
+    'footer_start': ['copyright', 'sphinx-version'],
+    'footer_end': ['theme-version'],
+    'icon_links': [
         {
-            "name": "GitHub",
-            "url": "https://github.com/dugalh",
-            "icon": "fa-brands fa-github",
-            "type": "fontawesome",
+            'name': 'GitHub',
+            'url': 'https://github.com/dugalh',
+            'icon': 'fa-brands fa-github',
+            'type': 'fontawesome',
         },
     ]
 }
@@ -76,17 +78,16 @@ html_theme_options = {
 
 # -- option for the favicon extention ------------------------------------------
 # see https://medium.com/swlh/are-you-using-svg-favicons-yet-a-guide-for-modern-browsers-836a6aace3df
-# TODO: copy .ico to site root
 favicons = [
-    "favicon.svg",
-    {"rel": "shortcut icon", "sizes": "any", "href": "favicon.ico"},
-    # "favicon-16x16.png",
-    # "favicon-32x32.png",
-    {"rel": "apple-touch-icon", "href": "apple-touch-icon.png",},
-    {"rel": "mask-icon", "href": "safari-pinned-tab.svg", "color": "#808080"},
-    {"rel": "manifest", "href": "manifest.json"},
-    # {"meta name": "theme-color", "content=":"#ffffff"},
+    'favicon.svg',
+    {'rel': 'shortcut icon', 'sizes': 'any', 'href': 'favicon.ico'},
+    # 'favicon-16x16.png',
+    # 'favicon-32x32.png',
+    {'rel': 'apple-touch-icon', 'href': 'apple-touch-icon.png',},
+    {'rel': 'mask-icon', 'href': 'safari-pinned-tab.svg', 'color': '#808080'},
+    {'rel': 'manifest', 'href': 'manifest.json'},
+    # {'meta name': 'theme-color', 'content=':'#ffffff'},
 ]
 
 # -- Options for images --------------------------------------------------------
-images_config = {"download": False}
+images_config = {'download': False}
