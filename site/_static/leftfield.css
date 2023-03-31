@@ -41,10 +41,12 @@ html {
 
 html[data-theme="light"] {
     --pst-color-primary: #106ed1ff;
+    --pst-color-link-hover: #f08080ff;
 }
 
 html[data-theme="dark"] {
     --pst-color-primary: #2f8cefff;
+    --pst-color-link-hover: #f09090ff;
 }
 
 :root[data-theme="light"] {
