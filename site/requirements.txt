@@ -1,5 +1,5 @@
 sphinx
 sphinx-book-theme
-pydata-sphinx-theme==0.12.0
+pydata-sphinx-theme>=0.13.3
 sphinx-design
 sphinx_favicon
