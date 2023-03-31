@@ -1,11 +1,11 @@
 .navbar-nav {
     font-size: 1.5rem;    /* section link font size */
-    margin-right: 1rem;   /* space between section headings and icon links */
+    margin-right: 1rem;   /* space between section links and icon links / components */
 }
 .bd-footer {
     font-size: 0.8rem;    /* footer font size */
 }
-/* center h1 and h2 */
+/* center h1 and h2 headings */
 .center h1,
 .center h2 {
     text-align: center;
@@ -15,8 +15,8 @@ html {
     /* Header height will impact the top offset for many sections
     Article header is 66% of Header by default
     Note 1rem = 16px by default */
-    --pst-header-height: 5.6rem;    /* height of nav bar */
-    --pst-header-article-height: 1rem;  /* space between navbar and start of page */
+    --pst-header-height: 5.6rem;    /* height of navigation bar */
+    --pst-header-article-height: 1rem;  /* space between nav bar and start of article */
 
     /* prefer Segoe UI which is a windows system font and used for Leftfield logo */
     --pst-font-family-base: Segoe UI, var(--pst-font-family-base-system);

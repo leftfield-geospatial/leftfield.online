@@ -48,20 +48,19 @@ html_context = {"default_mode": "dark"}
 html_favicon = "_static/favicons/favicon.svg"
 html_sourcelink_suffix = ""
 html_sidebars = {
-  "**": [] #["search-field.html", "sidebar-nav-bs.html"]
+  "**": []
 }
 
 html_theme_options = {
-    "secondary_sidebar_items": [], #["page-toc"], # ["page-toc", "edit-this-page", "sourcelink"],
+    "secondary_sidebar_items": [],
     "logo": {
         "image_light": "leftfield-logo_light.webp",
         "image_dark": "leftfield-logo_dark.webp",
-        # "text": "Leftfield\nGeospatial",
     },
-    "navbar_align": "right",
+    "navbar_align": "center",
     "show_prev_next": False,
     "search_bar_text": "Search the site...",
-    # "footer_items": ["copyright", "sphinx-version"],
+    # "footer_items": ["copyright", "sphinx-version"],  # <= v0.12
     "footer_start": ["copyright", "sphinx-version"],
     "footer_end": ["theme-version"],
     "icon_links": [
@@ -76,8 +75,8 @@ html_theme_options = {
 
 
 # -- option for the favicon extention ------------------------------------------
-# see https://sphinx-favicon.readthedocs.io for more information about the
-# sphinx-favicon extension
+# see https://medium.com/swlh/are-you-using-svg-favicons-yet-a-guide-for-modern-browsers-836a6aace3df
+# TODO: copy .ico to site root
 favicons = [
     "favicon.svg",
     {"rel": "shortcut icon", "sizes": "any", "href": "favicon.ico"},
