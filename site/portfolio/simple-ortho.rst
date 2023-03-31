@@ -6,7 +6,7 @@ Simple and fast orthorectification of aerial images
 Example
 ^^^^^^^
 
-A mosaic of four NGI_ aerial images (covering a portion of the Baviaanskloof, South Africa), in raw form ("Source"), orthorectified with |simple-ortho|_ ("Orthorectified"), and corrected to surface reflectance with |homonim|_ ("Corrected").
+A mosaic of four NGI_ aerial images covering a portion of the Baviaanskloof, South Africa, in raw form ("Source"), orthorectified with |simple-ortho|_ ("Orthorectified"), and corrected to surface reflectance with |homonim|_ ("Corrected").
 
 .. figure:: ../_images/simple_ortho-example.webp
     :align: center
