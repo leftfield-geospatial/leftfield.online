@@ -9,11 +9,10 @@ Using `species-specific allometric equations <https://doi.org/10.1016/j.foreco.2
     :align: center
     :class: dark-light
 
-.. figure:: ../_images/thicket_agc-scatter_plot.webp
+Of the tested regression approaches, a multivariate linear regression model with stepwise selected features performed best.  This straightforward approach produced an *R*\ :sup:`2` (coefficient of determination) of 0.89 and *RMSE* (root mean square error) of 2.86 t C ha\ :sup:`-1`.  Part of the success of the method can be attributed to the emphasis placed on quality of the AGC ground truth and spatial accuracy of both images and ground truth.  The regression model produced AGC map for the study area is shown below.
+
+.. figure:: ../_images/thicket_agc-agc_map.webp
     :align: left
-    :height: 250
     :class: dark-light
 
-Of the tested regression approaches, a multivariate linear regression model with stepwise selected features performed best.  This straightforward approach produced an *R*\ :sup:`2` (coefficient of determination) of 0.89 and *RMSE* (root mean square error) of 2.86 t C ha\ :sup:`-1`.  Part of the success of the method can be attributed to the emphasis placed on quality of the AGC ground truth and spatial accuracy of both images and ground truth.  For more details, see the `code repository  <https://github.com/dugalh/map_thicket_agc>`_ for producing the model and data, as well as the the `related paper <https://doi.org/10.1117/1.JRS.15.038502>`_, and `project report <https://github.com/dugalh/map_thicket_agc/blob/main/docs/gef5_slm_remote_sensing_of_agc_in_thicket_nov2019.pdf>`_.
-
-
+For more details, see the `code repository  <https://github.com/dugalh/map_thicket_agc>`_, as well as the the `related paper <https://doi.org/10.1117/1.JRS.15.038502>`_, and `project report <https://github.com/dugalh/map_thicket_agc/blob/main/docs/gef5_slm_remote_sensing_of_agc_in_thicket_nov2019.pdf>`_.
