@@ -9,9 +9,9 @@
 
    portfolio/homonim
    portfolio/geedim
-   portfolio/simple-ortho
-   portfolio/thicket-agc
-   portfolio/biome-wide-thicket-agc
+   portfolio/simple_ortho
+   portfolio/thicket_agc
+   portfolio/biome_wide_thicket_agc
 
 .. grid:: 2
     :gutter: 1
@@ -44,7 +44,7 @@
         A command line tool and `python <https://www.python.org/>`_ library for searching, compositing and downloading `Google Earth Engine <gee>`_ (GEE) imagery.  Supports cloud and shadow masking, and cloud/shadow-free compositing.
 
     .. grid-item-card::
-        :link: portfolio/simple-ortho
+        :link: portfolio/simple_ortho
         :link-type: doc
 
         **Simple and fast orthorectification**
@@ -58,7 +58,7 @@
         An command line tool and `python <https://www.python.org/>`_ library for efficient orthorectification of aerial imagery.
 
     .. grid-item-card::
-        :link: portfolio/thicket-agc
+        :link: portfolio/thicket_agc
         :link-type: doc
 
         **Farm-scale aboveground carbon mapping**
@@ -72,7 +72,7 @@
         A machine learning method for mapping aboveground carbon in thicket, developed on data from a small site in the Baviaanskloof, South Africa.
 
     .. grid-item-card::
-        :link: portfolio/biome-wide-thicket-agc
+        :link: portfolio/biome_wide_thicket_agc
         :link-type: doc
 
         **Biome-wide aboveground carbon mapping**
