@@ -32,14 +32,6 @@ autosectionlabel_prefix_document = True
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-
-# -- Theme specific configuration ---------------------------------------------
-# NOTE on pydata_sphinx_theme versions:
-# - 0.13.0 does not do navbar_align='center' properly, and makes an unnecessary scrollbar with any LHS sidebar menu
-# - 0.12.0 does navbar_align='center' ok-ish, and makes an unnecessary scrollbar with any LHS sidebar menu
-# - 0.11.0 makes a neat-looking LHS line (not scrollbar) with any LHS sidebar menu, some param name changes
-# - 0.9.0 is used by numpy
-
 html_theme = 'pydata_sphinx_theme'
 html_title = f'{project}'
 html_static_path = ['_static', '_static/favicons']
@@ -53,11 +45,19 @@ html_sidebars = {
 # copy favicon.ico to build root
 html_extra_path = ['_static/favicons/favicon.ico', ]
 
+
+# -- Theme specific configuration ---------------------------------------------
+# NOTE on pydata_sphinx_theme versions:
+# - 0.13.0 does not do navbar_align='center' properly, and makes an unnecessary scrollbar with any LHS sidebar menu
+# - 0.12.0 does navbar_align='center' ok-ish, and makes an unnecessary scrollbar with any LHS sidebar menu
+# - 0.11.0 makes a neat-looking LHS line (not scrollbar) with any LHS sidebar menu, some param name changes
+# - 0.9.0 is used by numpy
 html_theme_options = {
     'secondary_sidebar_items': [],
     'logo': {
         'image_light': 'leftfield-logo_light.webp',
         'image_dark': 'leftfield-logo_dark.webp',
+        'alt_text': 'Leftfield Geospatial',
     },
     'navbar_align': 'right',
     'show_prev_next': False,
@@ -89,5 +89,3 @@ favicons = [
     # {'meta name': 'theme-color', 'content=':'#ffffff'},
 ]
 
-# -- Options for images --------------------------------------------------------
-images_config = {'download': False}
