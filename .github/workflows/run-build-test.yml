@@ -1,9 +1,7 @@
 name: Run build test
 on: [push, pull_request, workflow_dispatch]
-permissions:
-    contents: write
 jobs:
-  docs:
+  build-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
