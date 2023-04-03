@@ -1,0 +1,19 @@
+name: Run build test
+on: [push, pull_request, workflow_dispatch]
+permissions:
+    contents: write
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+      - name: Sphinx build
+        run: |
+          sphinx-build site _build
+      - name: Sphinx link test
+        run: |
+          sphinx-build site -W -b linkcheck -d _build/doctrees _build/html
