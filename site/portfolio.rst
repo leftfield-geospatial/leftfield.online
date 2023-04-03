@@ -41,7 +41,7 @@
             :width: 150
             :class: dark-light
 
-        A command line tool and `python <https://www.python.org/>`_ library for searching, compositing and downloading `Google Earth Engine <gee>`_ (GEE) imagery.  Supports cloud and shadow masking, and cloud/shadow-free compositing.
+        A command line tool and `python <https://www.python.org/>`_ library for searching, compositing and downloading `Google Earth Engine <https://earthengine.google.com>`_ (GEE) imagery.  Supports cloud and shadow masking, and cloud/shadow-free compositing.
 
     .. grid-item-card::
         :link: portfolio/simple_ortho
@@ -83,7 +83,5 @@
             :height: 90
             :class: dark-light
 
-        Proof-of-concept using `Google Earth Engine <gee>`_ for extending aboveground carbon mapping to the thicket biome, South Africa.
+        Proof-of-concept using `Google Earth Engine <https://earthengine.google.com>`_ for extending aboveground carbon mapping to the thicket biome, South Africa.
 
-
-.. _gee: https://earthengine.google.com
