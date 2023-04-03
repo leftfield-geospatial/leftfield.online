@@ -3,7 +3,9 @@ Farm-scale aboveground carbon mapping in thicket
 
 Large portions of the semi-arid thicket biome (South Africa) have been degraded, mostly by poorly managed goat-farming.  Restoration work and research is ongoing, and much needed for improving ecosystem function and mitigating climate change.  Aboveground carbon (AGC) maps are important tools required for restoration monitoring and funding.  As part of the `GEF-5 SLM (sustainable land management) project <https://www.thegef.org/projects-operations/projects/5327>`_, this work developed an AGC mapping approach for a ±3000 ha study area in the Baviaanskloof.
 
-Using `species-specific allometric equations <https://doi.org/10.1016/j.foreco.2019.05.048>`_, AGC ground truth for 85 plots was produced from `field sampling data gathered by Sustainable Landscape Solutions <https://github.com/dugalh/map_thicket_agc/blob/main/docs/gef5_slm_final_report_c_baselines_may2020.pdf>`_.  The spatial accuracy of ground truth and remotely sensed imagery was emphasised to ensure the accurate location of field plot data in images.  Ground truth plots are shown on a DSM (digital surface model) derived from multi-view NGI_ imagery, below.
+Using `species-specific allometric equations <https://doi.org/10.1016/j.foreco.2019.05.048>`_, AGC ground truth for 85 study area plots was produced from `field sampling data gathered by Sustainable Landscape Solutions <https://github.com/dugalh/map_thicket_agc/blob/main/docs/gef5_slm_final_report_c_baselines_may2020.pdf>`_.  The spatial accuracy of ground truth and remotely sensed imagery was emphasised to ensure the accurate location of field plot data in images.  Ground truth plots are shown on a DSM (digital surface model) derived from multi-view NGI_ imagery, below.
+
+.. _gef5_slm_study_area:
 
 .. figure:: ../_images/thicket_agc-ground_truth_map.webp
     :align: center
