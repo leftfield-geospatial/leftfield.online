@@ -13,6 +13,10 @@
 .center h2 {
     text-align: center;
 }
+/* maintain image aspect ratio when resizing */
+img.contain {
+    object-fit: contain;
+}
 
 html {
     /* Header height will impact the top offset for many sections

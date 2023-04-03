@@ -9,8 +9,8 @@ Using `species-specific allometric equations <https://doi.org/10.1016/j.foreco.2
 
 .. figure:: ../_images/thicket_agc-ground_truth_map.webp
     :align: center
-    :class: dark-light
-    :height: 300
+    :class: dark-light contain
+    :width: 640
 
 Various AGC estimation approaches were evaluated using the ground truth.  These included the use of remotely sensed plant volume found from NGI image-derived `DTM and DSM <https://en.wikipedia.org/wiki/Digital_elevation_model#Terminology>`_ surfaces, and features extracted from multi-spectral imagery.  A multivariate linear regression model using features extracted from a multispectral `WorldView-3 <https://en.wikipedia.org/wiki/WorldView-3>`_ image was the best performing method.  Univariate linear models based on WorldView-3 and multispectral NGI images also performed well.  In the context of the need for cost-effective biome-wide AGC maps at repeated intervals, the use of multi-spectral satellite imagery was favoured as the approach most likely to scale to these requirements.
 
