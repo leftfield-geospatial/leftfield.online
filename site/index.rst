@@ -36,6 +36,7 @@
     :gutter: 1
 
     .. grid-item-card::
+        :columns: 12 12 4 4
         :link: portfolio
         :link-type: doc
 
@@ -45,6 +46,7 @@
         A showcase of recent and ongoing projects.
 
     .. grid-item-card::
+        :columns: 12 12 4 4
         :link: profile
         :link-type: doc
 
@@ -54,6 +56,7 @@
         Background, expertise and experience.
 
     .. grid-item-card::
+        :columns: 12 12 4 4
         :link: contact
         :link-type: doc
 
