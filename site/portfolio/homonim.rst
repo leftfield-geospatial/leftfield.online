@@ -5,7 +5,7 @@ This method uses a fusion, or *harmonisation*, approach to correct imagery to ap
 
 .. figure:: ../_images/homonim-block_diagram.webp
     :align: right
-    :class: dark-light contain
+    :class: dark-light
     :width: 520
 
 The method uses spatially varying local linear models to approximate the relationship between source and reference images.  As shown in the block diagram, images and model parameters are resampled or re-projected between the source and reference image CRS's (coordinate reference systems) to allow model estimation and application.  Typically the reference has a lower resolution than the source image. Suitable sources of reference imagery are e.g. the `MODIS <https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MCD43A4>`_, `Landsat <https://developers.google.com/earth-engine/datasets/catalog/LANDSAT_LC08_C02_T1_L2>`_, or `Sentinel-2 <https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED>`_ programmes.  The |geedim|_ companion tool was created for downloading these, and other satellite images.
@@ -19,12 +19,12 @@ A mosaic of `NGI <https://ngi.dalrrd.gov.za/index.php/what-we-do/aerial-photogra
 
 .. figure:: ../_images/homonim-source_mosaic.webp
     :align: center
-    :class: dark-light contain
+    :class: dark-light
     :width: 580
 
 .. figure:: ../_images/homonim-corrected_mosaic.webp
     :align: center
-    :class: dark-light contain
+    :class: dark-light
     :width: 580
 
 .. |geedim| replace:: ``geedim``
