@@ -11,7 +11,7 @@ jobs:
           pip install -r requirements.txt
       - name: Sphinx build
         run: |
-          sphinx-build -W -M html site site/_build
+          sphinx-build -W -b html -d site/_build/doctrees site site/_build/html
       - name: Sphinx link test
         run: |
-          sphinx-build -W -M linkcheck site site/_build
+          sphinx-build -W -b linkcheck -d site/_build/doctrees site site/_build/linkcheck
