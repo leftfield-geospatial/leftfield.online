@@ -24,7 +24,7 @@ jobs:
           username: dugal@leftfield.online
           password: ${{ secrets.AFRIHOST_FTP_LOGIN }}
           protocol: ftps
-          local-dir: ./site/_build/html/
+          local-dir: ./_build/html/
           server-dir: ./preview/
           dry-run: True
           
