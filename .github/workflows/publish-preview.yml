@@ -12,7 +12,7 @@ jobs:
       - name: Sphinx build
         run: |
           make -C site html
-          ls site -R
+          ls site/_build -R
       - name: Sync preview
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
@@ -20,7 +20,7 @@ jobs:
           username: dugal@leftfield.online
           password: ${{ secrets.AFRIHOST_FTP_LOGIN }}
           protocol: ftps
-          local-dir: ./site/_build/html
+          local-dir: ./site/_build/html/
           server-dir: ./preview/
           dry-run: True
 
