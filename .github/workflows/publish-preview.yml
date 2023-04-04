@@ -11,8 +11,8 @@ jobs:
           pip install -r requirements.txt
       - name: Sphinx build
         run: |
-          make -C site html
-          ls site/_build -R
+          sphinx-build -W -M html site site/_build
+          ls site/_build/html -R
       - name: Sync preview
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
@@ -23,4 +23,3 @@ jobs:
           local-dir: ./site/_build/html/
           server-dir: ./preview/
           dry-run: False
-
