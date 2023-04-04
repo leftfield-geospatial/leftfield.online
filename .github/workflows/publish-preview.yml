@@ -11,9 +11,8 @@ jobs:
           pip install -r requirements.txt
       - name: Sphinx build
         run: |
-          sphinx-build site _build
-          pwd
-          ls -R
+          make -C site html
+          ls site -R
       - name: Sync preview
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
@@ -21,7 +20,7 @@ jobs:
           username: dugal@leftfield.online
           password: ${{ secrets.AFRIHOST_FTP_LOGIN }}
           protocol: ftps
-          local-dir: ./_build/
+          local-dir: ./site/_build/html
           server-dir: ./preview/
           dry-run: True
-          
+
