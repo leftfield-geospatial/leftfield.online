@@ -34,7 +34,7 @@ autosectionlabel_prefix_document = True
 
 html_theme = 'pydata_sphinx_theme'
 html_title = f'{project}'
-html_static_path = ['_static', '_static/favicons']
+html_static_path = ['_static']
 html_css_files = ['leftfield.css']
 html_context = {'default_mode': 'dark'}
 html_favicon = '_static/favicons/favicon.svg'
@@ -44,7 +44,8 @@ html_sidebars = {
 }
 # copy favicon.ico to build root
 html_extra_path = ['_static/favicons/favicon.ico', ]
-
+html_copy_source = False
+html_show_sourcelink = False
 
 # -- Theme specific configuration ---------------------------------------------
 # NOTE on pydata_sphinx_theme versions:
@@ -80,12 +81,20 @@ html_theme_options = {
 # see https://medium.com/swlh/are-you-using-svg-favicons-yet-a-guide-for-modern-browsers-836a6aace3df
 favicons = [
     'favicon.svg',
-    {'rel': 'shortcut icon', 'sizes': 'any', 'href': 'favicon.ico'},
+    {'rel': 'shortcut icon', 'sizes': 'any', 'href': 'favicons/favicon.ico'},
     # 'favicon-16x16.png',
     # 'favicon-32x32.png',
-    {'rel': 'apple-touch-icon', 'href': 'apple-touch-icon.png',},
-    {'rel': 'mask-icon', 'href': 'safari-pinned-tab.svg', 'color': '#808080'},
-    {'rel': 'manifest', 'href': 'manifest.json'},
+    {'rel': 'apple-touch-icon', 'href': 'favicons/apple-touch-icon.png',},
+    {'rel': 'mask-icon', 'href': 'favicons/safari-pinned-tab.svg', 'color': '#808080'},
+    {'rel': 'manifest', 'href': 'favicons/manifest.json'},
     # {'meta name': 'theme-color', 'content=':'#ffffff'},
 ]
+
+# TODO: test dark light mode works for whole site, not per-page as it is doing locally
+# TODO: check figure sizes and readability (preview)
+# TODO: check favicons on different browsers (preview)
+# TODO: get rid of any unneeded config & check build contains only what is needed?
+# TODO: get rid of ctrl-k in search
+# TODO: favicons are duplicated between root _static dir and _static/favicons
+# TODO: decrease size of some thumbnail images
 
