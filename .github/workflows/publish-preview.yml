@@ -1,0 +1,28 @@
+name: Publish preview
+on: [workflow_dispatch]
+jobs:
+  build-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+      - name: Sphinx build
+        run: |
+          sphinx-build site _build
+      - name: Sphinx link test
+        run: |
+          sphinx-build site -W -b linkcheck -d _build/doctrees _build/html
+      - name: Sync preview
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: contagion.aserv.co.za
+          username: dugal@leftfield.online
+          password: ${{ secrets.AFRIHOST_FTP_LOGIN }}
+          protocol: ftps
+          local-dir: site/_build/html/
+          server-dir: preview/
+          dry-run: True
+          
