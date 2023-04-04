@@ -46,6 +46,7 @@ html_sidebars = {
 html_extra_path = ['_static/favicons/favicon.ico', ]
 html_copy_source = False
 html_show_sourcelink = False
+html_permalinks = False
 
 # -- Theme specific configuration ---------------------------------------------
 # NOTE on pydata_sphinx_theme versions:
@@ -79,17 +80,18 @@ html_theme_options = {
 
 # -- option for the favicon extention ------------------------------------------
 # see https://medium.com/swlh/are-you-using-svg-favicons-yet-a-guide-for-modern-browsers-836a6aace3df
+# and https://github.com/tcmetzger/sphinx-favicon/blob/main/docs/source/conf.py
 favicons = [
-    'favicon.svg',
+    'favicons/favicon.svg',
+    'favicons/favicon-16x16.png',
+    'favicons/favicon-32x32.png',
     {'rel': 'shortcut icon', 'sizes': 'any', 'href': 'favicons/favicon.ico'},
-    # 'favicon-16x16.png',
-    # 'favicon-32x32.png',
     {'rel': 'apple-touch-icon', 'href': 'favicons/apple-touch-icon.png',},
     {'rel': 'mask-icon', 'href': 'favicons/safari-pinned-tab.svg', 'color': '#808080'},
     {'rel': 'manifest', 'href': 'favicons/manifest.json'},
-    # {'meta name': 'theme-color', 'content=':'#ffffff'},
+    {'name': 'msapplication-TileColor', 'content': '#ffffff'},
+    {'name': 'theme-color', 'content': '#ffffff'},
 ]
-
 # TODO: test dark light mode works for whole site, not per-page as it is doing locally
 # TODO: check figure sizes and readability (preview)
 # TODO: check favicons on different browsers (preview)
