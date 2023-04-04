@@ -3,12 +3,6 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-.. rst-class:: center
-
-========================
-**Leftfield Geospatial**
-========================
-
 .. toctree::
    :maxdepth: 1
    :hidden:
@@ -16,6 +10,12 @@
    portfolio
    profile
    contact
+
+.. rst-class:: center
+
+========================
+**Leftfield Geospatial**
+========================
 
 .. grid:: 1
 

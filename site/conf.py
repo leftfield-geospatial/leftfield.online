@@ -93,8 +93,4 @@ favicons = [
 # TODO: test dark light mode works for whole site, not per-page as it is doing locally
 # TODO: check figure sizes and readability (preview)
 # TODO: check favicons on different browsers (preview)
-# TODO: get rid of any unneeded config & check build contains only what is needed?
-# TODO: get rid of ctrl-k in search
-# TODO: favicons are duplicated between root _static dir and _static/favicons
-# TODO: decrease size of some thumbnail images
-
+# TODO: card hover highlight in mobile res

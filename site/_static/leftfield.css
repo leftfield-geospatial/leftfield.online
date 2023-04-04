@@ -19,7 +19,7 @@ html {
     Article header is 66% of Header by default
     Note 1rem = 16px by default */
     --pst-header-height: 5.6rem;    /* height of navigation bar */
-    --pst-header-article-height: 2.5rem;  /* space between nav bar and start of article */
+    --pst-header-article-height: 3rem;  /* space between nav bar and start of article */
 
     /* prefer Segoe UI which is a windows system font and used for Leftfield logo */
     --pst-font-family-base: Segoe UI, var(--pst-font-family-base-system);
