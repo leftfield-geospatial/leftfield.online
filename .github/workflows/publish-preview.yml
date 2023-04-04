@@ -22,5 +22,5 @@ jobs:
           protocol: ftps
           local-dir: ./site/_build/html/
           server-dir: ./preview/
-          dry-run: True
+          dry-run: False
 
