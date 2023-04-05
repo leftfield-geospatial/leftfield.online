@@ -37,13 +37,13 @@ html_title = f'{project}'
 html_static_path = ['_static']
 html_css_files = ['leftfield.css']
 html_context = {'default_mode': 'dark'}
-html_favicon = '_static/favicons/favicon.svg'
+# html_favicon = '_static/favicons/favicon.svg'
 html_sourcelink_suffix = ""
 html_sidebars = {
   '**': []
 }
 # copy favicon.ico to build root
-html_extra_path = ['_static/favicons/favicon.ico', ]
+# html_extra_path = ['_static/favicons/favicon.ico', ]
 html_copy_source = False
 html_show_sourcelink = False
 html_permalinks = False
@@ -78,20 +78,37 @@ html_theme_options = {
 }
 
 
-# -- option for the favicon extention ------------------------------------------
+# -- option sfor the favicon extention ------------------------------------------
 # see https://medium.com/swlh/are-you-using-svg-favicons-yet-a-guide-for-modern-browsers-836a6aace3df
 # and https://github.com/tcmetzger/sphinx-favicon/blob/main/docs/source/conf.py
 favicons = [
-    'favicons/favicon.svg',
-    'favicons/favicon-16x16.png',
+    # generic icons compatible with most browsers
     'favicons/favicon-32x32.png',
+    'favicons/favicon-16x16.png',
     {'rel': 'shortcut icon', 'sizes': 'any', 'href': 'favicons/favicon.ico'},
-    {'rel': 'apple-touch-icon', 'href': 'favicons/apple-touch-icon.png',},
-    {'rel': 'mask-icon', 'href': 'favicons/safari-pinned-tab.svg', 'color': '#808080'},
-    # {'rel': 'manifest', 'href': 'favicons/manifest.json'},
-    {'name': 'msapplication-TileColor', 'content': '#ffffff'},
+    # chrome specific
+    'favicons/android-chrome-192x192.png',
+    # apple icons
+    {'rel': 'mask-icon', 'color': '#808080', 'href': 'favicons/safari-pinned-tab.svg'},
+    {'rel': 'apple-touch-icon', 'href': 'favicons/apple-touch-icon.png'},
+    # msapplications
+    {'name': 'msapplication-TileColor', 'favicons/content': '#2f8cef'},
     {'name': 'theme-color', 'content': '#ffffff'},
+    {'name': 'msapplication-TileImage', 'content': 'favicons/mstile-150x150.png'},
 ]
+
+# old config
+# favicons = [
+#     'favicons/favicon.svg',
+#     'favicons/favicon-16x16.png',
+#     'favicons/favicon-32x32.png',
+#     {'rel': 'shortcut icon', 'sizes': 'any', 'href': 'favicons/favicon.ico'},
+#     {'rel': 'apple-touch-icon', 'href': 'favicons/apple-touch-icon.png',},
+#     {'rel': 'mask-icon', 'href': 'favicons/safari-pinned-tab.svg', 'color': '#808080'},
+#     # {'rel': 'manifest', 'href': 'favicons/manifest.json'},
+#     {'name': 'msapplication-TileColor', 'content': '#ffffff'},
+#     {'name': 'theme-color', 'content': '#ffffff'},
+# ]
 # TODO: test dark light mode works for whole site, not per-page as it is doing locally
 # TODO: check figure sizes and readability (preview)
 # TODO: check favicons on different browsers (preview)
