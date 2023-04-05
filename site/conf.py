@@ -101,4 +101,3 @@ favicons = [
 # TODO: check favicons on different browsers (preview)
 # TODO: auto generate ico
 # TODO: make a github leftfield organisation and move repositories there
-# TODO: can/should the profile pic be made to take up the full screen width on mobile devices?
