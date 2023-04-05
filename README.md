@@ -1,4 +1,4 @@
-[![Build test](https://github.com/dugalh/leftfield.online/actions/workflows/run-build-test.yml/badge.svg)](https://github.com/dugalh/leftfield.online/actions/workflows/run-build-test.yml)
+[![Test](https://github.com/dugalh/leftfield.online/actions/workflows/test.yml/badge.svg)](https://github.com/dugalh/leftfield.online/actions/workflows/test.yml)
 
 # leftfield.online
 
