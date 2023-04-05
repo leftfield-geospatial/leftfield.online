@@ -99,4 +99,6 @@ favicons = [
 # TODO: test dark light mode works for whole site, not per-page as it is doing locally
 # TODO: check figure sizes and readability (preview)
 # TODO: check favicons on different browsers (preview)
-# TODO: card hover highlight in mobile res
+# TODO: auto generate ico
+# TODO: make a github leftfield organisation and move repositories there
+# TODO: can/should the profile pic be made to take up the full screen width on mobile devices?

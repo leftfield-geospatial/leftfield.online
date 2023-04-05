@@ -58,7 +58,7 @@
             :height: 90
             :class: dark-light
 
-        An command line tool and python library for orthorectification of aerial and other imagery.
+        A command line tool and python library for orthorectification of aerial and other imagery.
 
     .. grid-item-card::
         :columns: 12 12 6 6
