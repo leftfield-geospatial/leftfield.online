@@ -1,6 +1,7 @@
 """
-A script for converting icon svg to various favicon formats.
+Convert icon svg to various favicon formats using Inkscape.
 """
+
 import os
 import subprocess
 import shutil
@@ -17,7 +18,7 @@ out_dict = {
     'favicon-16x16.png': ['--export-width=16', '--actions=select:leaves;delete'],
     'favicon-32x32.png': ['--export-width=32', '--actions=select:leaves;delete'],
     'favicon-64x64.png': ['--export-width=64', '--actions=select:leaves;delete'],
-    # 'favicon.ico': ['--export-width=32'],
+    # 'favicon.ico': ['--export-width=32'], # not supported by Inkscape
     'android-chrome-192x192.png': ['--export-width=192'],
     'apple-touch-icon.png': ['--export-width=180', '--export-background=#ffffffff'],
     'mstile-150x150.png': ['--export-width=150'],
@@ -52,6 +53,8 @@ for src_file, dest_file in copy_dict.items():
     shutil.copy(src_path, dest_path)
     assert dest_path.exists()
 
+if __name__ =='__main__':
+    input('Press ENTER to continue...')
 
 # path-simplify
 # select-clear
