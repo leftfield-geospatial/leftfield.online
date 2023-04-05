@@ -96,8 +96,5 @@ favicons = [
     {'name': 'msapplication-TileImage', 'content': 'favicons/mstile-150x150.png'},
 ]
 
-# TODO: test dark light mode works for whole site, not per-page as it is doing locally
-# TODO: check figure sizes and readability (preview)
-# TODO: check favicons on different browsers (preview)
 # TODO: auto generate ico
 # TODO: make a github leftfield organisation and move repositories there
