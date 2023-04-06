@@ -98,3 +98,4 @@ favicons = [
 
 # TODO: auto generate ico
 # TODO: make a github leftfield organisation and move repositories there
+# TODO: add a license for data / images
