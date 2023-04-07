@@ -70,7 +70,7 @@ html_theme_options = {
     'icon_links': [
         {
             'name': 'GitHub',
-            'url': 'https://github.com/dugalh',
+            'url': 'https://github.com/leftfield-geospatial',
             'icon': 'fa-brands fa-github',
             'type': 'fontawesome',
         },
@@ -98,4 +98,5 @@ favicons = [
 
 # TODO: auto generate ico
 # TODO: make a github leftfield organisation and move repositories there
+# TODO: also sort out sponsorship to me or organisation
 # TODO: add a license for data / images

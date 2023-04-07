@@ -1,5 +1,5 @@
-[![Tests](https://github.com/dugalh/leftfield.online/actions/workflows/test.yml/badge.svg)](https://github.com/dugalh/leftfield.online/actions/workflows/test.yml)
-[![Publish](https://github.com/dugalh/leftfield.online/actions/workflows/publish.yml/badge.svg)](https://github.com/dugalh/leftfield.online/actions/workflows/publish.yml)
+[![Tests](https://github.com/leftfield-geospatial/leftfield.online/actions/workflows/test.yml/badge.svg)](https://github.com/leftfield-geospatial/leftfield.online/actions/workflows/test.yml)
+[![Publish](https://github.com/leftfield-geospatial/leftfield.online/actions/workflows/publish.yml/badge.svg)](https://github.com/leftfield-geospatial/leftfield.online/actions/workflows/publish.yml)
 
 # leftfield.online
 

@@ -31,8 +31,8 @@ A mosaic of NGI_ aerial imagery before and after correction with |homonim|_.
     :alt: Corrected mosaic
 
 .. |geedim| replace:: ``geedim``
-.. _geedim: https://github.com/dugalh/geedim
+.. _geedim: https://github.com/leftfield-geospatial/geedim
 .. |homonim| replace:: ``homonim``
-.. _homonim: https://github.com/dugalh/homonim
+.. _homonim: https://github.com/leftfield-geospatial/homonim
 .. _NGI: https://ngi.dalrrd.gov.za/index.php/what-we-do/aerial-photography-and-imagery
 
