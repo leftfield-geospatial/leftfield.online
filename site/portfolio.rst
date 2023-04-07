@@ -27,6 +27,7 @@
         .. image:: _images/homonim-thumbnail.webp
             :align: center
             :class: dark-light
+            :alt: Thumbnail
 
         An end-user and research tool for harmonisation and surface reflectance correction of remotely sensed imagery.
 
@@ -42,6 +43,7 @@
             :align: left
             :width: 150
             :class: dark-light
+            :alt: Thumbnail
 
         A command line tool and python library for searching, compositing and downloading Google Earth Engine imagery.  Supports cloud and shadow masking, and cloud/shadow-free compositing.
 
@@ -57,6 +59,7 @@
             :align: center
             :height: 90
             :class: dark-light
+            :alt: Thumbnail
 
         A command line tool and python library for orthorectification of aerial and other imagery.
 
@@ -72,6 +75,7 @@
             :align: center
             :class: dark-light
             :height: 90
+            :alt: Thumbnail
 
         A machine learning method for mapping aboveground carbon in thicket, developed on data from a small site in the Baviaanskloof, South Africa.
 
@@ -87,6 +91,7 @@
             :align: center
             :height: 90
             :class: dark-light
+            :alt: Thumbnail
 
         Proof-of-concept using Google Earth Engine for extending aboveground carbon mapping to the thicket biome, South Africa.
 

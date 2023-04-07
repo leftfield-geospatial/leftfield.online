@@ -12,6 +12,7 @@ A mosaic of four NGI_ aerial images captured over the Kouga river in the Baviaan
     :align: center
     :class: dark-light
     :target: ../_images/simple_ortho-example.webp
+    :alt: Orthorectification and correction example
 
 .. |homonim| replace:: ``homonim``
 .. _homonim: https://github.com/dugalh/homonim

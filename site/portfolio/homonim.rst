@@ -7,6 +7,7 @@ This method uses a fusion approach to correct imagery to approximate surface ref
     :align: right
     :class: dark-light
     :width: 520
+    :alt: Block diagram
 
 Spatially varying local linear models are used to approximate the relationship between source and reference images.  Images and model parameters are resampled or re-projected between the source and reference image CRS's (coordinate reference systems) to allow model estimation and application (as shown in the diagram).  Typically the reference has a lower resolution than the source image. Suitable sources of reference imagery are e.g. the `MODIS <https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MCD43A4>`_, `Landsat <https://developers.google.com/earth-engine/datasets/catalog/LANDSAT_LC08_C02_T1_L2>`_, or `Sentinel-2 <https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED>`_ satellites.  The |geedim|_ companion tool was created for downloading these, and other satellite images.
 
@@ -21,11 +22,13 @@ A mosaic of NGI_ aerial imagery before and after correction with |homonim|_.
     :align: center
     :class: dark-light
     :width: 580
+    :alt: Source mosaic
 
 .. figure:: ../_images/homonim-corrected_mosaic.webp
     :align: center
     :class: dark-light
     :width: 580
+    :alt: Corrected mosaic
 
 .. |geedim| replace:: ``geedim``
 .. _geedim: https://github.com/dugalh/geedim
