@@ -36,7 +36,7 @@ html_theme = 'pydata_sphinx_theme'
 html_title = f'{project}'
 html_static_path = ['_static']
 html_css_files = ['leftfield.css']
-html_context = {'default_mode': 'dark'}
+html_context = {'default_mode': 'auto'}
 # html_favicon = '_static/favicons/favicon.svg'
 html_sourcelink_suffix = ""
 html_sidebars = {
@@ -97,6 +97,5 @@ favicons = [
 ]
 
 # TODO: auto generate ico
-# TODO: make a github leftfield organisation and move repositories there
 # TODO: also sort out sponsorship to me or organisation
 # TODO: add a license for data / images
