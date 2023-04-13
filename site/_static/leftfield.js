@@ -2,13 +2,13 @@
 //   'feature' can be one of 'lossy', 'lossless', 'alpha' or 'animation'.
 //   'callback(feature, isSupported)' will be passed back the detection result (in an asynchronous way!)
 function check_webp_feature(feature, callback) {
-    var kTestImages = {
+    const kTestImages = {
         lossy: "UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA",
         lossless: "UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==",
         alpha: "UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA==",
         animation: "UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA"
     };
-    var img = new Image();
+    const img = new Image();
     img.onload = function () {
         var result = (img.width > 0) && (img.height > 0);
         callback(feature, result);
@@ -19,28 +19,32 @@ function check_webp_feature(feature, callback) {
     img.src = "data:image/webp;base64," + kTestImages[feature];
 }
 
-var allSupported = true;
+function create_announcement(innerHtml) {
+    if (!innerHtml) innerHtml = "<b>This site requires webp support to display images.  Please update your browser.</b>";
+    const ann = document.createElement("div");
+    ann.classList.add("bd-header-announcement", "container-fluid", "bd-header-announcement");
+//            ann.textContent = "No webp support";
+    const innerAnn = document.createElement("div");
+    innerAnn.classList.add("bd-header-announcement__content");
+//            innerAnn.textContent = "This site requires webp support to display images.  Please update your browser.";
+    innerAnn.innerHTML = innerHtml;
+    ann.appendChild(innerAnn);
+    return ann;
+}
 
 function check_webp() {
-    var webp_callback = function (feature, isSupported) {
+    sessionStorage.webpSupport = "true";
 
-//        if (!isSupported && allSupported) {
-        if (allSupported) {
+    const webp_callback = function (feature, isSupported) {
+
+        if (!isSupported && sessionStorage.webpSupport != "false") {
+//        if (allSupported) {
+            sessionStorage.webpSupport = "false";
             allSupported = false;
-            const out_div = document.createElement("div");
-            out_div.classList.add("bd-header-announcement", "container-fluid", "bd-header-announcement");
-//            out_div.textContent = "No webp support";
-            const in_div = document.createElement("div");
-            in_div.classList.add("bd-header-announcement__content");
-//            in_div.textContent = "This site requires webp support to display images.  Please update your browser.";
-            in_div.innerHTML = "<b>This site requires webp support to display images.  Please update your browser.</b>"
-            out_div.appendChild(in_div);
+//            innerAnn.textContent = "This site requires webp support to display images.  Please update your browser.";
 //            const main_elem = document.getElementById("main-content");
-//            main_elem.insertAdjacentElement("afterend", out_div);
-            document.body.insertAdjacentElement("afterbegin", out_div);
-            //alert("Site requires webp support.")
-            //var elem = document.createElement('span');
-            //elem.textContent = "Note: this site requires webp support.";
+//            main_elem.insertAdjacentElement("afterend", ann);
+            document.body.insertAdjacentElement("afterbegin", create_announcement());
             //document.body.appendChild(elem);
         }
     }
@@ -48,4 +52,17 @@ function check_webp() {
     check_webp_feature('lossless', webp_callback);
     check_webp_feature('alpha', webp_callback);
 }
-check_webp();
+
+$(document).ready(function () {
+     if (!sessionStorage.webpSupport){
+          check_webp();
+     } else if (sessionStorage.webpSupport == "false") {
+         document.body.insertAdjacentElement("afterbegin", create_announcement());
+     } else {
+         document.body.insertAdjacentElement("afterbegin", create_announcement("Webp supported"));
+     }
+    //$('#version-warning-banner').prependTo($('div.document'))
+    // document.body.insertAdjacentElement("afterbegin", create_announcement());
+//    check_webp();
+});
+
