@@ -37,14 +37,16 @@ function create_announcement(innerHtml) {
     return ann;
 }
 
+var webpSupport = null;
+
 function check_webp() {
     // General check for webp support over features.  Adds an announcement if any feature not supported.
-    sessionStorage.webpSupport = "true";
+    webpSupport = true;
 
     const webp_callback = function (feature, isSupported) {
 
-        if (!isSupported && sessionStorage.webpSupport != "false") {
-            sessionStorage.webpSupport = "false";
+        if (!isSupported && webpSupport != false) {
+            webpSupport = false;
             document.body.insertAdjacentElement("afterbegin", create_announcement());
         }
     }
@@ -54,16 +56,4 @@ function check_webp() {
     });
 }
 
-$(document).ready(function () {
-    // Event handler to check for webp support when document is ready
-     if (!sessionStorage.webpSupport){
-        // Only run the download test once per session
-        check_webp();
-     } else if (sessionStorage.webpSupport == "false") {
-        // Download test has previously failed
-        document.body.insertAdjacentElement("afterbegin", create_announcement());
-     } /*else {
-         document.body.insertAdjacentElement("afterbegin", create_announcement("<b>Webp supported</b>"));
-     }*/
-});
-
+check_webp();
