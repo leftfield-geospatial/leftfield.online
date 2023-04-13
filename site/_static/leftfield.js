@@ -38,7 +38,7 @@ function create_announcement(innerHtml) {
 }
 
 function check_webp() {
-    // General check for webp support that adds an announcement if not supported.
+    // General check for webp support over features.  Adds an announcement if any feature not supported.
     sessionStorage.webpSupport = "true";
 
     const webp_callback = function (feature, isSupported) {
@@ -48,9 +48,10 @@ function check_webp() {
             document.body.insertAdjacentElement("afterbegin", create_announcement());
         }
     }
-    check_webp_feature('lossy', webp_callback);
-    check_webp_feature('lossless', webp_callback);
-    check_webp_feature('alpha', webp_callback);
+    const features = ["lossy", "lossless", "alpha"]
+    features.forEach(function (feature, index) {
+        check_webp_feature(feature, webp_callback);
+    });
 }
 
 $(document).ready(function () {
