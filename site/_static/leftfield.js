@@ -40,7 +40,6 @@ function check_webp() {
         if (!isSupported && sessionStorage.webpSupport != "false") {
 //        if (allSupported) {
             sessionStorage.webpSupport = "false";
-            allSupported = false;
 //            innerAnn.textContent = "This site requires webp support to display images.  Please update your browser.";
 //            const main_elem = document.getElementById("main-content");
 //            main_elem.insertAdjacentElement("afterend", ann);
