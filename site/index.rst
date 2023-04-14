@@ -7,7 +7,7 @@
    :maxdepth: 1
    :hidden:
 
-   portfolio
+   portfolio/index
    profile
    contact
 
@@ -37,7 +37,7 @@
 
     .. grid-item-card::
         :columns: 12 12 4 4
-        :link: portfolio
+        :link: portfolio/index
         :link-type: doc
 
         :fas:`book-open` **Portfolio**

@@ -76,7 +76,10 @@ html_theme_options = {
             'icon': 'fa-brands fa-github',
             'type': 'fontawesome',
         },
-    ]
+    ],
+    'collapse_navigation': True,
+    'show_nav_level': 0,
+    'navigation_depth': 0,
 }
 
 

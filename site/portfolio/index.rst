@@ -1,12 +1,13 @@
 .. toctree::
+   :caption: Portfolio
    :maxdepth: 1
    :hidden:
 
-   portfolio/homonim
-   portfolio/geedim
-   portfolio/simple_ortho
-   portfolio/thicket_agc
-   portfolio/biome_wide_thicket_agc
+   homonim
+   geedim
+   simple_ortho
+   thicket_agc
+   biome_wide_thicket_agc
 
 .. rst-class:: center
 
@@ -18,13 +19,13 @@
 
     .. grid-item-card::
         :columns: 12 12 6 6
-        :link: portfolio/homonim
+        :link: homonim
         :link-type: doc
 
         **Correct imagery to surface reflectance**
         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-        .. image:: _images/homonim-thumbnail.webp
+        .. image:: ../_images/homonim-thumbnail.webp
             :align: center
             :class: dark-light
             :alt: Thumbnail
@@ -33,13 +34,13 @@
 
     .. grid-item-card::
         :columns: 12 12 6 6
-        :link: portfolio/geedim
+        :link: geedim
         :link-type: doc
 
         **Search, composite and download GEE imagery**
         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-        .. image:: _images/geedim-thumbnail.webp
+        .. image:: ../_images/geedim-thumbnail.webp
             :align: left
             :width: 150
             :class: dark-light
@@ -49,13 +50,13 @@
 
     .. grid-item-card::
         :columns: 12 12 6 6
-        :link: portfolio/simple_ortho
+        :link: simple_ortho
         :link-type: doc
 
         **Orthorectification of aerial images**
         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-        .. image:: _images/simple_ortho-thumbnail.webp
+        .. image:: ../_images/simple_ortho-thumbnail.webp
             :align: center
             :height: 90
             :class: dark-light
@@ -65,13 +66,13 @@
 
     .. grid-item-card::
         :columns: 12 12 6 6
-        :link: portfolio/thicket_agc
+        :link: thicket_agc
         :link-type: doc
 
         **Farm-scale aboveground carbon mapping**
         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-        .. image:: _images/thicket_agc-thumbnail.webp
+        .. image:: ../_images/thicket_agc-thumbnail.webp
             :align: center
             :class: dark-light
             :height: 90
@@ -81,13 +82,13 @@
 
     .. grid-item-card::
         :columns: 12 12 6 6
-        :link: portfolio/biome_wide_thicket_agc
+        :link: biome_wide_thicket_agc
         :link-type: doc
 
         **Biome-wide aboveground carbon mapping**
         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-        .. image:: _images/biome_wide_thicket_agc-thumbnail.webp
+        .. image:: ../_images/biome_wide_thicket_agc-thumbnail.webp
             :align: center
             :height: 90
             :class: dark-light
