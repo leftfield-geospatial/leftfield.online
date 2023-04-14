@@ -52,7 +52,8 @@ html_permalinks = False
 # -- Theme specific configuration ---------------------------------------------
 # NOTE on pydata_sphinx_theme versions:
 # - 0.13.0 does not do navbar_align='center' properly, and makes an unnecessary scrollbar with any LHS sidebar menu
-# - 0.12.0 does navbar_align='center' ok-ish, and makes an unnecessary scrollbar with any LHS sidebar menu
+# - 0.12.0 does navbar_align='center' ok-ish, and makes an unnecessary scrollbar with any LHS sidebar menu.  it renders
+# both light and dark theme logos in ie, and does not copy them unless they are in the static dir.
 # - 0.11.0 makes a neat-looking LHS line (not scrollbar) with any LHS sidebar menu, some param name changes
 # - 0.9.0 is used by numpy
 html_theme_options = {
