@@ -104,4 +104,3 @@ favicons = [
 # TODO: auto generate ico
 # TODO: also sort out sponsorship to me or organisation
 # TODO: add a license for data / images
-# TODO: "skip to main content" on older browsers
