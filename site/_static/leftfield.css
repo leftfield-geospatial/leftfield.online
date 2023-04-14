@@ -9,9 +9,6 @@
 .navbar-brand img {
    height: 4.6rem;  /* adapted from numpy docs - limits logo height for older safari and ie browsers */
 }
-.navbar-brand {
-   height: 4.6rem;
-}
 
 .bd-footer {
     font-size: 0.8rem;    /* footer font size */
