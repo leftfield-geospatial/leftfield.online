@@ -58,8 +58,8 @@ html_permalinks = False
 html_theme_options = {
     'secondary_sidebar_items': [],
     'logo': {
-        'image_light': 'leftfield-logo_light.webp',
-        'image_dark': 'leftfield-logo_dark.webp',
+        'image_light': './_image_sources/leftfield-logo_light.svg',
+        'image_dark': './_image_sources/leftfield-logo_dark.svg',
         'alt_text': 'Leftfield Geospatial',
     },
     'navbar_align': 'right',
