@@ -101,4 +101,4 @@ favicons = [
 # TODO: auto generate ico
 # TODO: also sort out sponsorship to me or organisation
 # TODO: add a license for data / images
-# TODO: svg font does not render correctly on some devices/browsers (e.g. safari on iphone<8)
+# TODO: "skip to main content" on older browsers
