@@ -7,7 +7,15 @@
 }
 
 .navbar-brand img {
-   height: 4.6rem;  /* adapted from numpy docs - limits logo height for older safari and ie browsers */
+    height: 4.6rem;  /* adapted from numpy docs - limits logo height for older safari and ie browsers */
+}
+
+/*.navbar-brand {
+    display: -webkit-flex;
+    -webkit-flex-direction: row;
+}*/
+.nav-link {
+    margin-left: 0.3rem;    /* for ie which ignores the flex gap */
 }
 
 .skip-link {
@@ -17,10 +25,8 @@
 .bd-footer {
     font-size: 0.8rem;    /* footer font size */
 }
-
 body {
-    /* adapted from numpy docs for older safari and ie browsers */
-    font-family: "Segoe UI", sans-serif, arial;
+    font-family: "Segoe UI", sans-serif, arial;   /* adapted from numpy docs for older safari and ie browsers */
 }
 
 /* center h1 and h2 headings */
@@ -58,4 +64,12 @@ html[data-theme="dark"] {
 
 :root[data-theme="dark"] {
     --sd-color-card-border-hover: #2f8cefff;
+}
+
+html[data-theme="light"] .bd-sidebar {
+    background: white;
+}
+
+html[data-theme="dark"] .bd-sidebar {
+    background: black;
 }
