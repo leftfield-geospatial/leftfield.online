@@ -10,6 +10,19 @@
     height: 4.6rem;  /* adapted from numpy docs - limits logo height for older safari and ie browsers */
 }
 
+/*.bd-header__inner,
+.bd-navbar-elements,
+.navbar-header-items,
+.navbar-nav,
+.navbar-item
+.navbar-header-items__start,
+.nav-item {
+    display: flex;
+    display: ms-flex;
+    display: -webkit-inline-box;
+    padding: 0.25rem 0.25rem;
+}*/
+
 /*.navbar-brand {
     display: -webkit-flex;
     -webkit-flex-direction: row;
@@ -25,6 +38,7 @@
 .bd-footer {
     font-size: 0.8rem;    /* footer font size */
 }
+
 body {
     font-family: "Segoe UI", sans-serif, arial;   /* adapted from numpy docs for older safari and ie browsers */
 }
@@ -33,6 +47,11 @@ body {
 .center h1,
 .center h2 {
     text-align: center;
+}
+
+.bd-breadcrumbs {
+    display: flex;
+    display: none;      /* turn off breadcrumbs for browsers that don't support display flex */
 }
 
 html {
@@ -67,9 +86,9 @@ html[data-theme="dark"] {
 }
 
 html[data-theme="light"] .bd-sidebar {
-    background: white;
+    background: white;    /* workaround for old browsers which make sidebar transparent */
 }
 
 html[data-theme="dark"] .bd-sidebar {
-    background: black;
+    background: black;   /* workaround for old browsers which make sidebar transparent */
 }
