@@ -42,7 +42,7 @@
 }
 
 body {
-    font-family: "Segoe UI", sans-serif, arial;   /* adapted from numpy docs for older safari and ie browsers */
+    font-family: "Segoe UI", arial, sans-serif;   /* adapted from numpy docs for older safari and ie browsers */
 }
 
 /* center h1 and h2 headings */
@@ -50,6 +50,15 @@ body {
 .center h2 {
     text-align: center;
 }
+
+h1 {
+    font-size: 2.5rem;
+}
+h2 {
+    font-size: 2rem;
+}
+
+
 
 /* workaround for older safari browsers where flex stacks items vertically */
 ul.bd-breadcrumbs li.breadcrumb-item,
@@ -76,13 +85,13 @@ html {
 }
 
 html[data-theme="light"] {
-    --pst-color-primary: #106ed1ff;
-    --pst-color-link-hover: #f08080ff;
+    --pst-color-primary: #106ed1;
+    --pst-color-link-hover: #f08080;
 }
 
 html[data-theme="dark"] {
-    --pst-color-primary: #2f8cefff;
-    --pst-color-link-hover: #f09090ff;
+    --pst-color-primary: #2f8cef;
+    --pst-color-link-hover: #f09090;
 }
 
 :root[data-theme="light"] {
@@ -99,4 +108,61 @@ html[data-theme="light"] .bd-sidebar {
 
 html[data-theme="dark"] .bd-sidebar {
     background: black;   /* workaround for old browsers which make sidebar transparent */
+}
+
+/* Configure colors for browsers without var and or alpha support */
+
+/* inactive links in header and sidebar (must come before more specific hover/focus/active settings below) */
+html[data-theme="light"] .bd-header .navbar-nav li a.nav-link,  /* header */
+html[data-theme="light"] ul.bd-breadcrumbs li.breadcrumb-item:not(.breadcrumb-home):before,
+html[data-theme="light"] .navbar-nav li a.nav-link {            /* sidebar */
+    color: #646464
+}
+html[data-theme="dark"] .bd-header .navbar-nav li a.nav-link,  
+html[data-theme="dark"] ul.bd-breadcrumbs li.breadcrumb-item:not(.breadcrumb-home):before,
+html[data-theme="dark"] .navbar-nav li a.nav-link {
+    color: #a6a6a6
+}
+
+/* link hover colors (must come before more specific hover settings below) */
+html[data-theme="light"] a:hover {
+    color: #f08080;
+}
+
+html[data-theme="dark"] a:hover {
+    color: #f09090;
+}
+
+
+/* all primary color items incl hover/focus/active links in header and sidebar */
+html[data-theme="light"] h1,
+html[data-theme="light"] h2, 
+html[data-theme="light"] a, 
+html[data-theme="light"] .bd-header .navbar-nav li a.nav-link:focus,    /* header */
+html[data-theme="light"] .bd-header .navbar-nav li a.nav-link:hover, 
+html[data-theme="light"] .bd-header .navbar-nav>.active>.nav-link, 
+html[data-theme="light"] .navbar-nav li a:focus,    /* sidebar */
+html[data-theme="light"] .navbar-nav li a:hover,
+html[data-theme="light"] .navbar-nav li.current>a,
+html[data-theme="light"] ul.bd-breadcrumbs li.breadcrumb-item a { /*breadcrumbs*/
+    color: #106ed1;
+}
+
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] a,
+html[data-theme="dark"] .bd-header .navbar-nav li a.nav-link:focus,
+html[data-theme="dark"] .bd-header .navbar-nav li a.nav-link:hover, 
+html[data-theme="dark"] .bd-header .navbar-nav>.active>.nav-link,
+html[data-theme="dark"] .navbar-nav li a:focus,
+html[data-theme="dark"] .navbar-nav li a:hover,
+html[data-theme="dark"] .navbar-nav li.current>a,
+html[data-theme="dark"] ul.bd-breadcrumbs li.breadcrumb-item a {  /*breadcrumbs*/
+    color: #2f8cef
+}
+
+
+/* both light and dark themes */
+.bd-header-announcement:after {
+    background-color: #459db9;
 }
