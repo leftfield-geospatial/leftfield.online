@@ -16,7 +16,7 @@ author = 'Leftfield Geospatial'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
-    'sphinx.ext.autosectionlabel',
+    # 'sphinx.ext.autosectionlabel',
     'sphinx_design',
     'sphinx_favicon',
 ]
@@ -26,7 +26,7 @@ templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 # -- Auto section label configuration ---------------------------------------------
-autosectionlabel_prefix_document = True
+# autosectionlabel_prefix_document = True
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -48,6 +48,7 @@ html_sidebars = {
 html_copy_source = False
 html_show_sourcelink = False
 html_permalinks = False
+
 
 # -- Theme specific configuration ---------------------------------------------
 # NOTE on pydata_sphinx_theme versions:
@@ -82,7 +83,6 @@ html_theme_options = {
     'navigation_depth': 0,
 }
 
-
 # -- option sfor the favicon extention ------------------------------------------
 # adapted from https://github.com/tcmetzger/sphinx-favicon/blob/main/docs/source/conf.py
 favicons = [
@@ -104,3 +104,41 @@ favicons = [
 # TODO: auto generate ico
 # TODO: also sort out sponsorship to me or organisation
 # TODO: add a license for data / images
+# TODO: IE does not use gap setting from theme flow, so requires css for .nav-link to add padding.  But then new browsers
+#  add this padding to the flex gap.  Ideally I should either get IE to use a gap specific to it.  Or zero the gap, and
+#  use only padding for all browsers.  This is in navbar-item->navbar-nav.
+#  The above applies to section headers and breadcrumbs.
+# TODO: Safari is rendering vertically what newer browsers render horizontally e.g. the header section titles and breadcrumbs.
+# TODO: Safari and IE announcement banner coloring
+# TODO: IE does not re-configure layout when it is resized
+# TODO: Safari and IE put underline with header / sidebar hover
+# TODO: browserstack safari 5 does not have the breadcrumb triangle
+# TODO: safari 5 sidebar does not go away if you click outside of it, only inside
+# TODO: safari renders grid as though it is on low res i.e. one column
+# TODO: think about including portfolio items in drop-down or sidebar sub-menu
+# \\127.0.0.1\c$\Data\Development\Projects\leftfield.online\site\_build\html\index.html
+# TODO: sidebar 0.13.3:
+# TODO:
+#   // header:
+#   bd-header / navbar / bd-navbar
+#       ...
+#       navbar-item
+#           logo
+#       navbar-header-items
+#           navbar-item
+#               navbar-nav (bd-navbar-elements)
+#                   nav-item
+#                       nav-link
+#                           (Portfolio/Profile/Contact)
+#               theme switcher
+#               navbar-icon-links
+#   // sidebar:
+#   bd-sidebar-primary bd-sidebar hide-on-wide
+#       sidebar-header-items
+#           navbar-item
+#               navbar-nav
+#                   nav-item
+#                           (Portfolio/Profile/Contact)
+#               theme switcher
+#               navbar-icon-links
+
