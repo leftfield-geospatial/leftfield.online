@@ -1,48 +1,33 @@
 .navbar-nav {
-    font-size: 1.5rem;    /* section link font size */
-    margin-right: 1rem;   /* space between right-aligned section links and icon links / components */
-    margin-left: 0rem;    /* space between logo and left-aligned section links, also between light/dark button & icon links  */
+    /* section link font size */
+    font-size: 1.5rem;
+    /* space between right-aligned section links and icon links / components */
+    margin-right: 1rem;
+    /* space between logo and left-aligned section links, also between light/dark button & icon links  */
+    margin-left: 0rem;
+    /*gap: 0.5rem;*/
+    /* spacing between section titles */
     padding: 0rem;
-    /*gap: 0.5rem;*/        /* spacing between section titles */
 }
 
-.navbar-brand img {
-    height: 4.6rem;  /* adapted from numpy docs - limits logo height for older safari and ie browsers */
+/* limit logo height for older safari and ie browsers - adapted from numpy docs  */
+navbar-brand img {
+    height: 4.6rem;
 }
 
-/*.bd-header__inner,
-.bd-navbar-elements,
-.navbar-header-items,
-.navbar-nav,
-.navbar-item
-.navbar-header-items__start,
-.nav-item {
-    display: flex;
-    display: ms-flex;
-    display: -webkit-inline-box;
-    padding: 0.25rem 0.25rem;
-}*/
-
-/*.navbar-brand {
-    display: -webkit-flex;
-    -webkit-flex-direction: row;
-}*/
-/* for ie which ignores the flex gap */
-/* TODO: make this specific to nav bar */
-.nav-link {
-    margin-left: 0.3rem;    
-}
-
+/* remove skip to main content link */
 .skip-link {
-    display: none;      /* remove skip to main content link */
+    display: none;
 }
 
+/* footer font size */
 .bd-footer {
-    font-size: 0.8rem;    /* footer font size */
+    font-size: 0.8rem;
 }
 
+/* adapted from numpy docs for older safari and ie browsers */
 body {
-    font-family: "Segoe UI", arial, sans-serif;   /* adapted from numpy docs for older safari and ie browsers */
+    font-family: "Segoe UI", arial, sans-serif;
 }
 
 /* center h1 and h2 headings */
@@ -54,6 +39,7 @@ body {
 h1 {
     font-size: 2.5rem;
 }
+
 h2 {
     font-size: 2rem;
 }
@@ -67,8 +53,10 @@ ul.bd-breadcrumbs li.breadcrumb-item a {
     display: flex;
 }
 
+/* workaround for browsers which support var or the --pst-breadcrumb-divider unicode character */
 ul.bd-breadcrumbs li.breadcrumb-item:not(.breadcrumb-home):before {
-    content: "⏵";       /* workaround for older ie and safari browsers which don't read --pst-breadcrumb-divider */
+    content: ">";
+    /*content: "⏵";*/
 }
 
 
@@ -76,8 +64,10 @@ html {
     /* Header height will impact the top offset for many sections
     Article header is 66% of Header by default
     Note 1rem = 16px by default */
-    --pst-header-height: 5.6rem;    /* height of navigation bar */
-    --pst-header-article-height: 3rem;  /* space between nav bar and start of article */
+    /* height of navigation bar */
+    --pst-header-height: 5.6rem;
+    /* space between nav bar and start of article */
+    --pst-header-article-height: 3rem;
 
     /* prefer Segoe UI which is a windows system font and used for Leftfield logo */
     --pst-font-family-base: "Segoe UI", var(--pst-font-family-base-system);
@@ -88,7 +78,6 @@ html[data-theme="light"] {
     --pst-color-primary: #106ed1;
     --pst-color-link-hover: #f08080;
 }
-
 html[data-theme="dark"] {
     --pst-color-primary: #2f8cef;
     --pst-color-link-hover: #f09090;
@@ -97,29 +86,35 @@ html[data-theme="dark"] {
 :root[data-theme="light"] {
     --sd-color-card-border-hover: #106ed1ff;
 }
-
 :root[data-theme="dark"] {
     --sd-color-card-border-hover: #2f8cefff;
 }
 
+/* workaround for old browsers which make sidebar transparent */
 html[data-theme="light"] .bd-sidebar {
-    background: white;    /* workaround for old browsers which make sidebar transparent */
+    background: white;
 }
-
 html[data-theme="dark"] .bd-sidebar {
-    background: black;   /* workaround for old browsers which make sidebar transparent */
+    background: black;
 }
 
 /* Configure colors for browsers without var and or alpha support */
 
 /* inactive links in header and sidebar (must come before more specific hover/focus/active settings below) */
-html[data-theme="light"] .bd-header .navbar-nav li a.nav-link,  /* header */
+/* header */
+html[data-theme="light"] .bd-header .navbar-nav li a.nav-link,
+/* breadcrumbs */
 html[data-theme="light"] ul.bd-breadcrumbs li.breadcrumb-item:not(.breadcrumb-home):before,
-html[data-theme="light"] .navbar-nav li a.nav-link {            /* sidebar */
+/* sidebar */
+html[data-theme="light"] .navbar-nav li a.nav-link {
     color: #646464
 }
-html[data-theme="dark"] .bd-header .navbar-nav li a.nav-link,  
+
+/* header */
+html[data-theme="dark"] .bd-header .navbar-nav li a.nav-link,
+/* breadcrumbs */
 html[data-theme="dark"] ul.bd-breadcrumbs li.breadcrumb-item:not(.breadcrumb-home):before,
+/* sidebar */
 html[data-theme="dark"] .navbar-nav li a.nav-link {
     color: #a6a6a6
 }
@@ -133,36 +128,89 @@ html[data-theme="dark"] a:hover {
     color: #f09090;
 }
 
-
 /* all primary color items incl hover/focus/active links in header and sidebar */
+/* headings and links */
 html[data-theme="light"] h1,
-html[data-theme="light"] h2, 
-html[data-theme="light"] a, 
-html[data-theme="light"] .bd-header .navbar-nav li a.nav-link:focus,    /* header */
-html[data-theme="light"] .bd-header .navbar-nav li a.nav-link:hover, 
-html[data-theme="light"] .bd-header .navbar-nav>.active>.nav-link, 
-html[data-theme="light"] .navbar-nav li a:focus,    /* sidebar */
+html[data-theme="light"] h2,
+html[data-theme="light"] a,
+/* header */
+html[data-theme="light"] .bd-header .navbar-nav li a.nav-link:focus,
+html[data-theme="light"] .bd-header .navbar-nav li a.nav-link:hover,
+html[data-theme="light"] .bd-header .navbar-nav>.active>.nav-link,
+/* sidebar */
+html[data-theme="light"] .navbar-nav li a:focus,
 html[data-theme="light"] .navbar-nav li a:hover,
 html[data-theme="light"] .navbar-nav li.current>a,
-html[data-theme="light"] ul.bd-breadcrumbs li.breadcrumb-item a { /*breadcrumbs*/
+/*breadcrumbs*/
+html[data-theme="light"] ul.bd-breadcrumbs li.breadcrumb-item a {
     color: #106ed1;
 }
 
+/* headings and links */
 html[data-theme="dark"] h1,
 html[data-theme="dark"] h2,
 html[data-theme="dark"] a,
+/* header */
 html[data-theme="dark"] .bd-header .navbar-nav li a.nav-link:focus,
-html[data-theme="dark"] .bd-header .navbar-nav li a.nav-link:hover, 
+html[data-theme="dark"] .bd-header .navbar-nav li a.nav-link:hover,
 html[data-theme="dark"] .bd-header .navbar-nav>.active>.nav-link,
+/* sidebar */
 html[data-theme="dark"] .navbar-nav li a:focus,
 html[data-theme="dark"] .navbar-nav li a:hover,
 html[data-theme="dark"] .navbar-nav li.current>a,
-html[data-theme="dark"] ul.bd-breadcrumbs li.breadcrumb-item a {  /*breadcrumbs*/
-    color: #2f8cef
+/*breadcrumbs*/
+html[data-theme="dark"] ul.bd-breadcrumbs li.breadcrumb-item a {
+    color: #2f8cef;
 }
 
+/* turn off header and sidebar link underlines (for ie and safari)  */
+.navbar-nav li a.nav-link:hover {
+    text-decoration: none
+}
 
-/* both light and dark themes */
+/* light and dark theme announcement background */
 .bd-header-announcement:after {
     background-color: #459db9;
 }
+
+/* Workaround(s) for older safari browsers where flex stacks header items vertically. */
+/* Adapted from _build/html/_static/styles/pydata-sphinx-theme.css */
+
+/* When screen >= 960px, display header items using flex or inline-block */
+@media(min-width:960px) {
+    .bd-header .navbar-header-items {
+        display: inline-block;
+        display: flex;
+    }
+}
+
+/* Display header items with inline-block if flex not supported. */
+.bd-header .navbar-header-items__start,
+.bd-header .navbar-header-items__center,
+.bd-header .navbar-header-items__end,
+.bd-header .sidebar-toggle
+.bd-header .navbar-brand,
+.bd-header .navbar-brand img,
+.bd-header .navbar-icon-links,
+.bd-header .navbar-item,
+.bd-header .navbar-nav,
+.bd-header .nav-item,
+.bd-header .nav-link {
+    display: inline-block;
+    display: flex
+}
+
+/* Adjust header item spacing for IE which does flex with no spacing. */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .bd-header .nav-link {
+        margin-right: 1rem;
+    }
+}
+
+
+/* turn off header section and icon links if flex is not supported */
+/*.bd-header .navbar-header-items__center,
+.bd-header .navbar-header-items__end {
+    display: none;
+    display: flex;
+}*/
