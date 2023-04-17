@@ -116,6 +116,8 @@ favicons = [
 # TODO: safari 5 sidebar does not go away if you click outside of it, only inside
 # TODO: safari renders grid as though it is on low res i.e. one column
 # TODO: think about including portfolio items in drop-down or sidebar sub-menu
+# TODO: could we auto-generate css with all the var(...)'s evaluated?  Then we wouldn't need all the custom coloring etc code.
+#  The problem is it is dynamic i.e. it needs to know the theme at browse time to determine the val of e.g. --pst-*-color
 # \\127.0.0.1\c$\Data\Development\Projects\leftfield.online\site\_build\html\index.html
 # TODO: sidebar 0.13.3:
 # TODO:

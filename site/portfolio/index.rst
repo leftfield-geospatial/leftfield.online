@@ -14,11 +14,10 @@
 **Portfolio**
 =============
 
-.. grid:: 2
+.. grid:: 1 1 2 2
     :gutter: 1
 
     .. grid-item-card::
-        :columns: 12 12 6 6
         :link: homonim
         :link-type: doc
 
@@ -33,7 +32,6 @@
         An end-user and research tool for harmonisation and surface reflectance correction of remotely sensed imagery.
 
     .. grid-item-card::
-        :columns: 12 12 6 6
         :link: geedim
         :link-type: doc
 
@@ -49,7 +47,6 @@
         A command line tool and python library for searching, compositing and downloading Google Earth Engine imagery.  Supports cloud and shadow masking, and cloud/shadow-free compositing.
 
     .. grid-item-card::
-        :columns: 12 12 6 6
         :link: simple_ortho
         :link-type: doc
 
@@ -65,7 +62,6 @@
         A command line tool and python library for orthorectification of aerial and other imagery.
 
     .. grid-item-card::
-        :columns: 12 12 6 6
         :link: thicket_agc
         :link-type: doc
 
@@ -81,7 +77,6 @@
         A machine learning method for mapping aboveground carbon in thicket, developed on data from a small site in the Baviaanskloof, South Africa.
 
     .. grid-item-card::
-        :columns: 12 12 6 6
         :link: biome_wide_thicket_agc
         :link-type: doc
 

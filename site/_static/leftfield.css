@@ -30,6 +30,12 @@ body {
     font-family: "Segoe UI", arial, sans-serif;
 }
 
+/* wrap main content on window resize in IE -  
+see https://stackoverflow.com/questions/20149715/internet-explorer-11-word-wrap-is-not-working */
+.bd-main {
+    width: 100%;
+}
+
 /* center h1 and h2 headings */
 .center h1,
 .center h2 {
@@ -59,6 +65,21 @@ ul.bd-breadcrumbs li.breadcrumb-item:not(.breadcrumb-home):before {
     /*content: "⏵";*/
 }
 
+/*.sd-card {
+    vertical-align: top;
+}*/
+/*.sd-card-header,
+.sd-card-body,
+.sd-card-text,
+.sd-stretched-link {
+    display: inline-block;
+    display: flex;
+}*/
+.sd-col {
+    display: inline-block;
+    display: flex;
+    vertical-align: top;
+}
 
 html {
     /* Header height will impact the top offset for many sections

@@ -32,11 +32,10 @@
 
         Collaborative in nature, and aligned with scientific best practice, Leftfield supports the open source model - using it where appropriate.  Through it's work, Leftfield aims to contribute toward a sane and vibrant living planet.  Please get :doc:`in touch <contact>` if you would like to find out more.
 
-.. grid:: 3
+.. grid:: 1 1 3 3
     :gutter: 1
 
     .. grid-item-card::
-        :columns: 12 12 4 4
         :link: portfolio/index
         :link-type: doc
 
@@ -46,7 +45,6 @@
         A showcase of recent and ongoing projects.
 
     .. grid-item-card::
-        :columns: 12 12 4 4
         :link: profile
         :link-type: doc
 
@@ -56,7 +54,6 @@
         Background, expertise and experience.
 
     .. grid-item-card::
-        :columns: 12 12 4 4
         :link: contact
         :link-type: doc
 
