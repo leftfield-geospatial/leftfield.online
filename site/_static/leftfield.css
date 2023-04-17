@@ -1,3 +1,5 @@
+/* Leftfield aesthetic customisations. */
+/* configure header and sidebar navbar */
 .navbar-nav {
     /* section link font size */
     font-size: 1.5rem;
@@ -15,9 +17,8 @@
     height: 4.6rem;
 }
 
-/* remove skip to main content link */
-.skip-link {
-    display: none;
+.navbar-brand {
+    height: 4.6rem;
 }
 
 /* footer font size */
@@ -25,21 +26,46 @@
     font-size: 0.8rem;
 }
 
-/* adapted from numpy docs for older safari and ie browsers */
-body {
-    font-family: "Segoe UI", arial, sans-serif;
-}
-
-/* wrap main content on window resize in IE -  
-see https://stackoverflow.com/questions/20149715/internet-explorer-11-word-wrap-is-not-working */
-.bd-main {
-    width: 100%;
-}
-
-/* center h1 and h2 headings */
+/* center class for h1 and h2 headings */
 .center h1,
 .center h2 {
     text-align: center;
+}
+
+
+/* Misc. workarounds for browser compatibility. */
+
+/* remove skip to main content link */
+.skip-link {
+    display: none;
+}
+
+/* turn off header and sidebar link underlines */
+.navbar-nav li a.nav-link:hover {
+    text-decoration: none
+}
+
+/* ie specific settings */
+@media all and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+
+    /* adjust header item spacing for ie's lack of flex spacing. */
+    .bd-header .nav-link {
+        margin-right: 1rem;
+    }
+
+    /* wrap main content when it doesn't fit in the windopw   
+    see https://stackoverflow.com/questions/20149715/internet-explorer-11-word-wrap-is-not-working */
+    .bd-main {
+        width: 100%;
+    }
+}
+
+/* Workarounds for browsers without custom variable support. */
+
+/* system font stack - adapted from https://systemfontstack.com/*/
+body {
+    font-family: "Segoe UI", arial, sans-serif, -apple-system, BlinkMacSystemFont, "avenir next", avenir, "helvetica neue", helvetica, Cantarell, Ubuntu, roboto, noto;
 }
 
 h1 {
@@ -50,76 +76,12 @@ h2 {
     font-size: 2rem;
 }
 
-
-
-/* workaround for older safari browsers where flex stacks items vertically */
-ul.bd-breadcrumbs li.breadcrumb-item,
-ul.bd-breadcrumbs li.breadcrumb-item a {
-    display: inline-block;
-    display: flex;
-}
-
-/* workaround for browsers which support var or the --pst-breadcrumb-divider unicode character */
+/* breadcrumb divider */
 ul.bd-breadcrumbs li.breadcrumb-item:not(.breadcrumb-home):before {
     content: ">";
-    /*content: "⏵";*/
 }
 
-/*.sd-card {
-    vertical-align: top;
-}*/
-/*.sd-card-header,
-.sd-card-body,
-.sd-card-text,
-.sd-stretched-link {
-    display: inline-block;
-    display: flex;
-}*/
-.sd-col {
-    display: inline-block;
-    display: flex;
-    vertical-align: top;
-}
-
-html {
-    /* Header height will impact the top offset for many sections
-    Article header is 66% of Header by default
-    Note 1rem = 16px by default */
-    /* height of navigation bar */
-    --pst-header-height: 5.6rem;
-    /* space between nav bar and start of article */
-    --pst-header-article-height: 3rem;
-
-    /* prefer Segoe UI which is a windows system font and used for Leftfield logo */
-    --pst-font-family-base: "Segoe UI", var(--pst-font-family-base-system);
-    --pst-font-size-base: 0.9rem;
-}
-
-html[data-theme="light"] {
-    --pst-color-primary: #106ed1;
-    --pst-color-link-hover: #f08080;
-}
-html[data-theme="dark"] {
-    --pst-color-primary: #2f8cef;
-    --pst-color-link-hover: #f09090;
-}
-
-:root[data-theme="light"] {
-    --sd-color-card-border-hover: #106ed1ff;
-}
-:root[data-theme="dark"] {
-    --sd-color-card-border-hover: #2f8cefff;
-}
-
-/* workaround for old browsers which make sidebar transparent */
-html[data-theme="light"] .bd-sidebar {
-    background: white;
-}
-html[data-theme="dark"] .bd-sidebar {
-    background: black;
-}
-
-/* Configure colors for browsers without var and or alpha support */
+/* Colours for browsers without alpha and or custom variable support. */
 
 /* inactive links in header and sidebar (must come before more specific hover/focus/active settings below) */
 /* header */
@@ -140,7 +102,7 @@ html[data-theme="dark"] .navbar-nav li a.nav-link {
     color: #a6a6a6
 }
 
-/* link hover colors (must come before more specific hover settings below) */
+/* link hover colours (must come before more specific hover settings below) */
 html[data-theme="light"] a:hover {
     color: #f08080;
 }
@@ -149,7 +111,7 @@ html[data-theme="dark"] a:hover {
     color: #f09090;
 }
 
-/* all primary color items incl hover/focus/active links in header and sidebar */
+/* all primary colour items incl hover/focus/active links in header and sidebar */
 /* headings and links */
 html[data-theme="light"] h1,
 html[data-theme="light"] h2,
@@ -184,33 +146,44 @@ html[data-theme="dark"] ul.bd-breadcrumbs li.breadcrumb-item a {
     color: #2f8cef;
 }
 
-/* turn off header and sidebar link underlines (for ie and safari)  */
-.navbar-nav li a.nav-link:hover {
-    text-decoration: none
+/* force opaque sidebar for old browsers */
+html[data-theme="light"] .bd-sidebar {
+    background: white;
 }
 
-/* light and dark theme announcement background */
+html[data-theme="dark"] .bd-sidebar {
+    background: black;
+}
+
+/* light and dark theme announcement background (i.e. the note about webp support) */
 .bd-header-announcement:after {
     background-color: #459db9;
 }
 
-/* Workaround(s) for older safari browsers where flex stacks header items vertically. */
-/* Adapted from _build/html/_static/styles/pydata-sphinx-theme.css */
 
+/* Workarounds for browsers without `display: flex` support */
+/* stack breadcrumbs horizontally */
+ul.bd-breadcrumbs li.breadcrumb-item,
+ul.bd-breadcrumbs li.breadcrumb-item a {
+    display: inline-block;
+    display: -webkit-flex;
+    display: flex;
+}
+
+/* stack header section links horizontally. */
 /* When screen >= 960px, display header items using flex or inline-block */
 @media(min-width:960px) {
     .bd-header .navbar-header-items {
         display: inline-block;
+        display: -webkit-flex;
         display: flex;
     }
 }
 
-/* Display header items with inline-block if flex not supported. */
 .bd-header .navbar-header-items__start,
 .bd-header .navbar-header-items__center,
 .bd-header .navbar-header-items__end,
-.bd-header .sidebar-toggle
-.bd-header .navbar-brand,
+.bd-header .sidebar-toggle .bd-header .navbar-brand,
 .bd-header .navbar-brand img,
 .bd-header .navbar-icon-links,
 .bd-header .navbar-item,
@@ -218,20 +191,98 @@ html[data-theme="dark"] ul.bd-breadcrumbs li.breadcrumb-item a {
 .bd-header .nav-item,
 .bd-header .nav-link {
     display: inline-block;
+    display: -webkit-flex;
     display: flex
 }
 
-/* Adjust header item spacing for IE which does flex with no spacing. */
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    .bd-header .nav-link {
-        margin-right: 1rem;
-    }
+/* stack sphinx-design grid columns horizontally */
+.sd-col {
+    display: inline-block;
+    margin-right: -3px;
+    vertical-align: top;
 }
 
+@supports(display: flex) {
+    .sd-col {
+        display: flex;
+        margin-right: unset;
+    }
+}
 
 /* turn off header section and icon links if flex is not supported */
 /*.bd-header .navbar-header-items__center,
 .bd-header .navbar-header-items__end {
     display: none;
     display: flex;
+}*/
+
+
+
+/* Define custom variables. */
+/* NB note that some of these variables are duplicated by configurations above. */
+html {
+    /* header height will impact the top offset for many sections
+    article header is 66% of Header by default,
+    note 1rem = 16px by default */
+    
+    /* height of navigation bar */
+    --pst-header-height: 5.6rem;
+    /* space between nav bar and start of article */
+    --pst-header-article-height: 3rem;
+
+    /* prefer Segoe UI which is a windows system font and used for Leftfield logo */
+    --pst-font-family-base: "Segoe UI", var(--pst-font-family-base-system);
+    --pst-font-size-base: 0.9rem;
+}
+
+html[data-theme="light"] {
+    --pst-color-primary: #106ed1;
+    --pst-color-link-hover: #f08080;
+}
+
+html[data-theme="dark"] {
+    --pst-color-primary: #2f8cef;
+    --pst-color-link-hover: #f09090;
+}
+
+:root[data-theme="light"] {
+    --sd-color-card-border-hover: #106ed1ff;
+}
+
+:root[data-theme="dark"] {
+    --sd-color-card-border-hover: #2f8cefff;
+}
+
+
+/*.sd-card {
+    vertical-align: top;
+}*/
+/*.sd-card-header,
+.sd-card-body,
+.sd-card-text,
+.sd-stretched-link {
+    display: inline-block;
+    display: flex;
+}*/
+/*.sd-row {
+    width: 95%;
+    max-width: 95%;
+}*/
+
+/*.sd-row > * {
+    padding-right: 0.5;
+    padding-left: 0.5;
+    margin-top: 1;
+}*/
+
+
+/*.sd-col {
+    display: inline-block;
+    display: flex;
+    vertical-align: top;
+}*/
+
+/*.sd-card-header,
+.sd-card-body,
+.sd-card-text {
 }*/
