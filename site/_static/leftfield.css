@@ -15,11 +15,12 @@
 /* limit logo height for older safari and ie browsers - adapted from numpy docs  */
 .navbar-brand img {
     height: 4.6rem;
+    width: auto;
 }
 
-.navbar-brand {
+/*.navbar-brand {
     height: 4.6rem;
-}
+}*/
 
 /* footer font size */
 .bd-footer {
