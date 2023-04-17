@@ -166,7 +166,7 @@ html[data-theme="dark"] .bd-sidebar {
 ul.bd-breadcrumbs li.breadcrumb-item,
 ul.bd-breadcrumbs li.breadcrumb-item a {
     display: inline-block;
-    display: -webkit-flex;
+    /* display: -webkit-flex; */
     display: flex;
 }
 
@@ -175,7 +175,7 @@ ul.bd-breadcrumbs li.breadcrumb-item a {
 @media(min-width:960px) {
     .bd-header .navbar-header-items {
         display: inline-block;
-        display: -webkit-flex;
+        /* display: -webkit-flex; */
         display: flex;
     }
 }
@@ -191,7 +191,7 @@ ul.bd-breadcrumbs li.breadcrumb-item a {
 .bd-header .nav-item,
 .bd-header .nav-link {
     display: inline-block;
-    display: -webkit-flex;
+    /* display: -webkit-flex; */
     display: flex
 }
 
