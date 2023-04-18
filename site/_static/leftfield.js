@@ -28,11 +28,8 @@ function create_announcement(innerHtml) {
     if (!innerHtml) innerHtml = "<b>This site requires webp support to display images.  Please update your browser.</b>";
     
     const ann = document.createElement("div");
-    ann.classList.add("bd-header-announcement", "container-fluid", "bd-header-announcement");
-    const innerAnn = document.createElement("div");
-    innerAnn.classList.add("bd-header-announcement__content");
-    innerAnn.innerHTML = innerHtml;
-    ann.appendChild(innerAnn);
+    ann.classList.add("bd-header-announcement");
+    ann.innerHTML = innerHtml;
     
     return ann;
 }
@@ -47,7 +44,7 @@ function check_webp() {
 
         if (!isSupported && webpSupport != false) {
             webpSupport = false;
-            document.body.insertAdjacentElement("afterbegin", create_announcement());
+            document.body.insertBefore(create_announcement(), document.body.firstChild);
         }
     }
     const features = ["lossy", "lossless", "alpha"]
