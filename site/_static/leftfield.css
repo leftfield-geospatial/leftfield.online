@@ -192,22 +192,17 @@ ul.bd-breadcrumbs li.breadcrumb-item a {
 .bd-header .nav-item,
 .bd-header .nav-link {
     display: inline-block;
-    /* display: -webkit-flex; */
-    display: flex
+    display: flex;
 }
 
-/* stack sphinx-design grid columns horizontally */
+/* stack sphinx-design grid columns horizontally, */
+/* see https://tylercipriani.com/blog/2012/08/01/display-inline-block-extra-margin. */
+/* using `display: inline-block` does not work as it includes extra spacing between */
+/* columns so they overflow the a row.  */
 .sd-col {
-    display: inline-block;
-    margin-right: -3px;
-    vertical-align: top;
-}
-
-@supports(display: flex) {
-    .sd-col {
-        display: flex;
-        margin-right: unset;
-    }
+    display: block;
+    display: flex;
+    float: left;
 }
 
 /* turn off header section and icon links if flex is not supported */
