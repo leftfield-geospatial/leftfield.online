@@ -161,7 +161,7 @@ html[data-theme="dark"] .bd-sidebar {
     background-color: #459db9;
 }
 
-/* Workarounds for bowsers without @media support. */
+/* Workarounds for browsers without @media support. */
 .bd-header-announcement {
     padding: .5rem 2%;
 }

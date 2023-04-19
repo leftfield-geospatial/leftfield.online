@@ -3,13 +3,13 @@ function check_webp_feature(feature, callback) {
     //   'feature' can be one of 'lossy', 'lossless', 'alpha' or 'animation'.
     //   'callback(feature, isSupported)' will be passed back the detection result (in an asynchronous way!).
     // Copied from https://developers.google.com/speed/webp/faq#in_your_own_javascript
-    const kTestImages = {
+    var kTestImages = {
             lossy: "UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA",
             lossless: "UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==",
             alpha: "UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA==",
             animation: "UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA"
         };
-        const img = new Image();
+        var img = new Image();
         img.onload = function () {
             var result = (img.width > 0) && (img.height > 0);
             callback(feature, result);
@@ -27,7 +27,7 @@ function create_announcement(innerHtml) {
     
     if (!innerHtml) innerHtml = "<b>This site requires webp support to display images.  Please update your browser.</b>";
     
-    const ann = document.createElement("div");
+    var ann = document.createElement("div");
     ann.classList.add("bd-header-announcement");
     ann.innerHTML = innerHtml;
     
@@ -40,14 +40,14 @@ function check_webp() {
     // General check for webp support over features.  Adds an announcement if any feature not supported.
     webpSupport = true;
 
-    const webp_callback = function (feature, isSupported) {
+    var webp_callback = function (feature, isSupported) {
 
         if (!isSupported && webpSupport != false) {
             webpSupport = false;
             document.body.insertBefore(create_announcement(), document.body.firstChild);
         }
     }
-    const features = ["lossy", "lossless", "alpha"]
+    var features = ["lossy", "lossless", "alpha"]
     features.forEach(function (feature, index) {
         check_webp_feature(feature, webp_callback);
     });
