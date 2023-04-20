@@ -62,6 +62,14 @@
     }
 }
 
+/* display body content in safari 9-10 & chrome 29 (+?) */
+/* .bd-main .bd-content {
+    min-height: 100vh;
+} 
+
+.bd-container, .bd-container__inner, .bd-main, .bd-content, .bd-article-container, .bd-article { 
+} */
+
 /* Workarounds for browsers without custom variable support. */
 
 /* system font stack - adapted from https://systemfontstack.com/*/
@@ -125,7 +133,7 @@ html[data-theme="light"] .bd-header .navbar-nav>.active>.nav-link,
 html[data-theme="light"] .navbar-nav li a:focus,
 html[data-theme="light"] .navbar-nav li a:hover,
 html[data-theme="light"] .navbar-nav li.current>a,
-/*breadcrumbs*/
+/* breadcrumbs */
 html[data-theme="light"] ul.bd-breadcrumbs li.breadcrumb-item a {
     color: #106ed1;
 }
@@ -142,10 +150,25 @@ html[data-theme="dark"] .bd-header .navbar-nav>.active>.nav-link,
 html[data-theme="dark"] .navbar-nav li a:focus,
 html[data-theme="dark"] .navbar-nav li a:hover,
 html[data-theme="dark"] .navbar-nav li.current>a,
-/*breadcrumbs*/
+/* breadcrumbs */
 html[data-theme="dark"] ul.bd-breadcrumbs li.breadcrumb-item a {
     color: #2f8cef;
 }
+
+/* sd-card border colour */
+html[data-theme="light"] .sd-card {
+    border: 1px solid #c9c9c9;
+}
+html[data-theme="dark"] .sd-card {
+    border: 1px solid silver;
+}
+html[data-theme="light"] .sd-card-header {
+    border-bottom: 1px solid #c9c9c9;
+}
+html[data-theme="dark"] .sd-card-header {
+    border-bottom: 1px solid silver;
+}
+
 
 /* force opaque sidebar for old browsers */
 html[data-theme="light"] .bd-sidebar {
@@ -203,10 +226,22 @@ ul.bd-breadcrumbs li.breadcrumb-item a {
 /* see https://tylercipriani.com/blog/2012/08/01/display-inline-block-extra-margin. */
 /* using `display: inline-block` does not work as it includes extra spacing between */
 /* columns so they overflow the a row.  */
-.sd-col {
+[display="flex"] {
     display: block;
-    display: flex;
+}
+.bd-main {
+    display: block;
+    /* float: left; */
+    outline: 1px solid green;
+}
+.sd-col {
     float: left;
+    outline: 1px solid blue;
+}
+.sd-row {
+    float: left;
+    width: 100%;
+    outline: 1px red solid;
 }
 
 /* turn off header section and icon links if flex is not supported */
@@ -215,7 +250,6 @@ ul.bd-breadcrumbs li.breadcrumb-item a {
     display: none;
     display: flex;
 }*/
-
 
 
 /* Define custom variables. */
