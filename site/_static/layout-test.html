@@ -1,0 +1,205 @@
+<html>
+
+<body>
+
+    <style>
+        body {
+            min-height: 100vh;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            border: 1px solid blue;
+            /* width: 100%; */
+            padding: 5px;
+            /* min-height: 0;
+        min-width: 0; */
+        }
+
+        .flex-cell {
+            /* margin: 5px; */
+            width: 500px;
+            background: pink;
+            outline: 1px solid red;
+        }
+    </style>
+
+    <div>
+        <h1>Flex</h1>
+    </div>
+    <section class="flex-container">
+        <div class="flex-cell">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique
+            sapien ac erat tincidunt, sit amet dignissim lectus vulputate. Donec id
+            iaculis velit. Aliquam vel malesuada erat. Praesent non magna ac massa
+            aliquet tincidunt vel in massa. Phasellus feugiat est vel leo finibus
+        </div>
+        <div class="flex-cell">1</div>
+        <div class="flex-cell">2</div>
+        <div class="flex-cell">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique
+            sapien ac erat tincidunt.
+        </div>
+    </section>
+
+    <style>
+        .float-container {
+            /* this must also be float if it is to contain the cells */
+            display: block;
+            float: left;
+            border: 1px solid blue;
+            padding: 5px;
+            width: 100%;
+        }
+
+        .float-cell {
+            display: block;
+            float: left;
+            width: 500px;
+            background: pink;
+            outline: 1px solid red;
+        }
+    </style>
+
+    <div>
+        <h1>Float</h1>
+    </div>
+    <div float="none">
+        <div class="float-container">
+            <div class="float-cell">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique
+                sapien ac erat tincidunt, sit amet dignissim lectus vulputate. Donec id
+                iaculis velit. Aliquam vel malesuada erat. Praesent non magna ac massa
+                aliquet tincidunt vel in massa. Phasellus feugiat est vel leo finibus
+            </div>
+            <div class="float-cell">1</div>
+            <div class="float-cell">2</div>
+            <div class="float-cell">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique
+                sapien ac erat tincidunt.
+            </div>
+        </div>
+    </div>
+    <div>
+        <p>-<br></p>
+    </div>
+
+    <style>
+        .iblock-container {
+            display: block;
+            border: 1px solid blue;
+            /* width: 100%; */
+            padding: 5px;
+            font-size: 0;
+        }
+
+        .iblock-cell {
+            display: inline-block;
+            vertical-align: top;
+            /* in child element */
+            font-size: 1rem;
+            /* remove extra inter-iblock space */
+            width: 500px;
+            background: pink;
+            outline: 1px solid red;
+        }
+    </style>
+
+    <div display="block" float="none">
+        <div>
+            <h1>Inline block</h1>
+        </div>
+        <div class="iblock-container">
+            <div class="iblock-cell">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique
+                sapien ac erat tincidunt, sit amet dignissim lectus vulputate. Donec id
+                iaculis velit. Aliquam vel malesuada erat. Praesent non magna ac massa
+                aliquet tincidunt vel in massa. Phasellus feugiat est vel leo finibus
+            </div>
+
+            <div class="iblock-cell">1</div>
+
+            <div class="iblock-cell">2</div>
+
+            <div class="iblock-cell">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique
+                sapien ac erat tincidunt.
+            </div>
+        </div>
+    </div>
+    <style>
+        .tbl-container {
+            display: table;
+            border: 1px solid blue;
+            padding: 5px;
+        }
+
+        .tbl-cell {
+            display: table-cell;
+            vertical-align: top;
+            width: 500px;
+            background: pink;
+            outline: 1px solid red;
+        }
+    </style>
+
+    <div>
+        <h1>Table</h1>
+    </div>
+    <div class="tbl-container">
+        <div class="tbl-cell">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique
+            sapien ac erat tincidunt, sit amet dignissim lectus vulputate. Donec id
+            iaculis velit. Aliquam vel malesuada erat. Praesent non magna ac massa
+            aliquet tincidunt vel in massa. Phasellus feugiat est vel leo finibus
+        </div>
+        <div class="tbl-cell">1</div>
+        <div class="tbl-cell">2</div>
+        <div class="tbl-cell">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique
+            sapien ac erat tincidunt.
+        </div>
+    </div>
+
+
+    <style>
+        .block-container {
+            display: block;
+            border: 1px solid magenta;
+        }
+
+        .ff24-container {
+            /* this must also be float if it is to contain the cells */
+            display: block;
+            float: left;
+            border: 1px solid blue;
+            padding: 5px;
+            /* height: 100%; */
+        }
+
+        .ff24-cell {
+            display: flex;
+            flex-wrap: nowrap;
+            float: left;
+            /* margin: 5px; */
+            width: 500px;
+            background: pink;
+            outline: 1px solid red;
+        }
+    </style>
+    <div>
+        <h1>Firefox v24 (flex-wrap: nowrap)</h1>
+    </div>
+    <div class="ff24-container">
+        <div class="block-container">
+            <div class="block-container">
+                <div class="ff24-cell">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique
+                    sapien ac erat tincidunt, sit amet dignissim lectus vulputate. Donec id
+                    iaculis velit. Aliquam vel malesuada erat. Praesent non magna ac massa
+                    aliquet tincidunt vel in massa. Phasellus feugiat est vel leo finibus
+                </div>
+                <div class="ff24-cell">1</div>
+                <div class="ff24-cell">2</div>
+                <div class="ff24-cell">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique
+                    sapien ac erat tincidunt.
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
