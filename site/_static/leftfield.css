@@ -60,7 +60,13 @@
     .bd-main {
         width: 100%;
     }
+
+    /* maintain logo aspect ratio */
+    img[src*="leftfield-logo"] {
+        width: 100%;
+    }
 }
+
 
 /* display body content in safari 9-10 & chrome 29 (+?) */
 /* .bd-main .bd-content {
@@ -159,19 +165,22 @@ html[data-theme="dark"] ul.bd-breadcrumbs li.breadcrumb-item a {
 html[data-theme="light"] .sd-card {
     border: 1px solid #c9c9c9;
 }
+
 html[data-theme="dark"] .sd-card {
     border: 1px solid silver;
 }
+
 html[data-theme="light"] .sd-card-header {
     border-bottom: 1px solid #c9c9c9;
 }
+
 html[data-theme="dark"] .sd-card-header {
     border-bottom: 1px solid silver;
 }
 
 
 /* force opaque sidebar for old browsers */
-html[data-theme="light"] .bd-sidebar {
+.bd-sidebar, html[data-theme="light"] .bd-sidebar {
     background: white;
 }
 
@@ -222,26 +231,41 @@ ul.bd-breadcrumbs li.breadcrumb-item a {
     display: flex;
 }
 
-/* stack sphinx-design grid columns horizontally, */
+/* layout options for sphinx-design grids  */
 /* see https://tylercipriani.com/blog/2012/08/01/display-inline-block-extra-margin. */
-/* using `display: inline-block` does not work as it includes extra spacing between */
-/* columns so they overflow the a row.  */
-[display="flex"] {
-    display: block;
-}
+
 .bd-main {
     display: block;
-    /* float: left; */
     outline: 1px solid green;
 }
-.sd-col {
-    float: left;
+
+/* inline-block styles for no flex-wrap support */
+.sd-d-flex-row {
+    display: inline-block !important;
+    vertical-align: top;
+    /* spacing work around */
+    margin-right: -0.3em;
     outline: 1px solid blue;
 }
+
 .sd-row {
-    float: left;
+    display: block;
     width: 100%;
-    outline: 1px red solid;
+    outline: 1px solid red;
+}
+
+/* inline-block styles for flex-wrap support */
+@supports(flex-wrap: wrap) {
+    .sd-d-flex-row {
+        display: flex !important;
+        margin-right: unset;
+        outline: 1px dashed blue;
+    }
+
+    .sd-row {
+        display: flex;
+        outline: 1px dashed red;
+    }
 }
 
 /* turn off header section and icon links if flex is not supported */
@@ -258,7 +282,7 @@ html {
     /* header height will impact the top offset for many sections
     article header is 66% of Header by default,
     note 1rem = 16px by default */
-    
+
     /* height of navigation bar */
     --pst-header-height: 5.6rem;
     /* space between nav bar and start of article */
