@@ -11,14 +11,10 @@
             display: flex;
             flex-wrap: wrap;
             border: 1px solid blue;
-            /* width: 100%; */
             padding: 5px;
-            /* min-height: 0;
-        min-width: 0; */
         }
 
         .flex-cell {
-            /* margin: 5px; */
             width: 500px;
             background: pink;
             outline: 1px solid red;
@@ -43,7 +39,7 @@
 
     <style>
         .float-container {
-            /* this must also be float if it is to contain the cells */
+            /* this must also be float for it's height to be the max of the cells */
             display: block;
             float: left;
             border: 1px solid blue;
@@ -84,18 +80,19 @@
     <style>
         .iblock-container {
             display: block;
-            border: 1px solid blue;
-            /* width: 100%; */
             padding: 5px;
-            font-size: 0;
+            /* font size "trick" to remove spacing between inline-block cells */
+            /* font-size: 0; */
+            border: 1px solid blue;
         }
 
         .iblock-cell {
             display: inline-block;
             vertical-align: top;
-            /* in child element */
-            font-size: 1rem;
-            /* remove extra inter-iblock space */
+            /* font size "trick" to remove spacing between inline-block cells */
+            /* font-size: 1rem; */
+            /* empirical work around to remove space between cells */
+            margin-right: -0.3rem;
             width: 500px;
             background: pink;
             outline: 1px solid red;
@@ -167,14 +164,12 @@
             float: left;
             border: 1px solid blue;
             padding: 5px;
-            /* height: 100%; */
         }
 
         .ff24-cell {
             display: flex;
             flex-wrap: nowrap;
             float: left;
-            /* margin: 5px; */
             width: 500px;
             background: pink;
             outline: 1px solid red;
