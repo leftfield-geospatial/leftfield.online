@@ -8,18 +8,19 @@
 
     <style>
         .contact-table {
+            margin-top: 2rem;
             margin-left: auto;
             margin-right: auto;
         }
-
         .contact-type {
             text-align: right;
             padding: 0.5rem;
+            margin: 0.5rem;
         }
-
         .contact-val {
             text-align: left;
             padding: 0.5rem;
+            margin: 0.5rem;
         }
     </style>
     <table class="contact-table">
