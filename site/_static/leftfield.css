@@ -217,6 +217,28 @@ ul.bd-breadcrumbs li.breadcrumb-item a {
     }
 }
 
+/* display flex items: */
+.bd-header .bd-header__inner,
+.bd-header .navbar-item, 
+.bd-header .navbar-header-items__center,
+.bd-header .navbar-header-items__end,
+.bd-header .navbar-header-items__start,
+.bd-header .navbar-nav,
+.bd-header .navbar-item, 
+.bd-header .nav-item {
+    display: inline-block;
+    vertical-align: middle;
+    display: flex;
+    outline: 1px dashed red;
+}
+
+/* container for section and icon etc links */
+.bd-header .navbar-header-items {
+    float: right;
+}
+
+
+/* old hack for header
 .bd-header .navbar-header-items__start,
 .bd-header .navbar-header-items__center,
 .bd-header .navbar-header-items__end,
@@ -229,7 +251,10 @@ ul.bd-breadcrumbs li.breadcrumb-item a {
 .bd-header .nav-link {
     display: inline-block;
     display: flex;
-}
+    vertical-align: middle;
+} */
+
+
 
 /* layout options for sphinx-design grids  */
 /* see https://tylercipriani.com/blog/2012/08/01/display-inline-block-extra-margin. */
@@ -239,25 +264,32 @@ ul.bd-breadcrumbs li.breadcrumb-item a {
     outline: 1px solid green;
 }
 
-/* inline-block styles for no flex-wrap support */
+/* sphinx-design styles for no `flex-wrap: wrap` support */
+/* column style (not "row" as it says) */
 .sd-d-flex-row {
+    /* override `display: flex !important` in sphinx-design sd-d-flex-row */
     display: inline-block !important;
     vertical-align: top;
-    /* spacing work around */
+    /* space is inserted between sibling inline-blocks - this is an empirical workaround to remove
+     it.  columns would be too wide to fit in a row without it. */
     margin-right: -0.3em;
     outline: 1px solid blue;
 }
 
 .sd-row {
-    display: block;
-    width: 100%;
+    /* allow wrapping of child inline-block elements */
+    display: block;     
+    /* expand width to page, otherwise it would be width of children. */
+    /* width: 100%;     */
     outline: 1px solid red;
 }
 
-/* inline-block styles for flex-wrap support */
+/* sphinx-design styles for browsers with flex wrapping (and @support) support */
 @supports(flex-wrap: wrap) {
     .sd-d-flex-row {
+        /* override `display: inline-block !important` above */
         display: flex !important;
+        /* remove the margin workaround above */
         margin-right: unset;
         outline: 1px dashed blue;
     }
