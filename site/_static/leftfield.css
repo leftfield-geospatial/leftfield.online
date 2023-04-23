@@ -217,14 +217,10 @@ ul.bd-breadcrumbs li.breadcrumb-item a {
     }
 }
 
-/* display flex items: */
-/* .bd-header {
-    display: inline-block;
-    display: flex;
-} */
-
-/* .bd-header .sidebar-toggle,
-.bd-header .navbar-brand, */
+/* items that pydata-sphinx-theme sets to display: flex */
+.navbar-persistent--mobile,
+.bd-header .sidebar-toggle,
+.bd-header .navbar-brand,
 .bd-header .bd-header__inner,
 .bd-header .navbar-item, 
 .bd-header .navbar-header-items__center,
@@ -234,27 +230,52 @@ ul.bd-breadcrumbs li.breadcrumb-item a {
 .bd-header .navbar-item, 
 .bd-header .nav-item {
     display: inline-block;
+    /* TODO: we need either vertical-align: middle or float: left here for safari... why? */
+    /* TODO: also, what about centering e.g. the sidebar toggle with xlateY and then vertical-align: middle and inline-block for the rest?, would that work? */
+    /* TODO: go through all these selectors and check they are sensible */
     vertical-align: middle;
-    display: flex;
     outline: 1px dashed red;
-    /* float: left; */
 }
 
-/* right align section and icon etc link container */
-.bd-header .navbar-header-items {
+/* TODO: can we avoid the repeat below? */
+/* repeat pydata-sphinx-theme rule for turning off "mobile" res search button 
+(necessary due to its includion in the display: inline-block list above) */
+@media(min-width:960px) {
+    .navbar-persistent--mobile {
+        display: none
+    }
+}
+
+/* right align section etc link container & "mobile" res search button */
+.bd-header .navbar-header-items, 
+.navbar-persistent--mobile {
     float: right;
 }
 
-/* theme sets heights in these classes with --pst-header-height, re-set here for browsers without 
-var support.  also, the parent of the section link & github link navbar-nav is a navbar-item, and 
-the parent of the logo image is navbar-brand.  Both of these container elements must be at full 
-header height to center their child elements below.*/
-.bd-header .navbar-item, .navbar-brand {
+/* left align the sidebar toggle button */
+.bd-header .sidebar-toggle {
+    float: left;
+}
+
+/* float the .navbar-header-items container so it scales to its floated contents */
+/* .bd-header .bd-header__inner {
+    float: left;
+} */
+
+/* pydata-sphinx-theme sets heights in navbar-item & navbar-brand with --pst-header-height 
+custom varable. they are re-set here for browsers without var support.  
+in addition, the heights on parents of centered elements below must also be set, so 
+bd-header__inner is included in the list.*/
+.bd-header .bd-header__inner, 
+.bd-header .navbar-item, 
+.navbar-brand {
     height: 5.6rem;
     max-height: 5.6rem;
 }
 
-/* center the logo, section and icon etc links */
+/* center the logo, section and icon etc links, sidebar toggle, and "mobile" res search button */
+.navbar-persistent--mobile,
+.bd-header .sidebar-toggle,
 .navbar-brand img, 
 .bd-header .navbar-item > button,
 .bd-header .navbar-item > .navbar-nav {
@@ -265,6 +286,49 @@ header height to center their child elements below.*/
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
     outline: 1px solid green;
+}
+
+/* TODO: IE doesn't support @supports, do we add a special rule or leave it inline-block? */
+@supports(display: flex) and (align-items: center) and (justify-content: end) {
+    .navbar-persistent--mobile,
+    .bd-header .sidebar-toggle,
+    .bd-header .navbar-brand,
+    .bd-header .bd-header__inner,
+    .bd-header .navbar-item, 
+    .bd-header .navbar-header-items__center,
+    .bd-header .navbar-header-items__end,
+    .bd-header .navbar-header-items__start,
+    .bd-header .navbar-nav,
+    .bd-header .navbar-item, 
+    .bd-header .nav-item {
+        display: flex;
+        outline: 1px dashed pink;
+        float: unset;
+        vertical-align: unset;
+        /* TODO: is unset the right choice here and below? */
+    }
+
+    @media(min-width:960px) {
+        .navbar-persistent--mobile {
+            display: none
+        }
+    }
+    
+    /* TODO can we exclude unfloating the above floated items? */
+
+    .navbar-persistent--mobile,
+    .bd-header .sidebar-toggle,
+    .navbar-brand img, 
+    .bd-header .navbar-item > button,
+    .bd-header .navbar-item > .navbar-nav {
+        position: unset;
+        top: unset;
+        -moz-transform: none;
+        -ms-transform: none;
+        -webkit-transform: none;
+        transform: none;
+        outline: 1px solid turquoise;
+    }
 }
 
 /* old hack for header
