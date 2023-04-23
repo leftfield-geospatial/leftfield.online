@@ -1,0 +1,212 @@
+<html>
+
+<body>
+
+    <style>
+        body {
+            min-height: 100vh;
+        }
+        .outline-blue {
+            outline: 1px solid blue;
+        }
+        .outline-red {
+            outline: 1px dashed red;
+        }
+
+        .margin-center {
+            width: fit-content;
+            margin: auto auto;
+        }
+
+        .transform-center-abs {
+            position: absolute;
+            margin: 0;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        .transform-center-rel {
+            position: relative;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -moz-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+    </style>
+    <div>
+        <h1>Centering</h1>
+    </div>
+    <div class="outline-blue">
+        <h2 style="text-align: center;" class="outline-red">(x) text-align: center;</h2>
+    </div>
+    <div class="outline-blue">
+        <h2 class="margin-center outline-red">(x) margin: auto;</h2>
+    </div>
+    <div style="height: 100px; display: flex;" class="outline-blue">
+        <h2 class="margin-center outline-red">(x,y) display: flex (container); margin: auto auto; (element)</h2>
+    </div>
+    <div style="height: 100px; display: flex; align-items: center; justify-content: center;" class="outline-blue">
+        <h2 class="outline-red">(x,y) display: flex; align-items: center; justify-content: center;</h2>
+    </div>
+    <div style="height: 100px; position: relative;" class="outline-blue">
+        <h2 class="transform-center-abs outline-red">(x,y) position: absolute; transform: translate</h2>
+    </div>
+    <div style="height: 100px; width: 100wv;" class="outline-blue">
+        <h2 class="transform-center-rel outline-red">(y) position: relative; transform: translateY</h2>
+    </div>
+
+
+    <style>
+        .margin-right {
+            display: block;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+        .position-rhs-abs {
+            position: absolute;
+            right: 0;
+        }
+
+        .position-rhs-rel {
+            position: relative;
+            right: 0%;
+        }
+        
+        .float-rhs {
+            float: right;
+        }
+    </style>
+    <div>
+        <h1>Right alignment</h1>
+    </div>
+    <div class="outline-blue">
+        <h2 style="text-align: right;" class="outline-red">(x) text-align: right;</h2>
+    </div>
+    <div class="outline-blue">
+        <h2 class="margin-right outline-red">(x rhs) margin-left: auto;</h2>
+    </div>
+    <div style="height: 100px; display: flex;" class="outline-blue">
+        <h2 class="margin-right outline-red">(x,y) display: flex (container); margin-left: auto; (element)</h2>
+    </div>
+    <div style="height: 100px; display: flex; align-items: center; justify-content: right;" class="outline-blue">
+        <h2 class="outline-red">(x,y) display: flex; align-items: center; justify-content: center;</h2>
+    </div>
+    <div style="height: 100px; position: relative;" class="outline-blue">
+        <h2 class="position-rhs-abs outline-red">(x,y) position: absolute; right: 0;</h2>
+    </div>
+    <div style="height: 100px; width: 100wv;" class="outline-blue">
+        <h2 class="position-rhs-rel outline-red">(y) position: relative; right: 0;</h2>
+    </div>
+    <div style="height: 100px; width: 100wv;" class="outline-blue">
+        <h2 class="float-rhs outline-red">(y) float: right;</h2>
+    </div>
+
+
+    <style>
+        .iblock-container {
+            /* justify-content: center; */
+            background-color: lightblue;
+            display: block;
+            max-width: 100vw;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            outline: 1px solid blue;
+            /* float: left; */
+            /* z-index: 1030 */
+        }
+
+        .iblock-left {
+            display: inline-block;
+            height: 5.6rem;
+            outline: 1px solid blue;
+        }
+
+        .iblock-right {
+            display: inline-block;
+            width: fit-content;
+            position: absolute;
+            right: 0;
+            height: 5.6rem;
+            outline: 1px solid blue;
+        }
+    </style>
+    <div>
+        <h1>Left-right elements with absolute positioning</h1>
+    </div>
+    <div class="iblock-container">
+        <div class="iblock-left">
+            <p>Left</p>
+        </div>
+        <div class="iblock-right">
+            <div class="iblock-left">
+                <p>Right1</p>
+            </div>
+            <div class="iblock-left">
+                <p>Right2</p>
+            </div>
+        </div>
+    </div>
+
+
+    <style>
+        .float-container {
+            /* justify-content: center; */
+            background-color: lightblue;
+            display: block;
+            float: left;
+            max-width: 100vw;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            outline: 1px solid blue;
+            /* float: left; */
+            /* z-index: 1030 */
+        }
+
+        .float-left {
+            display: block;
+            float: left;
+            position: relative;
+            height: 5.6rem;
+            outline: 1px solid blue;
+        }
+
+        .float-right {
+            display: block;
+            float: right;
+            width: fit-content;
+            position: absolute;
+            right: 0;
+            height: 5.6rem;
+            outline: 1px solid blue;
+        }
+    </style>
+    <div>
+        <h1>Left-right elements with float</h1>
+    </div>
+    <div class="float-container">
+        <div class="float-left">
+            <p>Left</p>
+        </div>
+        <div class="float-right">
+            <div class="float-left">
+                <p>Right1</p>
+            </div>
+            <div class="float-left">
+                <p>Right2</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
