@@ -218,6 +218,13 @@ ul.bd-breadcrumbs li.breadcrumb-item a {
 }
 
 /* display flex items: */
+/* .bd-header {
+    display: inline-block;
+    display: flex;
+} */
+
+/* .bd-header .sidebar-toggle,
+.bd-header .navbar-brand, */
 .bd-header .bd-header__inner,
 .bd-header .navbar-item, 
 .bd-header .navbar-header-items__center,
@@ -230,13 +237,35 @@ ul.bd-breadcrumbs li.breadcrumb-item a {
     vertical-align: middle;
     display: flex;
     outline: 1px dashed red;
+    /* float: left; */
 }
 
-/* container for section and icon etc links */
+/* right align section and icon etc link container */
 .bd-header .navbar-header-items {
     float: right;
 }
 
+/* theme sets heights in these classes with --pst-header-height, re-set here for browsers without 
+var support.  also, the parent of the section link & github link navbar-nav is a navbar-item, and 
+the parent of the logo image is navbar-brand.  Both of these container elements must be at full 
+header height to center their child elements below.*/
+.bd-header .navbar-item, .navbar-brand {
+    height: 5.6rem;
+    max-height: 5.6rem;
+}
+
+/* center the logo, section and icon etc links */
+.navbar-brand img, 
+.bd-header .navbar-item > button,
+.bd-header .navbar-item > .navbar-nav {
+    position: relative;
+    top: 50%;
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    outline: 1px solid green;
+}
 
 /* old hack for header
 .bd-header .navbar-header-items__start,
