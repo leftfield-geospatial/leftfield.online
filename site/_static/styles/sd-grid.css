@@ -1,0 +1,48 @@
+/* layout for sphinx-design grids  */
+/* see https://tylercipriani.com/blog/2012/08/01/display-inline-block-extra-margin. */
+
+.bd-main {
+    display: block;
+    outline: 1px solid green;
+}
+
+/* sphinx-design styles for no `flex-wrap: wrap` support */
+/* column style (not "row" as it says) */
+.sd-d-flex-row {
+    /* override `display: flex !important` in sphinx-design sd-d-flex-row */
+    display: inline-block !important;
+    vertical-align: top;
+    /* space is inserted between sibling inline-blocks - this is an empirical workaround to remove
+     it.  columns would be too wide to fit in a row without it. */
+    margin-right: -0.3em;
+    outline: 1px solid blue;
+}
+
+.sd-row {
+    /* allow wrapping of child inline-block elements */
+    display: block;     
+    /* expand width to page, otherwise it would be width of children. */
+    /* width: 100%;     */
+    outline: 1px solid red;
+}
+
+/* sphinx-design styles for browsers with flex wrapping (and @support) support */
+@supports(flex-wrap: wrap) {
+    .bd-main {
+        display: flex;
+        outline: 1px solid green;
+    }
+
+   .sd-d-flex-row {
+        /* override `display: inline-block !important` above */
+        display: flex !important;
+        /* remove the margin workaround above */
+        margin-right: unset;
+        outline: 1px dashed blue;
+    }
+
+    .sd-row {
+        display: flex;
+        outline: 1px dashed red;
+    }
+}
