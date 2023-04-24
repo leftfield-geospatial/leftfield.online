@@ -217,30 +217,31 @@ ul.bd-breadcrumbs li.breadcrumb-item a {
     }
 }
 
-/* items that pydata-sphinx-theme sets to display: flex */
+/* items that pydata-sphinx-theme sets to `display: flex` are set to `display: inline-block` here,
+following the selection patterns of the theme */
 .navbar-persistent--mobile,
-.bd-header .sidebar-toggle,
-.bd-header .navbar-brand,
+.bd-header label.sidebar-toggle,
+.navbar-brand,
 .bd-header .bd-header__inner,
-.bd-header .navbar-item, 
+.bd-header .navbar-header-items__start,
 .bd-header .navbar-header-items__center,
 .bd-header .navbar-header-items__end,
-.bd-header .navbar-header-items__start,
 .bd-header .navbar-nav,
 .bd-header .navbar-item, 
+/* nav-item not set in theme but include it here to horizontally stack e.g. section or icon links */
 .bd-header .nav-item {
     display: inline-block;
     /* TODO: we need either vertical-align: middle or float: left here for safari... why? */
-    /* TODO: also, what about centering e.g. the sidebar toggle with xlateY and then vertical-align: middle and inline-block for the rest?, would that work? */
-    /* TODO: go through all these selectors and check they are sensible */
     vertical-align: middle;
     outline: 1px dashed red;
 }
 
-/* TODO: can we avoid the repeat below? */
-/* repeat pydata-sphinx-theme rule for turning off "mobile" res search button 
+/* repeat pydata-sphinx-theme rule(s) for turning off "mobile" res sidebar toggle & search button 
 (necessary due to its includion in the display: inline-block list above) */
 @media(min-width:960px) {
+    label.sidebar-toggle.primary-toggle {
+        display: none
+    }
     .navbar-persistent--mobile {
         display: none
     }
@@ -253,11 +254,12 @@ ul.bd-breadcrumbs li.breadcrumb-item a {
 }
 
 /* left align the sidebar toggle button */
-.bd-header .sidebar-toggle {
+.bd-header label.sidebar-toggle {
     float: left;
 }
 
 /* float the .navbar-header-items container so it scales to its floated contents */
+/* (unnecessary - heights are set below, and width in theme) */
 /* .bd-header .bd-header__inner {
     float: left;
 } */
@@ -273,12 +275,15 @@ bd-header__inner is included in the list.*/
     max-height: 5.6rem;
 }
 
-/* center the logo, section and icon etc links, sidebar toggle, and "mobile" res search button */
+/* TODO: why don't we see the search button in old browsers? Also, does it work where we do see it? */
+/* center the logo, section and icon etc links, and "mobile" res sidebar toggle and search button */
 .navbar-persistent--mobile,
-.bd-header .sidebar-toggle,
+.bd-header label.sidebar-toggle,
 .navbar-brand img, 
-.bd-header .navbar-item > button,
-.bd-header .navbar-item > .navbar-nav {
+/* section and icon links */
+.bd-header .navbar-item > .navbar-nav,
+/* search button */
+.bd-header .navbar-item > button {
     position: relative;
     top: 50%;
     -moz-transform: translateY(-50%);
@@ -288,18 +293,18 @@ bd-header__inner is included in the list.*/
     outline: 1px solid green;
 }
 
-/* TODO: IE doesn't support @supports, do we add a special rule or leave it inline-block? */
-@supports(display: flex) and (align-items: center) and (justify-content: end) {
+/* TODO: IE doesn't support @supports but has (buggy) support for flex, do we add a special rule or leave it inline-block? */
+@supports(display: dummy) and (align-items: center) and (justify-content: end) {
     .navbar-persistent--mobile,
-    .bd-header .sidebar-toggle,
-    .bd-header .navbar-brand,
+    .bd-header label.sidebar-toggle,
+    .navbar-brand,
     .bd-header .bd-header__inner,
-    .bd-header .navbar-item, 
+    .bd-header .navbar-header-items__start,
     .bd-header .navbar-header-items__center,
     .bd-header .navbar-header-items__end,
-    .bd-header .navbar-header-items__start,
     .bd-header .navbar-nav,
     .bd-header .navbar-item, 
+    /* nav-item not set in theme but include it here to horizontally stack e.g. section or icon links */
     .bd-header .nav-item {
         display: flex;
         outline: 1px dashed pink;
@@ -308,46 +313,34 @@ bd-header__inner is included in the list.*/
         /* TODO: is unset the right choice here and below? */
     }
 
+    /* repeat pydata-sphinx-theme rule(s) for turning off "mobile" res sidebar toggle & search button 
+    (necessary due to its includion in the display: inline-block list above) */
     @media(min-width:960px) {
+        label.sidebar-toggle.primary-toggle {
+            display: none
+        }
         .navbar-persistent--mobile {
             display: none
         }
     }
     
     /* TODO can we exclude unfloating the above floated items? */
-
     .navbar-persistent--mobile,
-    .bd-header .sidebar-toggle,
+    .bd-header label.sidebar-toggle,
     .navbar-brand img, 
-    .bd-header .navbar-item > button,
-    .bd-header .navbar-item > .navbar-nav {
-        position: unset;
+    /* section and icon links */
+    .bd-header .navbar-item > .navbar-nav,
+    /* search button */
+    .bd-header .navbar-item > button {
+            position: unset;
         top: unset;
-        -moz-transform: none;
-        -ms-transform: none;
-        -webkit-transform: none;
-        transform: none;
+        -moz-transform: unset;
+        -ms-transform: unset;
+        -webkit-transform: unset;
+        transform: unset;
         outline: 1px solid turquoise;
     }
 }
-
-/* old hack for header
-.bd-header .navbar-header-items__start,
-.bd-header .navbar-header-items__center,
-.bd-header .navbar-header-items__end,
-.bd-header .sidebar-toggle .bd-header .navbar-brand,
-.bd-header .navbar-brand img,
-.bd-header .navbar-icon-links,
-.bd-header .navbar-item,
-.bd-header .navbar-nav,
-.bd-header .nav-item,
-.bd-header .nav-link {
-    display: inline-block;
-    display: flex;
-    vertical-align: middle;
-} */
-
-
 
 /* layout options for sphinx-design grids  */
 /* see https://tylercipriani.com/blog/2012/08/01/display-inline-block-extra-margin. */
