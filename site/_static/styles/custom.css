@@ -24,6 +24,7 @@
 
 /* footer font size */
 .bd-footer {
+    display: block;
     font-size: 0.8rem;
 }
 
@@ -212,28 +213,6 @@ ul.bd-breadcrumbs li.breadcrumb-item a {
 
 
 
-/* Center the main content section for browsers without flex support */
-/*.bd-main .bd-content {
-    display: block;
-}
-
-.bd-main .bd-content .bd-article-container {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-@supports (display: flex) and (justify-content: center) {
-    .bd-main .bd-content {
-        display: flex;
-    }
-    
-    .bd-main .bd-content .bd-article-container {
-        display: flex;
-        margin-left: unset;
-        margin-right: unset;
-    }
-}*/
 
 
 /* Define custom variables. */
@@ -271,4 +250,22 @@ html[data-theme="dark"] {
     --sd-color-card-border-hover: #2f8cefff;
 }
 
+
+
+
+
+
+/*.bd-footer .footer-items__end,
+.bd-footer .footer-items__start {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    justify-content: center
+}
+
+.bd-footer .footer-items__end {
+    margin-left: auto;
+    text-align: end
+}
+*/
 
