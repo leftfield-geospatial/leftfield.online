@@ -332,7 +332,10 @@ bd-header__inner is included in the list.*/
     }
 }
 
-/* layout options for sphinx-design grids  */
+/* footer layout */
+
+
+/* layout for sphinx-design grids  */
 /* see https://tylercipriani.com/blog/2012/08/01/display-inline-block-extra-margin. */
 
 .bd-main {
@@ -383,7 +386,7 @@ bd-header__inner is included in the list.*/
 
 
 /* Center the main content section for browsers without flex support */
-.bd-main .bd-content {
+/*.bd-main .bd-content {
     display: block;
 }
 
@@ -403,7 +406,7 @@ bd-header__inner is included in the list.*/
         margin-left: unset;
         margin-right: unset;
     }
-}
+}*/
 /* turn off header section and icon links if flex is not supported */
 /*.bd-header .navbar-header-items__center,
 .bd-header .navbar-header-items__end {
