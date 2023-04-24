@@ -231,7 +231,8 @@ following the selection patterns of the theme */
 /* nav-item not set in theme but include it here to horizontally stack e.g. section or icon links */
 .bd-header .nav-item {
     display: inline-block;
-    /* TODO: we need either vertical-align: middle or float: left here for safari... why? */
+    /* `vertical-align: auto` is default but mis-calculates element heights in some browsers,  
+    so it is forced to middle here. */
     vertical-align: middle;
     outline: 1px dashed red;
 }
@@ -259,7 +260,7 @@ following the selection patterns of the theme */
 }
 
 /* float the .navbar-header-items container so it scales to its floated contents */
-/* (unnecessary - heights are set below, and width in theme) */
+/* (unnecessary - heights are set below) */
 /* .bd-header .bd-header__inner {
     float: left;
 } */
@@ -324,7 +325,8 @@ bd-header__inner is included in the list.*/
         }
     }
     
-    /* TODO can we exclude unfloating the above floated items? */
+    /* `float: *` settings are ignored in `display: flex` so no need to unset here */
+
     .navbar-persistent--mobile,
     .bd-header label.sidebar-toggle,
     .navbar-brand img, 
