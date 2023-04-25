@@ -145,7 +145,7 @@ bd-header__inner is included in the list.*/
 }
 
 /* re-set header elements to their default theme settings if flex is supported */
-@supports(display: dummy) and (align-items: center) and (justify-content: end) {
+@supports(display: flex) and (align-items: center) and (justify-content: end) {
     .bd-header {
         display: flex;
     }
@@ -209,6 +209,7 @@ bd-header__inner is included in the list.*/
 .bd-footer, 
 .bd-footer .bd-footer__inner {
     display: block;
+    outline: 1px solid red;
 }
 
 /* change footer elements with `display: flex` to `display: inline-block` so they are arranged 
@@ -216,6 +217,7 @@ horizontally. */
 .bd-footer .footer-items__start,
 .bd-footer .footer-items__end {
     display: inline-block;
+    outline: 1px solid green;
 }
 
 /* right align the end container */
@@ -225,12 +227,13 @@ horizontally. */
 }
 
 /* re-set footer elements to their default theme settings if flex is supported */
-@supports(display: flex) and (justify-content: center) {
+@supports(display: flex) and (align-items: center) and (justify-content: end) {
     .bd-footer, 
     .bd-footer .bd-footer__inner,
     .bd-footer .footer-items__start,
     .bd-footer .footer-items__end {
         display: flex;
+        outline: 1px dashed red;
     }
     .bd-footer .footer-items__end {
         float: none;
