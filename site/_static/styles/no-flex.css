@@ -32,13 +32,13 @@
 }
 
 /* sphinx-design styles for browsers with flex wrapping (and @support) support */
-@supports(flex-wrap: wrap) {
+@supports(flex-wrap: wrap) and (flex-direction: row) and (flex-shrink: 0) and (flex: 0 0 auto) and (flex: 1 0 0%) {
     .bd-main {
         display: flex;
         outline: 1px solid green;
     }
 
-   .sd-d-flex-row {
+    .sd-d-flex-row {
         /* override `display: inline-block !important` above */
         display: flex !important;
         /* remove the margin workaround above */
@@ -92,6 +92,7 @@ horizontally. */
     label.sidebar-toggle.primary-toggle {
         display: none
     }
+
     .navbar-persistent--mobile {
         display: none
     }
@@ -132,9 +133,9 @@ bd-header__inner is included in the list.*/
 .bd-header label.sidebar-toggle,
 .navbar-brand img,
 /* section and icon links */
-.bd-header .navbar-item > .navbar-nav,
+.bd-header .navbar-item>.navbar-nav,
 /* navbar search button */
-.bd-header .navbar-item > button {
+.bd-header .navbar-item>button {
     position: relative;
     top: 50%;
     -moz-transform: translateY(-50%);
@@ -144,18 +145,18 @@ bd-header__inner is included in the list.*/
     outline: 1px solid green;
 }
 
-/* re-set header elements to their default theme settings if flex is supported */
-@supports(display: flex) and (align-items: center) and (justify-content: end) {
+/* re-set header elements to their default theme settings if flex is adequately supported */
+@supports(display: flex) and (align-items: center) and (justify-content: end) and (flex-shrink: 1) and (flex-grow: 1) and (flex-flow: wrap) {
     .bd-header {
         display: flex;
     }
-    
+
     .bd-header .bd-header__inner {
         display: flex;
         margin-left: unset;
         margin-right: unset;
     }
-    
+
     .navbar-persistent--mobile,
     .bd-header label.sidebar-toggle,
     .navbar-brand,
@@ -178,6 +179,7 @@ bd-header__inner is included in the list.*/
         label.sidebar-toggle.primary-toggle {
             display: none
         }
+
         .navbar-persistent--mobile {
             display: none
         }
@@ -189,9 +191,9 @@ bd-header__inner is included in the list.*/
     .bd-header label.sidebar-toggle,
     .navbar-brand img,
     /* section and icon links */
-    .bd-header .navbar-item > .navbar-nav,
+    .bd-header .navbar-item>.navbar-nav,
     /* search button */
-    .bd-header .navbar-item > button {
+    .bd-header .navbar-item>button {
         position: unset;
         top: unset;
         -moz-transform: unset;
@@ -206,7 +208,7 @@ bd-header__inner is included in the list.*/
 -------------------------------------------------------------------------------------------------*/
 
 /* horizontally center the main footer container */
-.bd-footer, 
+.bd-footer,
 .bd-footer .bd-footer__inner {
     display: block;
     outline: 1px solid red;
@@ -226,15 +228,18 @@ horizontally. */
     text-align: right;
 }
 
-/* re-set footer elements to their default theme settings if flex is supported */
-@supports(display: flex) and (align-items: center) and (justify-content: end) {
-    .bd-footer, 
+/* re-set footer elements to their default theme settings if flex is adequately supported */
+@supports(display: flex) and (flex-grow: 1) and (flex-direction: column) and (justify-content: center) {
+    /* and (text-align: end)*/
+
+    .bd-footer,
     .bd-footer .bd-footer__inner,
     .bd-footer .footer-items__start,
     .bd-footer .footer-items__end {
         display: flex;
         outline: 1px dashed red;
     }
+
     .bd-footer .footer-items__end {
         float: none;
         /* the theme sets `text-align: end`, but I think `text-align: right` set above is correct*/
@@ -245,6 +250,10 @@ horizontally. */
 
 /* Horizontal centering of main content
 -------------------------------------------------------------------------------------------------*/
+/* display body content in safari 9-10 & chrome 29 (+?) */
+/* .bd-main .bd-content {
+    height: 100%;
+}  */
 .bd-container,
 .bd-main .bd-content {
     display: block;
@@ -257,7 +266,7 @@ horizontally. */
     margin-right: auto;
 }
 
-@supports(display: flex) and (align-items: center) and (justify-content: center) {
+@supports(display: flex) and (justify-content: center) and (flex-direction: column) and (justify-content: start) {
     .bd-container,
     .bd-main .bd-content {
         display: flex;
