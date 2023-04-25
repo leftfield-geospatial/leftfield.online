@@ -1,7 +1,7 @@
 Correct imagery to surface reflectance
 --------------------------------------
 
-This method uses a fusion approach to correct imagery to approximate surface reflectance.  It requires a concurrent and co-located reference reflectance image with which to fuse the source.  Since the method's `initial conception <https://doi.org/10.1080/01431161.2018.1528404>`_ with my PhD supervisor, `Adriaan van Niekerk <https://www0.sun.ac.za/geography/adriaan-van-niekerk/>`_, it has evolved into the |homonim|_ package, and proved effective for a `range of imagery and problems <https://homonim.readthedocs.io/en/latest/case_studies.html>`_.
+This method uses a fusion approach to correct imagery to approximate surface reflectance.  It requires a concurrent and co-located reference reflectance image with which to fuse the source.  Since the method's `initial conception <https://doi.org/10.1080/01431161.2018.1528404>`_ with my PhD supervisor, `Adriaan van Niekerk <https://scholar.google.co.za/citations?user=bUalpwUAAAAJ&hl=en>`_, it has evolved into the |homonim|_ package, and proved effective for a `range of imagery and problems <https://homonim.readthedocs.io/en/latest/case_studies.html>`_.
 
 .. figure:: ../_images/homonim-block_diagram.webp
     :align: right
