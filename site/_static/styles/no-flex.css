@@ -33,10 +33,11 @@
 
 /* sphinx-design styles for browsers with flex wrapping (and @support) support */
 @supports(flex-wrap: wrap) and (flex-direction: row) and (flex-shrink: 0) and (flex: 0 0 auto) and (flex: 1 0 0%) {
-    .bd-main {
+    /* leave bd-main on display: block to work around chrome v29-38 & safari 9-10 issues */
+    /* .bd-main {
         display: flex;
         outline: 1px solid green;
-    }
+    } */
 
     .sd-d-flex-row {
         /* override `display: inline-block !important` above */
