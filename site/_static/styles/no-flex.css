@@ -55,8 +55,20 @@
 /* Header
 -------------------------------------------------------------------------------------------------*/
 
-/* items that pydata-sphinx-theme sets to `display: flex` are set to `display: inline-block` here,
-following the selection patterns of the theme. */
+/* horizontally center the main header container */
+.bd-header {
+    display: block;
+}
+
+.bd-header .bd-header__inner {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* change header elements with `display: flex` to `display: inline-block` so they are arranged 
+horizontally. */
 .navbar-persistent--mobile,
 .bd-header label.sidebar-toggle,
 .navbar-brand,
@@ -75,7 +87,7 @@ following the selection patterns of the theme. */
 }
 
 /* repeat pydata-sphinx-theme rule(s) for turning off "mobile" res sidebar toggle & search button
-(necessary due to its includion in the display: inline-block list above) */
+(necessary due to its inclusion in the display: inline-block list above) */
 @media(min-width:960px) {
     label.sidebar-toggle.primary-toggle {
         display: none
@@ -86,6 +98,7 @@ following the selection patterns of the theme. */
 }
 
 /* right align section etc link container & "mobile" res search button */
+/* TODO can we use margin auto instead of float? don't think margin works with inline blocks? */
 .bd-header .navbar-header-items,
 .navbar-persistent--mobile {
     float: right;
@@ -114,13 +127,13 @@ bd-header__inner is included in the list.*/
 }
 
 /* TODO: why don't we see the search button in old browsers? Also, does it work where we do see it? */
-/* center the logo, section and icon etc links, and "mobile" res sidebar toggle and search button */
+/* vertically center the logo, section and icon links, and "mobile" res sidebar toggle and search button */
 .navbar-persistent--mobile,
 .bd-header label.sidebar-toggle,
 .navbar-brand img,
 /* section and icon links */
 .bd-header .navbar-item > .navbar-nav,
-/* search button */
+/* navbar search button */
 .bd-header .navbar-item > button {
     position: relative;
     top: 50%;
@@ -131,8 +144,18 @@ bd-header__inner is included in the list.*/
     outline: 1px solid green;
 }
 
-/* TODO: IE doesn't support @supports but has (buggy) support for flex, do we add a special rule or leave it inline-block? */
+/* re-set header elements to their default theme settings if flex is supported */
 @supports(display: dummy) and (align-items: center) and (justify-content: end) {
+    .bd-header {
+        display: flex;
+    }
+    
+    .bd-header .bd-header__inner {
+        display: flex;
+        margin-left: unset;
+        margin-right: unset;
+    }
+    
     .navbar-persistent--mobile,
     .bd-header label.sidebar-toggle,
     .navbar-brand,
@@ -169,7 +192,7 @@ bd-header__inner is included in the list.*/
     .bd-header .navbar-item > .navbar-nav,
     /* search button */
     .bd-header .navbar-item > button {
-            position: unset;
+        position: unset;
         top: unset;
         -moz-transform: unset;
         -ms-transform: unset;
@@ -182,42 +205,63 @@ bd-header__inner is included in the list.*/
 /* Footer
 -------------------------------------------------------------------------------------------------*/
 
-.bd-header .navbar-header-items,
-.navbar-persistent--mobile {
-    float: right;
-}
-
-
-/* Horizontal centering of header, footer and main content
--------------------------------------------------------------------------------------------------*/
-.bd-header,
-.bd-container,
-.bd-main .bd-content,
-.bd-footer {
+/* horizontally center the main footer container */
+.bd-footer, 
+.bd-footer .bd-footer__inner {
     display: block;
 }
 
-.bd-header .bd-header__inner,
+/* change footer elements with `display: flex` to `display: inline-block` so they are arranged 
+horizontally. */
+.bd-footer .footer-items__start,
+.bd-footer .footer-items__end {
+    display: inline-block;
+}
+
+/* right align the end container */
+.bd-footer .footer-items__end {
+    float: right;
+    text-align: right;
+}
+
+/* re-set footer elements to their default theme settings if flex is supported */
+@supports(display: flex) and (justify-content: center) {
+    .bd-footer, 
+    .bd-footer .bd-footer__inner,
+    .bd-footer .footer-items__start,
+    .bd-footer .footer-items__end {
+        display: flex;
+    }
+    .bd-footer .footer-items__end {
+        float: none;
+        /* the theme sets `text-align: end`, but I think `text-align: right` set above is correct*/
+        /* text-align: end; */
+    }
+}
+
+
+/* Horizontal centering of main content
+-------------------------------------------------------------------------------------------------*/
+.bd-container,
+.bd-main .bd-content {
+    display: block;
+}
+
 .bd-container .bd-container__inner,
-.bd-main .bd-content .bd-article-container,
-.bd-footer .bd-footer__inner {
+.bd-main .bd-content .bd-article-container {
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
 @supports(display: flex) and (align-items: center) and (justify-content: center) {
-    .bd-header,
     .bd-container,
-    .bd-main .bd-content,
-    .bd-footer {
+    .bd-main .bd-content {
         display: flex;
     }
 
-    .bd-header .bd-header__inner,
     .bd-container .bd-container__inner,
-    .bd-main .bd-content .bd-article-container,
-    .bd-footer .bd-footer__inner {
+    .bd-main .bd-content .bd-article-container {
         display: flex;
         margin-left: unset;
         margin-right: unset;
