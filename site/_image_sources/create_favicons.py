@@ -39,19 +39,28 @@ for out_file, params in out_dict.items():
     if len(p.stdout) > 0:
         print(p.stdout)
 
-# copy svgs to favicons dir
-copy_dict = {
-    'leftfield-icon.svg': 'favicon.svg',
-    'leftfield-bw-icon.svg': 'safari-pinned-tab.svg',
+# export svgs to favicons dir
+# exporting rather than copying should optimise the files
+export_dict = {
+    'leftfield-icon.svg': ['favicon.svg', ['--export-plain-svg', '--export-type=svg', '--vacuum-defs']],
+    'leftfield-bw-icon.svg': ['safari-pinned-tab.svg', ['--export-plain-svg', '--export-type=svg', '--vacuum-defs']],
 }
 
-for src_file, dest_file in copy_dict.items():
+for src_file, (out_file, params) in export_dict.items():
+    print(f'Creating {out_file}')
     src_path = src_dir.joinpath(src_file)
-    dest_path = out_dir.joinpath(dest_file)
-    if dest_path.exists():
-        os.remove(dest_path)
-    shutil.copy(src_path, dest_path)
-    assert dest_path.exists()
+    out_path = out_dir.joinpath(out_file)
+    if out_path.exists():
+        os.remove(out_path)
+    params.append(f'--export-filename={str(out_path)}')
+    p = subprocess.run(
+        ['inkscape', str(src_path), *params],
+        executable=inkscape_path, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True
+    )
+    if (p.returncode != 0) or (not out_path.exists()):
+        raise Exception(p.stderr)
+    if len(p.stdout) > 0:
+        print(p.stdout)
 
 if __name__ =='__main__':
     input('Press ENTER to continue...')

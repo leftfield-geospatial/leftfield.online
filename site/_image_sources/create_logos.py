@@ -22,7 +22,7 @@ if convert_to_png:
     ext = '.png'
 else:
     # export to svg, converting text to paths so the logo is independent of system fonts
-    params = ['--export-text-to-path']
+    params = ['--export-text-to-path', '--export-plain-svg', '--vacuum-defs', '--export-type=svg']
     ext = '.svg'
 
 for svg_path in svg_paths:
