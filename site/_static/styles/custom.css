@@ -1,6 +1,7 @@
 /* Leftfield aesthetic customisations. */
 /* configure header and sidebar navbar */
-.navbar-nav {
+/* TODO: this applies to both sidebar and header. things (e.g. font-size) will get confused esp without custom var support. */
+.bd-header .navbar-nav {
     /* section link font size */
     font-size: 1.5rem;
     /* space between right-aligned section links and icon links / components */

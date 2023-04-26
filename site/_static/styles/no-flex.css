@@ -33,7 +33,7 @@
 
 /* sphinx-design styles for browsers with flex wrapping (and @support) support */
 @supports(flex-wrap: wrap) and (flex-direction: row) and (flex-shrink: 0) and (flex: 0 0 auto) and (flex: 1 0 0%) {
-    /* leave bd-main on display: block to work around chrome v29-38 & safari 9-10 issues */
+    /* leave bd-main on `display: block` to work around chrome v29-38 & safari 9-10 issues */
     /* .bd-main {
         display: flex;
         outline: 1px solid green;
@@ -201,6 +201,47 @@ bd-header__inner is included in the list.*/
         -ms-transform: unset;
         -webkit-transform: unset;
         transform: unset;
+        outline: 1px dashed green;
+    }
+}
+
+
+/* Sidebar
+-------------------------------------------------------------------------------------------------*/
+
+/* configre theme `display: flex; flex-direction: column` (i.e. vertically stacked) elements as 
+`display: block` */
+.bd-sidebar-primary,
+.bd-sidebar-primary .sidebar-header-items,
+.bd-sidebar-primary .sidebar-header-items .sidebar-header-items__center,
+.bd-sidebar-primary .sidebar-header-items .sidebar-header-items__center .nav-item,
+.bd-sidebar-primary .sidebar-header-items .sidebar-header-items__end {
+    display: block;
+    outline: 1px solid red;
+}
+
+/* stack end (icon link) elements horizontally */
+.bd-sidebar-primary .sidebar-header-items .sidebar-header-items__end .navbar-item {
+    display: inline-block;
+    vertical-align: middle;
+    outline: 1px solid green;
+}    
+
+/* re-set sidebar elements to their default theme settings if flex is adequately supported */
+@supports(display: flex) and (gap: 0.5rem) and (flex: 0 0 auto) and (flex-direction: column) and (align-items: center) {
+    .bd-sidebar-primary,
+    .bd-sidebar-primary .sidebar-header-items,
+    .bd-sidebar-primary .sidebar-header-items .sidebar-header-items__center,
+    .bd-sidebar-primary .sidebar-header-items .sidebar-header-items__center .nav-item,
+    .bd-sidebar-primary .sidebar-header-items .sidebar-header-items__end {
+        display: flex;
+        outline: 1px dashed red;
+    }
+    
+    /* stack horizontally */
+    .bd-sidebar-primary .sidebar-header-items .sidebar-header-items__end .navbar-item {
+        display: flex;
+        vertical-align: unset;
         outline: 1px dashed green;
     }
 }
