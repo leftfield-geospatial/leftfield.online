@@ -47,28 +47,6 @@
     text-decoration: none
 }
 
-/* ie specific settings */
-@media all and (-ms-high-contrast: none),
-(-ms-high-contrast: active) {
-
-    /* adjust header item spacing for ie's lack of flex spacing. */
-    .bd-header .nav-link {
-        margin-right: 1rem;
-    }
-
-    /* wrap main content when it doesn't fit in the window   
-    see https://stackoverflow.com/questions/20149715/internet-explorer-11-word-wrap-is-not-working */
-    .bd-main {
-        width: 100%;
-    }
-
-    /* maintain logo aspect ratio */
-    img[src*="leftfield-logo"] {
-        width: 100%;
-    }
-}
-
-
 /* Workarounds for browsers without custom variable support. */
 
 /* system font stack - adapted from https://systemfontstack.com/*/
