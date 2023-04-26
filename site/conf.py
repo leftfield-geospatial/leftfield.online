@@ -35,7 +35,8 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 html_theme = 'pydata_sphinx_theme'
 html_title = f'{project}'
 html_static_path = ['_static']
-html_css_files = ['styles/custom.css', 'styles/no-flex.css']
+# colour styles must come before no-flex
+html_css_files = ['styles/colours.css', 'styles/custom.css', 'styles/no-flex.css']
 html_js_files = ['scripts/webp-support.js']
 html_context = {'default_mode': 'auto'}  # use the system/browser light/dark theme setting
 # html_favicon = '_static/favicons/favicon.svg'

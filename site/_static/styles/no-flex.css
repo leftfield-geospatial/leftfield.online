@@ -5,7 +5,6 @@
 /* Sphinx-design grids
 -------------------------------------------------------------------------------------------------*/
 /* see https://tylercipriani.com/blog/2012/08/01/display-inline-block-extra-margin. */
-
 .bd-main {
     display: block;
     outline: 1px solid green;
@@ -20,7 +19,7 @@
     /* space is inserted between sibling inline-blocks - this is an empirical workaround to remove
      it.  columns would be too wide to fit in a row without it. */
     margin-right: -0.3em;
-    outline: 1px solid blue;
+    /* outline: 1px solid blue; */
 }
 
 .sd-row {
@@ -28,7 +27,23 @@
     display: block;
     /* expand width to page, otherwise it would be width of children. */
     /* width: 100%;     */
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
+}
+
+/* turn card borders off as adjacent cards will not have the same height */
+/* TODO: turn off the header underline too?*/
+.bd-content .sd-card {
+    border-style: none;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+/* scale card on hover using available support */
+.sd-card-hover:hover {
+    -moz-transform: scale(1.01);
+    -ms-transform: scale(1.01);
+    -webkit-transform: scale(1.01);
+    transform: scale(1.01);
 }
 
 /* sphinx-design styles for browsers with flex wrapping (and @support) support */
@@ -44,13 +59,22 @@
         display: flex !important;
         /* remove the margin workaround above */
         margin-right: unset;
-        outline: 1px dashed blue;
+        /* outline: 1px dashed blue; */
     }
 
     .sd-row {
         display: flex;
-        outline: 1px dashed red;
+        /* outline: 1px dashed red; */
     }
+
+    /* revert card borders for = height cards */
+    /* TODO: what are the original padding settings - we should revert to those. */
+    .bd-content .sd-card {
+        border-style: solid;
+        padding-left: unset;
+        padding-right: unset;
+    }
+    
 }
 
 /* Header
@@ -290,7 +314,7 @@ horizontally. */
 }
 
 
-/* Horizontal centering of main content
+/* Main content
 -------------------------------------------------------------------------------------------------*/
 /* display body content in safari 9-10 & chrome 29 (+?) */
 /* .bd-main .bd-content {
@@ -320,4 +344,20 @@ horizontally. */
         margin-left: unset;
         margin-right: unset;
     }
+}
+
+
+/* Breadcrumbs
+-------------------------------------------------------------------------------------------------*/
+/* stack breadcrumbs horizontally */
+ul.bd-breadcrumbs li.breadcrumb-item,
+ul.bd-breadcrumbs li.breadcrumb-item a {
+    display: inline-block;
+    /* display: -webkit-flex; */
+    display: flex;
+}
+
+/* breadcrumb divider */
+ul.bd-breadcrumbs li.breadcrumb-item:not(.breadcrumb-home):before {
+    content: ">";
 }

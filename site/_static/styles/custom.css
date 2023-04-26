@@ -52,6 +52,7 @@
 /* system font stack - adapted from https://systemfontstack.com/*/
 body {
     font-family: "Segoe UI", arial, sans-serif, -apple-system, BlinkMacSystemFont, "avenir next", avenir, "helvetica neue", helvetica, Cantarell, Ubuntu, roboto, noto;
+    font-family: var(--pst-font-family-base);
 }
 
 h1 {
@@ -62,126 +63,12 @@ h2 {
     font-size: 2rem;
 }
 
-/* breadcrumb divider */
-ul.bd-breadcrumbs li.breadcrumb-item:not(.breadcrumb-home):before {
-    content: ">";
-}
 
-/* Colours for browsers without alpha and or custom variable support. */
-
-/* inactive links in header and sidebar (must come before more specific hover/focus/active settings below) */
-/* header */
-html[data-theme="light"] .bd-header .navbar-nav li a.nav-link,
-/* breadcrumbs */
-html[data-theme="light"] ul.bd-breadcrumbs li.breadcrumb-item:not(.breadcrumb-home):before,
-/* sidebar */
-html[data-theme="light"] .navbar-nav li a.nav-link {
-    color: #646464
-}
-
-/* header */
-html[data-theme="dark"] .bd-header .navbar-nav li a.nav-link,
-/* breadcrumbs */
-html[data-theme="dark"] ul.bd-breadcrumbs li.breadcrumb-item:not(.breadcrumb-home):before,
-/* sidebar */
-html[data-theme="dark"] .navbar-nav li a.nav-link {
-    color: #a6a6a6
-}
-
-/* link hover colours (must come before more specific hover settings below) */
-html[data-theme="light"] a:hover {
-    color: #f08080;
-}
-
-html[data-theme="dark"] a:hover {
-    color: #f09090;
-}
-
-/* all primary colour items incl hover/focus/active links in header and sidebar */
-/* headings and links */
-html[data-theme="light"] h1,
-html[data-theme="light"] h2,
-html[data-theme="light"] a,
-/* header */
-html[data-theme="light"] .bd-header .navbar-nav li a.nav-link:focus,
-html[data-theme="light"] .bd-header .navbar-nav li a.nav-link:hover,
-html[data-theme="light"] .bd-header .navbar-nav>.active>.nav-link,
-/* sidebar */
-html[data-theme="light"] .navbar-nav li a:focus,
-html[data-theme="light"] .navbar-nav li a:hover,
-html[data-theme="light"] .navbar-nav li.current>a,
-/* breadcrumbs */
-html[data-theme="light"] ul.bd-breadcrumbs li.breadcrumb-item a {
-    color: #106ed1;
-}
-
-/* headings and links */
-html[data-theme="dark"] h1,
-html[data-theme="dark"] h2,
-html[data-theme="dark"] a,
-/* header */
-html[data-theme="dark"] .bd-header .navbar-nav li a.nav-link:focus,
-html[data-theme="dark"] .bd-header .navbar-nav li a.nav-link:hover,
-html[data-theme="dark"] .bd-header .navbar-nav>.active>.nav-link,
-/* sidebar */
-html[data-theme="dark"] .navbar-nav li a:focus,
-html[data-theme="dark"] .navbar-nav li a:hover,
-html[data-theme="dark"] .navbar-nav li.current>a,
-/* breadcrumbs */
-html[data-theme="dark"] ul.bd-breadcrumbs li.breadcrumb-item a {
-    color: #2f8cef;
-}
-
-/* sd-card border colour */
-html[data-theme="light"] .sd-card {
-    border: 1px solid #c9c9c9;
-}
-
-html[data-theme="dark"] .sd-card {
-    border: 1px solid silver;
-}
-
-html[data-theme="light"] .sd-card-header {
-    border-bottom: 1px solid #c9c9c9;
-}
-
-html[data-theme="dark"] .sd-card-header {
-    border-bottom: 1px solid silver;
-}
-
-
-/* force opaque sidebar for old browsers */
-.bd-sidebar, html[data-theme="light"] .bd-sidebar {
-    background: white;
-}
-
-html[data-theme="dark"] .bd-sidebar {
-    background: black;
-}
-
-/* light and dark theme announcement background (i.e. the note about webp support) */
-.bd-header-announcement:after {
-    background-color: #459db9;
-}
 
 /* Workarounds for browsers without @media support. */
 .bd-header-announcement {
     padding: .5rem 2%;
 }
-
-/* Workarounds for browsers without `display: flex` support */
-/* stack breadcrumbs horizontally */
-ul.bd-breadcrumbs li.breadcrumb-item,
-ul.bd-breadcrumbs li.breadcrumb-item a {
-    display: inline-block;
-    /* display: -webkit-flex; */
-    display: flex;
-}
-
-
-/* footer layout */
-
-
 
 
 
@@ -201,24 +88,6 @@ html {
     /* prefer Segoe UI which is a windows system font and used for Leftfield logo */
     --pst-font-family-base: "Segoe UI", var(--pst-font-family-base-system);
     --pst-font-size-base: 0.9rem;
-}
-
-html[data-theme="light"] {
-    --pst-color-primary: #106ed1;
-    --pst-color-link-hover: #f08080;
-}
-
-html[data-theme="dark"] {
-    --pst-color-primary: #2f8cef;
-    --pst-color-link-hover: #f09090;
-}
-
-:root[data-theme="light"] {
-    --sd-color-card-border-hover: #106ed1ff;
-}
-
-:root[data-theme="dark"] {
-    --sd-color-card-border-hover: #2f8cefff;
 }
 
 
