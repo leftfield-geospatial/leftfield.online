@@ -1,4 +1,4 @@
-.. rst-class:: center
+.. rst-class:: center-heading
 
 **Profile**
 ===========

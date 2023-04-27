@@ -40,6 +40,7 @@ settings below) */
 /* header */
 .bd-header .navbar-nav li a.nav-link,
 /* breadcrumbs */
+ul.bd-breadcrumbs li.breadcrumb-item.active,
 ul.bd-breadcrumbs li.breadcrumb-item:not(.breadcrumb-home):before,
 /* sidebar */
 .navbar-nav li a.nav-link {
@@ -50,6 +51,7 @@ ul.bd-breadcrumbs li.breadcrumb-item:not(.breadcrumb-home):before,
 /* header */
 html[data-theme=dark] .bd-header .navbar-nav li a.nav-link,
 /* breadcrumbs */
+html[data-theme=dark] ul.bd-breadcrumbs li.breadcrumb-item.active,
 html[data-theme=dark] ul.bd-breadcrumbs li.breadcrumb-item:not(.breadcrumb-home):before,
 /* sidebar */
 html[data-theme=dark] .navbar-nav li a.nav-link {

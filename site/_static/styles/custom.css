@@ -1,79 +1,6 @@
-/* Leftfield aesthetic customisations. */
-/* configure header and sidebar navbar */
-/* TODO: this applies to both sidebar and header. things (e.g. font-size) will get confused esp without custom var support. */
-.bd-header .navbar-nav {
-    /* section link font size */
-    font-size: 1.5rem;
-    /* space between right-aligned section links and icon links / components */
-    margin-right: 1rem;
-    /* space between logo and left-aligned section links, also between light/dark button & icon links  */
-    margin-left: 0rem;
-    /*gap: 0.5rem;*/
-    /* spacing between section titles */
-    padding: 0rem;
-}
+/* Custom variable definition
+------------------------------------------------------------------------------------------------ */ 
 
-/* limit logo height for older safari and ie browsers - adapted from numpy docs  */
-.navbar-brand img {
-    height: 4.6rem;
-    width: auto;
-}
-
-/*.navbar-brand {
-    height: 4.6rem;
-}*/
-
-/* footer font size */
-.bd-footer {
-    font-size: 0.8rem;
-}
-
-/* center class for h1 and h2 headings */
-.center h1,
-.center h2 {
-    text-align: center;
-}
-
-
-/* Misc. workarounds for browser compatibility. */
-
-/* remove skip to main content link */
-.skip-link {
-    display: none;
-}
-
-/* turn off header and sidebar link underlines */
-.navbar-nav li a.nav-link:hover {
-    text-decoration: none
-}
-
-/* Workarounds for browsers without custom variable support. */
-
-/* system font stack - adapted from https://systemfontstack.com/*/
-body {
-    font-family: "Segoe UI", arial, sans-serif, -apple-system, BlinkMacSystemFont, "avenir next", avenir, "helvetica neue", helvetica, Cantarell, Ubuntu, roboto, noto;
-    font-family: var(--pst-font-family-base);
-}
-
-h1 {
-    font-size: 2.5rem;
-}
-
-h2 {
-    font-size: 2rem;
-}
-
-
-
-/* Workarounds for browsers without @media support. */
-.bd-header-announcement {
-    padding: .5rem 2%;
-}
-
-
-
-
-/* Define custom variables. */
 /* NB note that some of these variables are duplicated by configurations above. */
 html {
     /* header height will impact the top offset for many sections
@@ -86,26 +13,86 @@ html {
     --pst-header-article-height: 3rem;
 
     /* prefer Segoe UI which is a windows system font and used for Leftfield logo */
-    --pst-font-family-base: "Segoe UI", var(--pst-font-family-base-system);
+    --pst-font-family-base: "Segoe UI", arial, sans-serif, -apple-system, BlinkMacSystemFont, "avenir next", avenir, "helvetica neue", helvetica, Cantarell, Ubuntu, roboto, noto;
+    --pst-font-family-monospace: "SFMono-Regular", Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
     --pst-font-size-base: 0.9rem;
+
+    --pst-font-size-h1: 2.5rem;
+    --pst-font-size-h2: 2rem;
+
+    /* --pst-sidebar-font-size: 0.9rem; */
+    --pst-sidebar-font-size-mobile: 1.1rem;
+    --pst-sidebar-header-font-size: 1.2rem;
+
+    font-size: 0.9rem;
+    font-size: var(--pst-font-size-base);
+}
+
+/* Fonts 
+-------------------------------------------------------------------------------------------------*/
+code,
+kbd,
+pre,
+samp {
+    font-family: "SFMono-Regular", Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+    font-family: var(--pst-font-family-monospace);
+}
+
+body {
+    font-family: "Segoe UI", arial, sans-serif, -apple-system, BlinkMacSystemFont, "avenir next", avenir, "helvetica neue", helvetica, Cantarell, Ubuntu, roboto, noto;
+    font-family: var(--pst-font-family-base);
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-size: var(--pst-font-size-h1);
+}
+
+h2 {
+    font-size: 2rem;
+    font-size: var(--pst-font-size-h2);
+}
+
+.bd-footer {
+    font-size: 0.8rem;
+}
+
+.bd-header {
+    font-size: 1.5rem;
+}
+
+.bd-sidebar-primary {
+    font-size: 1.1rem;
+    font-size: var(--pst-sidebar-font-size-mobile);
+}
+
+.bd-sidebar-primary .sidebar-header-items .sidebar-header-items__title {
+    font-size: 1.2rem;
+    font-size: var(--pst-sidebar-header-font-size);
+}
+
+/* class for optional rst centering of h1 and h2 headings */
+.center-heading h1,
+.center-heading h2 {
+    text-align: center;
 }
 
 
+/* Other work arounds
+------------------------------------------------------------------------------------------------ */ 
 
-
-
-
-/*.bd-footer .footer-items__end,
-.bd-footer .footer-items__start {
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-    justify-content: center
+/* remove skip to main content link */
+.skip-link {
+    display: none;
 }
 
-.bd-footer .footer-items__end {
-    margin-left: auto;
-    text-align: end
+/* turn off header and sidebar link underlines */
+.navbar-nav li a.nav-link:hover {
+    text-decoration: none
 }
-*/
+
+/* for no @media support. */
+.bd-header-announcement {
+    padding: .5rem 2%;
+}
 

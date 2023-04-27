@@ -11,7 +11,7 @@
    profile
    contact
 
-.. rst-class:: center
+.. rst-class:: center-heading
 
 ========================
 **Leftfield Geospatial**

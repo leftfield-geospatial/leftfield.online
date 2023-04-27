@@ -7,7 +7,7 @@
 /* see https://tylercipriani.com/blog/2012/08/01/display-inline-block-extra-margin. */
 .bd-main {
     display: block;
-    outline: 1px solid green;
+    /* outline: 1px solid green; */
 }
 
 /* sphinx-design styles for no `flex-wrap: wrap` support */
@@ -91,6 +91,11 @@ must come after related colour style(s) which turn borders on. */
     margin-right: auto;
 }
 
+/* place some space between section and icon links, and icon links and end of view window*/
+.bd-header .navbar-header-items__center,
+.bd-header .navbar-header-items__end {
+    margin-right: 1rem;
+}
 
 /* change header elements with `display: flex` to `display: inline-block` so they are arranged 
 horizontally. */
@@ -108,7 +113,7 @@ horizontally. */
     /* `vertical-align: auto` is default but mis-calculates element heights in some browsers,
     so it is forced to middle here. */
     vertical-align: middle;
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
 }
 
 /* repeat pydata-sphinx-theme rule(s) for turning off "mobile" res sidebar toggle & search button
@@ -124,7 +129,6 @@ horizontally. */
 }
 
 /* right align section etc link container & "mobile" res search button */
-/* TODO can we use margin auto instead of float? don't think margin works with inline blocks? */
 .bd-header .navbar-header-items,
 .navbar-persistent--mobile {
     float: right;
@@ -142,14 +146,23 @@ horizontally. */
 } */
 
 /* pydata-sphinx-theme sets heights in navbar-item & navbar-brand with --pst-header-height
-custom varable. they are re-set here for browsers without var support.
+custom varable. they are re-set here for browsers without custom var support.
 in addition, the heights on parents of centered elements below must also be set, so
 bd-header__inner is included in the list.*/
 .bd-header .bd-header__inner,
 .bd-header .navbar-item,
 .navbar-brand {
     height: 5.6rem;
+    height: var(--pst-header-height);
     max-height: 5.6rem;
+    max-height: var(--pst-header-height);
+}
+
+/* limit logo height for older safari and ie browsers - adapted from numpy docs  */
+.navbar-brand img {
+    height: 4.6rem;
+    height: calc(var(--pst-header-height) - 1rem);
+    width: auto;
 }
 
 /* TODO: why don't we see the search button in old browsers? Also, does it work where we do see it? */
@@ -167,7 +180,7 @@ bd-header__inner is included in the list.*/
     -ms-transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
-    outline: 1px solid green;
+    /* outline: 1px solid green; */
 }
 
 /* re-set header elements to their default theme settings if flex is adequately supported */
@@ -195,7 +208,7 @@ bd-header__inner is included in the list.*/
         display: flex;
         float: unset;
         vertical-align: unset;
-        outline: 1px dashed red;
+        /* outline: 1px dashed red; */
     }
 
     /* repeat pydata-sphinx-theme rule(s) for turning off "mobile" res sidebar toggle & search button
@@ -225,7 +238,7 @@ bd-header__inner is included in the list.*/
         -ms-transform: unset;
         -webkit-transform: unset;
         transform: unset;
-        outline: 1px dashed green;
+        /* outline: 1px dashed green; */
     }
 }
 
@@ -241,14 +254,14 @@ bd-header__inner is included in the list.*/
 .bd-sidebar-primary .sidebar-header-items .sidebar-header-items__center .nav-item,
 .bd-sidebar-primary .sidebar-header-items .sidebar-header-items__end {
     display: block;
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
 }
 
 /* stack end (icon link) elements horizontally */
 .bd-sidebar-primary .sidebar-header-items .sidebar-header-items__end .navbar-item {
     display: inline-block;
     vertical-align: middle;
-    outline: 1px solid green;
+    /* outline: 1px solid green; */
 }    
 
 /* re-set sidebar elements to their default theme settings if flex is adequately supported */
@@ -259,14 +272,14 @@ bd-header__inner is included in the list.*/
     .bd-sidebar-primary .sidebar-header-items .sidebar-header-items__center .nav-item,
     .bd-sidebar-primary .sidebar-header-items .sidebar-header-items__end {
         display: flex;
-        outline: 1px dashed red;
+        /* outline: 1px dashed red; */
     }
     
     /* stack horizontally */
     .bd-sidebar-primary .sidebar-header-items .sidebar-header-items__end .navbar-item {
         display: flex;
         vertical-align: unset;
-        outline: 1px dashed green;
+        /* outline: 1px dashed green; */
     }
 }
 
@@ -277,7 +290,7 @@ bd-header__inner is included in the list.*/
 .bd-footer,
 .bd-footer .bd-footer__inner {
     display: block;
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
 }
 
 /* change footer elements with `display: flex` to `display: inline-block` so they are arranged 
@@ -285,7 +298,7 @@ horizontally. */
 .bd-footer .footer-items__start,
 .bd-footer .footer-items__end {
     display: inline-block;
-    outline: 1px solid green;
+    /* outline: 1px solid green; */
 }
 
 /* right align the end container */
@@ -303,7 +316,7 @@ horizontally. */
     .bd-footer .footer-items__start,
     .bd-footer .footer-items__end {
         display: flex;
-        outline: 1px dashed red;
+        /* outline: 1px dashed red; */
     }
 
     .bd-footer .footer-items__end {
@@ -317,9 +330,6 @@ horizontally. */
 /* Main content
 -------------------------------------------------------------------------------------------------*/
 /* display body content in safari 9-10 & chrome 29 (+?) */
-/* .bd-main .bd-content {
-    height: 100%;
-}  */
 .bd-container,
 .bd-main .bd-content {
     display: block;
