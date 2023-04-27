@@ -1,17 +1,18 @@
+/* Custom colours with cross-browser support */
+
 /* Note that the theme should default to `light` if there is no conf.py or system setting, but for 
 older browsers it gets left on data-theme=auto.  Below, i have used no `html[data-them=e...]` 
 selector for specifying the `light` and default mode colours (i.e. they are the same), and a 
 html[data-them=dark] selector last, for specifying dark mode colours as a special case. */
 
-/* TODO if custom vars are supported but not themes or whatever sets data-theme, then custom
-vars should be specified in html root below. */
 /* Set theme variables to custom colours. */
+
+html,
 html[data-theme=light] {
     --pst-color-primary: #106ed1;
     --pst-color-text-muted: #646464;
     --pst-color-link-hover: #f08080;
     --pst-color-border: #c9c9c9;
-    
 }
 
 html[data-theme=dark] {
@@ -21,10 +22,17 @@ html[data-theme=dark] {
     --pst-color-border: silver;
 }
 
+:root,
+:root[data-theme=light] {
+    --sd-color-card-border-hover: #2f8cef;
+}
 
+:root[data-theme=dark] {
+    --sd-color-card-border-hover: white;
+}
 
-/* Set colours for browsers without alpha and or custom variable support using duplication of theme
-selectors but with fallback to hard coded colour values. */
+/* Set colours for browsers without alpha and or custom variable support. 
+pydata-sphinx-theme selectors are repeated with fallback to hard coded values. */
 
 /* inactive links in header and sidebar (must come before more specific hover/focus/active 
 settings below) */
@@ -54,16 +62,12 @@ a:hover {
     color: #f08080;
     color: var(--pst-color-link-hover);
 }
-
 html[data-theme=dark] a:hover {
     color: #f09090;
     color: var(--pst-color-link-hover);
 }
 
-/* all primary colour items incl hover/focus/active links in header and sidebar headings and 
-links */
-/* TODO: check selectors are specific enough */
-/* TODO: how to specify styles that apply both data-theme=light, and data-theme="auto"? */
+/* all primary colour items incl headings, links & hover/focus/active links in header and sidebar */
 h1,
 h2,
 a,
@@ -99,54 +103,37 @@ html[data-theme=dark] ul.bd-breadcrumbs li.breadcrumb-item a {
     color: var(--pst-color-primary);
 }
 
-/* sd-card border colour */
-/* TODO: we want card borders off if flex-wrap not supported.  is there a situation where flex-wrap 
-is not supported and custom vars also not supported?  only then do we need the below... */
-:root {
-    --sd-color-card-border-hover: var(--pst-color-primary); /*#2f8cef*/
-}
-:root[data-theme=dark] {
-    --sd-color-card-border-hover: white;
-}
+/* sd-card border colours.  these styles must come before flex related modifications. */
 
 .bd-content .sd-card {
     border: 1px solid #c9c9c9;
     border: 1px solid var(--pst-color-border);
-    /* border-color: #c9c9c9;
-    border-color: var(--pst-color-border); */
 }
 html[data-theme=dark] .bd-content .sd-card {
     border: 1px solid silver;
     border: 1px solid var(--pst-color-border);
-    /* border-color: silver;
-    border-color: var(--pst-color-border); */
 }
 
 .bd-content .sd-card .sd-card-header {
     border-bottom: 1px solid #c9c9c9; 
     border-bottom: 1px solid var(--pst-color-border);
-    /* border-bottom-color: #c9c9c9;
-    border-bottom-color: var(--pst-color-border); */
 }
 html[data-theme=dark] .bd-content .sd-card .sd-card-header {
     border-bottom: 1px solid silver;
     border-bottom: 1px solid var(--pst-color-border);
-    /* border-bottom-color: silver;
-    border-bottom-color: var(--pst-color-border); */
 }
 
 .sd-card-hover:hover {
-    border-color: #106ed1;
+    border-color: #2f8cef;
     border-color: var(--sd-color-card-border-hover);
 }
-
 html[data-theme=dark] .sd-card-hover:hover {
     border-color: white;
     border-color: var(--sd-color-card-border-hover);
 }
 
 
-/* force opaque sidebar for old browsers */
+/* opaque sidebar */
 .bd-sidebar {
     background: white;
     background: var(--pst-color-background);

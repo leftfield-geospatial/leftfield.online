@@ -30,15 +30,15 @@
     /* outline: 1px solid red; */
 }
 
-/* turn card borders off as adjacent cards will not have the same height */
-/* TODO: turn off the header underline too?*/
+/* for no flex wrap support, turn card borders off as adjacent cards will not have the same height.  
+must come after related colour style(s) which turn borders on. */
 .bd-content .sd-card {
     border-style: none;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
 }
 
-/* scale card on hover using available support */
+/* corss-browser card scale on hover */
 .sd-card-hover:hover {
     -moz-transform: scale(1.01);
     -ms-transform: scale(1.01);
@@ -48,7 +48,7 @@
 
 /* sphinx-design styles for browsers with flex wrapping (and @support) support */
 @supports(flex-wrap: wrap) and (flex-direction: row) and (flex-shrink: 0) and (flex: 0 0 auto) and (flex: 1 0 0%) {
-    /* leave bd-main on `display: block` to work around chrome v29-38 & safari 9-10 issues */
+    /* leave bd-main set to `display: block` to work around chrome v29-38 & safari 9-10 issues */
     /* .bd-main {
         display: flex;
         outline: 1px solid green;
