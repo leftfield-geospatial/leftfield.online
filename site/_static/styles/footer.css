@@ -1,0 +1,44 @@
+/* Footer
+-------------------------------------------------------------------------------------------------*/
+
+/* horizontally center the main footer container */
+.bd-footer,
+.bd-footer .bd-footer__inner {
+    display: block;
+    /* outline: 1px solid red; */
+}
+
+/* change footer elements with `display: flex` to `display: inline-block` so they are arranged 
+horizontally. */
+.bd-footer .footer-items__start,
+.bd-footer .footer-items__end {
+    display: inline-block;
+    /* outline: 1px solid green; */
+}
+
+/* right align the end container */
+.bd-footer .footer-items__end {
+    float: right;
+    text-align: right;
+}
+
+/* re-set footer elements to their default theme settings if flex is adequately supported */
+@supports(display: flex) and (flex-grow: 1) and (flex-direction: column) and (justify-content: center) {
+    /* and (text-align: end)*/
+
+    .bd-footer,
+    .bd-footer .bd-footer__inner,
+    .bd-footer .footer-items__start,
+    .bd-footer .footer-items__end {
+        display: flex;
+        /* outline: 1px dashed red; */
+    }
+
+    .bd-footer .footer-items__end {
+        float: none;
+        /* the theme sets `text-align: end`, but I think `text-align: right` set above is correct*/
+        /* text-align: end; */
+    }
+}
+
+

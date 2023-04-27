@@ -1,0 +1,165 @@
+/* Header
+-------------------------------------------------------------------------------------------------*/
+
+/* horizontally center the main header container */
+.bd-header {
+    display: block;
+}
+
+.bd-header .bd-header__inner {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* place some space between section and icon links, and icon links and end of view window*/
+.bd-header .navbar-header-items__center,
+.bd-header .navbar-header-items__end {
+    margin-right: 1rem;
+}
+
+/* change header elements with `display: flex` to `display: inline-block` so they are arranged 
+horizontally. */
+.navbar-persistent--mobile,
+.bd-header label.sidebar-toggle,
+.navbar-brand,
+.bd-header .navbar-header-items__start,
+.bd-header .navbar-header-items__center,
+.bd-header .navbar-header-items__end,
+.bd-header .navbar-nav,
+.bd-header .navbar-item,
+/* nav-item not set in theme but include it here to horizontally stack e.g. section or icon links */
+.bd-header .nav-item {
+    display: inline-block;
+    /* `vertical-align: auto` is default but mis-calculates element heights in some browsers,
+    so it is forced to middle here. */
+    vertical-align: middle;
+    outline: 1px solid red;
+}
+
+/* repeat pydata-sphinx-theme rule(s) for turning off "mobile" res sidebar toggle & search button
+(necessary due to its inclusion in the display: inline-block list above) */
+@media(min-width:960px) {
+    label.sidebar-toggle.primary-toggle {
+        display: none
+    }
+
+    .navbar-persistent--mobile {
+        display: none
+    }
+}
+
+/* right align section etc link container & "mobile" res search button */
+.bd-header .navbar-header-items,
+.navbar-persistent--mobile {
+    float: right;
+}
+
+/* left align the sidebar toggle button */
+.bd-header label.sidebar-toggle {
+    float: left;
+}
+
+/* float the .navbar-header-items container so it scales to its floated contents */
+/* (unnecessary - heights are set below) */
+/* .bd-header .bd-header__inner {
+    float: left;
+} */
+
+/* pydata-sphinx-theme sets heights in navbar-item & navbar-brand with --pst-header-height
+custom varable. they are re-set here for browsers without custom var support.
+in addition, the heights on parents of centered elements below must also be set, so
+bd-header__inner is included in the list.*/
+.bd-header .bd-header__inner,
+.bd-header .navbar-item,
+.navbar-brand {
+    height: 5.6rem;
+    height: var(--pst-header-height);
+    max-height: 5.6rem;
+    max-height: var(--pst-header-height);
+}
+
+/* limit logo height for older safari and ie browsers - adapted from numpy docs  */
+.navbar-brand img {
+    height: 4.6rem;
+    height: calc(var(--pst-header-height) - 1rem);
+    width: auto;
+}
+
+/* TODO: why don't we see the search button in old browsers? Also, does it work where we do see it? */
+/* vertically center the logo, section and icon links, and "mobile" res sidebar toggle and search button */
+.navbar-persistent--mobile,
+.bd-header label.sidebar-toggle,
+.navbar-brand img,
+/* section and icon links */
+.bd-header .navbar-item>.navbar-nav,
+/* navbar search button */
+.bd-header .navbar-item>button {
+    position: relative;
+    top: 50%;
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    outline: 1px solid green;
+}
+
+/* re-set header elements to their default theme settings if flex is adequately supported */
+@supports(display: flex) and (align-items: center) and (justify-content: end) and (flex-shrink: 1) and (flex-grow: 1) and (flex-flow: wrap) {
+    .bd-header {
+        display: flex;
+    }
+
+    .bd-header .bd-header__inner {
+        display: flex;
+        margin-left: unset;
+        margin-right: unset;
+    }
+
+    .navbar-persistent--mobile,
+    .bd-header label.sidebar-toggle,
+    .navbar-brand,
+    .bd-header .navbar-header-items__start,
+    .bd-header .navbar-header-items__center,
+    .bd-header .navbar-header-items__end,
+    .bd-header .navbar-nav,
+    .bd-header .navbar-item,
+    /* nav-item not set in theme but include it here to horizontally stack e.g. section or icon links */
+    .bd-header .nav-item {
+        display: flex;
+        float: unset;
+        vertical-align: unset;
+        outline: 1px dashed red;
+    }
+
+    /* repeat pydata-sphinx-theme rule(s) for turning off "mobile" res sidebar toggle & search button
+    (necessary due to its includion in the display: inline-block list above) */
+    @media(min-width:960px) {
+        label.sidebar-toggle.primary-toggle {
+            display: none
+        }
+
+        .navbar-persistent--mobile {
+            display: none
+        }
+    }
+
+    /* `float: *` settings are ignored in `display: flex` so no need to unset here */
+
+    .navbar-persistent--mobile,
+    .bd-header label.sidebar-toggle,
+    .navbar-brand img,
+    /* section and icon links */
+    .bd-header .navbar-item>.navbar-nav,
+    /* search button */
+    .bd-header .navbar-item>button {
+        position: unset;
+        top: unset;
+        -moz-transform: unset;
+        -ms-transform: unset;
+        -webkit-transform: unset;
+        transform: unset;
+        outline: 1px dashed green;
+    }
+}
+

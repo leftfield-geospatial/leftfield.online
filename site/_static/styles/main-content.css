@@ -1,0 +1,119 @@
+/* Sphinx-design grids
+-------------------------------------------------------------------------------------------------*/
+/* see https://tylercipriani.com/blog/2012/08/01/display-inline-block-extra-margin. */
+.bd-main {
+    display: block;
+    /* outline: 1px solid green; */
+}
+
+/* sphinx-design styles for no `flex-wrap: wrap` support */
+/* column style (not "row" as it says) */
+.sd-d-flex-row {
+    /* override `display: flex !important` in sphinx-design sd-d-flex-row */
+    display: inline-block !important;
+    vertical-align: top;
+    /* space is inserted between sibling inline-blocks - this is an empirical workaround to remove
+     it.  columns would be too wide to fit in a row without it. */
+    margin-right: -0.3em;
+    /* outline: 1px solid blue; */
+}
+
+.sd-row {
+    /* allow wrapping of child inline-block elements */
+    display: block;
+    /* expand width to page, otherwise it would be width of children. */
+    /* width: 100%;     */
+    /* outline: 1px solid red; */
+}
+
+/* for no flex wrap support, turn card borders off as adjacent cards will not have the same height.  
+must come after related colour style(s) which turn borders on. */
+.bd-content .sd-card {
+    border-style: none;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+/* corss-browser card scale on hover */
+.sd-card-hover:hover {
+    -moz-transform: scale(1.01);
+    -ms-transform: scale(1.01);
+    -webkit-transform: scale(1.01);
+    transform: scale(1.01);
+}
+
+/* sphinx-design styles for browsers with flex wrapping (and @support) support */
+@supports(flex-wrap: wrap) and (flex-direction: row) and (flex-shrink: 0) and (flex: 0 0 auto) and (flex: 1 0 0%) {
+    /* leave bd-main set to `display: block` to work around chrome v29-38 & safari 9-10 issues */
+    /* .bd-main {
+        display: flex;
+        outline: 1px solid green;
+    } */
+
+    .sd-d-flex-row {
+        /* override `display: inline-block !important` above */
+        display: flex !important;
+        /* remove the margin workaround above */
+        margin-right: unset;
+        /* outline: 1px dashed blue; */
+    }
+
+    .sd-row {
+        display: flex;
+        /* outline: 1px dashed red; */
+    }
+
+    /* revert card borders for = height cards */
+    /* TODO: what are the original padding settings - we should revert to those. */
+    .bd-content .sd-card {
+        border-style: solid;
+        padding-left: unset;
+        padding-right: unset;
+    }
+    
+}
+
+/* Main body
+-------------------------------------------------------------------------------------------------*/
+/* display body content in safari 9-10 & chrome 29 (+?) */
+.bd-container,
+.bd-main .bd-content {
+    display: block;
+}
+
+.bd-container .bd-container__inner,
+.bd-main .bd-content .bd-article-container {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@supports(display: flex) and (justify-content: center) and (flex-direction: column) and (justify-content: start) {
+    .bd-container,
+    .bd-main .bd-content {
+        display: flex;
+    }
+
+    .bd-container .bd-container__inner,
+    .bd-main .bd-content .bd-article-container {
+        display: flex;
+        margin-left: unset;
+        margin-right: unset;
+    }
+}
+
+
+/* Breadcrumbs
+-------------------------------------------------------------------------------------------------*/
+/* stack breadcrumbs horizontally */
+ul.bd-breadcrumbs li.breadcrumb-item,
+ul.bd-breadcrumbs li.breadcrumb-item a {
+    display: inline-block;
+    /* display: -webkit-flex; */
+    display: flex;
+}
+
+/* breadcrumb divider */
+ul.bd-breadcrumbs li.breadcrumb-item:not(.breadcrumb-home):before {
+    content: ">";
+}

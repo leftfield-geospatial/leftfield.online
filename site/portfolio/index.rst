@@ -9,7 +9,7 @@
    thicket_agc
    biome_wide_thicket_agc
 
-.. rst-class:: center
+.. rst-class:: center-heading
 
 **Portfolio**
 =============
