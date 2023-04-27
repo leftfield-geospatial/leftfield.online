@@ -5,6 +5,7 @@
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
+from pathlib import Path
 from datetime import datetime
 year = datetime.now().year
 year_str = str(year) if (year == 2023) else f'2023-{year}'
@@ -36,14 +37,11 @@ html_theme = 'pydata_sphinx_theme'
 html_title = f'{project}'
 html_static_path = ['_static']
 # colour styles must come before no-flex
-html_css_files = [
-    'styles/colours.css', 'styles/custom.css', 'styles/header.css', 'styles/main-content.css', 'styles/sidebar.css',
-    'styles/footer.css'
-]
+html_css_files = ['styles/leftfield.css']
 html_js_files = ['scripts/webp-support.js']
 html_context = {'default_mode': 'auto'}  # use the system/browser light/dark theme setting
 # html_favicon = '_static/favicons/favicon.svg'
-html_sourcelink_suffix = ""
+html_sourcelink_suffix = ''
 html_sidebars = {
   '**': []
 }
@@ -87,7 +85,7 @@ html_theme_options = {
     'navigation_depth': 0,
 }
 
-# -- option sfor the favicon extention ------------------------------------------
+# -- favicon extension optionse  ------------------------------------------
 # adapted from https://github.com/tcmetzger/sphinx-favicon/blob/main/docs/source/conf.py
 favicons = [
     # generic icons compatible with most browsers
@@ -104,6 +102,21 @@ favicons = [
     {'name': 'theme-color', 'content': '#ffffff'},
     {'name': 'msapplication-TileImage', 'content': 'favicons/mstile-150x150.png'},
 ]
+
+# -- concatenate css files into one  ------------------------------------------
+css_paths = [
+    '_styles/colours.css', '_styles/custom.css', '_styles/header.css', '_styles/main-content.css',
+    '_styles/sidebar.css', '_styles/footer.css'
+]
+dest_path = Path(html_static_path[0]).joinpath(html_css_files[0]).absolute()
+dest_path.parent.mkdir(exist_ok=True)
+
+with dest_path.open(mode='wt') as dest_file:
+    for css_path in css_paths:
+        css_path = Path(css_path).absolute()
+        with css_path.open('rt') as css_file:
+            dest_file.write(css_file.read())
+
 
 # TODO: auto generate ico
 # TODO: also sort out sponsorship to me or organisation
