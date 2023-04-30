@@ -38,7 +38,9 @@ html_title = f'{project}'
 html_static_path = ['_static']
 # colour styles must come before no-flex
 html_css_files = ['styles/leftfield.css']
-html_js_files = ['scripts/webp-support.js']
+# searchtools.js is a theme script that is always incuded, but is specified here to make sure it is 
+# listed in the html before browser-support.js, which uses it. 
+html_js_files = ['searchtools.js', 'scripts/browser-support.js']
 html_context = {'default_mode': 'auto'}  # use the system/browser light/dark theme setting
 # html_favicon = '_static/favicons/favicon.svg'
 html_sourcelink_suffix = ''
