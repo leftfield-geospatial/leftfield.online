@@ -1,4 +1,4 @@
-function test_webp_feature(feature, callback) {
+function webpFeatureSupport(feature, callback) {
     // Test webp feature.
     //   'feature' can be one of 'lossy', 'lossless', 'alpha' or 'animation'.
     //   'callback(feature, isSupported)' will be passed back the detection result (in an asynchronous way!).
@@ -20,7 +20,7 @@ function test_webp_feature(feature, callback) {
         img.src = "data:image/webp;base64," + kTestImages[feature];
 }
 
-function create_announcement(innerHtml) {
+function createAnnouncement(innerHtml) {
     // Return an announcement element.
     // Format was reverse-engineered from pydata-sphinx-theme v0.13.3 generated index.html with 
     // html_theme_options["announcement"] set in conf.py.
@@ -34,69 +34,158 @@ function create_announcement(innerHtml) {
     return ann;
 }
 
-var webpSupport = null;
+var webpSupported = null;
 
-function test_webp_support() {
+function webpSupport() {
     // General test for webp support over features.  Adds an announcement if any feature not 
     // supported.
-    webpSupport = true;
+    webpSupported = true;
 
     var webp_callback = function (feature, isSupported) {
 
-        if (!isSupported && webpSupport != false) {
-            webpSupport = false;
-            document.body.insertBefore(create_announcement(), document.body.firstChild);
+        if (!isSupported && webpSupported != false) {
+            webpSupported = false;
+            document.body.insertBefore(createAnnouncement(), document.body.firstChild);
         }
     }
     var features = ["lossy", "lossless", "alpha"];
     features.forEach(function (feature, index) {
-        test_webp_feature(feature, webp_callback);
+        webpFeatureSupport(feature, webp_callback);
     });
 }
 
+function disableSearch() {
+    var searchElems = document.getElementsByClassName("search-button");
+    for (var i = 0; i < searchElems.length; i++) {
+        searchElems[i].style.backgroundColor = "red";
+        // searchElems[i].style.display = "none";
+    }
+    console.log("Search disabled");
+}
 
-function test_search_support() {
-    // Disable search button(s) if search not supported.  
-    // Support is tested with a basic check for existence of searchtools.js, doctools.js & 
-    //  sphinx_highlight.js modules.
-    try {
-        // try create Search and dependent modules
-        var checkList = [Search, Documentation, SphinxHighlight, _ready]; 
+function disableTheme() {
+    var themeElems = document.getElementsByClassName("theme-switch-button");
+    for (var i = 0; i < themeElems.length; i++) {
+        themeElems[i].style.backgroundColor = "red";
+        // searchElems[i].style.display = "none";
+    }
+    console.log("Themes disabled");
+}
 
-        // var msg = "<b>Search ok.</b>";
-        // var searchElems = document.getElementsByClassName("search-button");
-        // for (var i = 0; i < searchElems.length; i++) {
-        //     searchElems[i].style.backgroundColor = "green";
-        // }
-        // document.body.insertBefore(create_announcement(msg), document.body.firstChild);
-    } 
-    catch (ex) {
-        // hide search buttons
-        var searchElems = document.getElementsByClassName("search-button");
-        for (var i = 0; i < searchElems.length; i++) {
-            // searchElems[i].style.backgroundColor = "red";
-            searchElems[i].style.display = "none";
+function createScript(scriptFile, scriptLoaded) {
+    // adapted from https://humanwhocodes.com/blog/2009/06/23/loading-javascript-without-blocking/
+    var script = document.createElement("script")
+    script.type = "text/javascript";
+    if (script.readyState) {  //IE
+        script.onreadystatechange = function() {
+            if (script.readyState == "loaded" || script.readyState == "complete") {
+                script.onreadystatechange = null;
+                scriptLoaded();
+            }
+        };
+    } else {  //Others
+        script.addEventListener("load", scriptLoaded);
+    }
+    script.src = scriptFile;
+    document.body.appendChild(script);
+    return script;
+}
+
+function searchSupport() {
+    
+    // dictionary of scripts that need to successfully load for search to be supported
+    var searchDict = {
+        "_static/searchtools.js": {
+            scriptElement: null,
+            loaded: false,
+        },
+        // TODO: include these last 2, or assume sphinx has included them?
+        // "_static/doctools.js": {
+        //     scriptElement: null,
+        //     loaded: false,
+        // },
+        // "_static/sphinx_highlight.js": {
+        //     scriptElement: null,
+        //     loaded: false,
+        // },
+    };
+
+    var scriptLoaded = function(event) {
+        // Script onload handler.  Tests for existence of (selected) search objects once all 
+        // scripts loaded, then disables search button on failure.  
+        
+        var allLoaded = true;
+        console.log("Script loaded:" + event.srcElement.src);
+        for (var scriptFile in searchDict) {
+            if (event.srcElement.src.indexOf(scriptFile) >= 0) {
+                searchDict[scriptFile].loaded = true;
+            }
+            allLoaded = allLoaded && searchDict[scriptFile].loaded;
         }
+        if (allLoaded) {
+            // Test search and dependent objects created successfully
+            try {
+                var testList = [Search, Documentation, SphinxHighlight, _ready]; 
+                console.log("Search supported");
+            } 
+            catch (ex) {
+                disableSearch();        
+                console.log("Search not supported: " + String(ex));
+            }
+            // remove test script elements
+            for (var scriptFile in searchDict) {
+                // IE does not support element.remove();
+                searchDict[scriptFile].scriptElement.parentNode.removeChild(searchDict[scriptFile].scriptElement);
+                console.log("Script removed:" + searchDict[scriptFile].scriptElement.src);
+            }
+        }
+    }
 
-        // msg = "<b>Search not ok.</b>";
-        // document.body.insertBefore(create_announcement(msg), document.body.firstChild);
-        console.log("Search not supported: " + String(ex));
-        // throw(ex);
+    // create and append test script elements
+    for (var scriptFile in searchDict) {
+        var script = createScript(scriptFile, scriptLoaded);
+        searchDict[scriptFile].scriptElement = script;
     }
 }
 
-// Override splitQuery in searchtools.js which specifies a unicode regex not supported by all
-// browsers
-// var splitQuery = function(query) {
-//     // change "/[^\p{Letter}\p{Number}_\p{Emoji_Presentation}]+/gu" to ascii only expression 
-//     return query.split(/[^A-Za-z0-9_]+/g).filter(function(term) { return term; });
-// }
+function themeSupport() {
+    var themeFile = "_static/scripts/pydata-sphinx-theme.js";
+    var supported = true;
+
+    var winError = function (event) {
+        console.log("Got error: " + String(event.message) + ", " + String(event.filename));
+        // console.log("File: " + String(event.filename));
+        // console.log(event);
+        if (event.filename.indexOf(themeFile) >= 0) {
+            disableSearch();
+            disableTheme();
+            supported = false;
+            console.log("Themes not supported.")
+        }
+    }
+    var scriptLoaded = function(event) {
+        // Script onload handler that removes script.          
+        console.log("Script loaded:" + event.srcElement.src);
+        event.srcElement.parentNode.removeChild(event.srcElement);
+        console.log("Script removed:" + event.srcElement.src);
+        window.removeEventListener("error", winError);
+        console.log("window.onerror removed");
+        if (supported) console.log("Themes supported.")
+    }
+
+    window.addEventListener("error", winError);
+    createScript(themeFile, scriptLoaded);
+}
+
+function browserSupport() {
+    webpSupport();
+    searchSupport();
+    themeSupport();    
+}
 
 if (document.readyState !== "loading") {
-    test_webp_support();
-    test_search_support();    
+    browserSupport();
 } else {
-    document.addEventListener("DOMContentLoaded", test_webp_support);
-    document.addEventListener("DOMContentLoaded", test_search_support);
+    document.addEventListener("DOMContentLoaded", browserSupport);
 }
 
