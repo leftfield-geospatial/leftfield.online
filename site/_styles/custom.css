@@ -24,6 +24,8 @@ html {
     --pst-sidebar-font-size-mobile: 1.1rem;
     --pst-sidebar-header-font-size: 1.2rem;
 
+    /* --pst-font-size-icon: 1.5rem; */
+
     font-size: 0.9rem;
     font-size: var(--pst-font-size-base);
 }
@@ -77,7 +79,18 @@ h2 {
     text-align: center;
 }
 
+/* .navbar-icon-links i.fa-brands,
+.navbar-icon-links i.fa-regular,
+.navbar-icon-links i.fa-solid {
+  font-size: 1.5rem;
+  font-size: var(--pst-font-size-icon);
+}
 
+.theme-switch-button {
+    font-size: 1.4rem;
+    font-size: calc(var(--pst-font-size-icon) - 0.1rem);
+} */
+  
 /* Other work arounds
 ------------------------------------------------------------------------------------------------ */ 
 
