@@ -1,40 +1,53 @@
 /* Sidebar
 -------------------------------------------------------------------------------------------------*/
 
+/* .bd-sidebar-primary {
+    top: 5.6rem;
+    top: var(--pst-header-height);
+} */
+
 /* configre theme `display: flex; flex-direction: column` (i.e. vertically stacked) elements as 
 `display: block` */
 .bd-sidebar-primary,
 .bd-sidebar-primary .sidebar-header-items,
 .bd-sidebar-primary .sidebar-header-items .sidebar-header-items__center,
-.bd-sidebar-primary .sidebar-header-items .sidebar-header-items__center .nav-item,
+/* more specific selector for section links than is used in header.css */
+.bd-sidebar-primary .sidebar-header-items .sidebar-header-items__center .navbar-nav li,
 .bd-sidebar-primary .sidebar-header-items .sidebar-header-items__end {
     display: block;
-    /* outline: 1px solid red; */
+    border: 1px solid red;
 }
 
-/* stack end (icon link) elements horizontally */
-.bd-sidebar-primary .sidebar-header-items .sidebar-header-items__end .navbar-item {
+/* stack end theme button & icon link elements horizontally */
+.bd-sidebar-primary .sidebar-header-items .sidebar-header-items__end .navbar-item,
+.bd-sidebar-primary .sidebar-header-items .sidebar-header-items__end .navbar-icon-links {
     display: inline-block;
-    vertical-align: middle;
-    /* outline: 1px solid green; */
+    /* border: 1px solid green; */
 }    
 
-/* re-set sidebar elements to their default theme settings if flex is adequately supported */
-@supports(display: flex) and (gap: 0.5rem) and (flex: 0 0 auto) and (flex-direction: column) and (align-items: center) {
+/* styles for icon link elements are set in header.css */
+
+/* re-set sidebar elements to their default theme settings if flex is adequately supported. 
+`flex-basis: min-content` is not required, but a work around test for `gap: 0.5rem`, which is
+not possible to test for in it's flex mode directly - see https://ishadeed.com/article/flexbox-gap/
+*/
+@supports(display: flex) and (flex-direction: column) and (align-items: center) and (flex-basis: min-content) {
     .bd-sidebar-primary,
     .bd-sidebar-primary .sidebar-header-items,
     .bd-sidebar-primary .sidebar-header-items .sidebar-header-items__center,
-    .bd-sidebar-primary .sidebar-header-items .sidebar-header-items__center .nav-item,
+    /* more specific selector for section links than is used in header.css */
+    .bd-sidebar-primary .sidebar-header-items .sidebar-header-items__center .navbar-nav li,
     .bd-sidebar-primary .sidebar-header-items .sidebar-header-items__end {
         display: flex;
-        /* outline: 1px dashed red; */
+        border: 1px dashed red;
     }
     
     /* stack horizontally */
-    .bd-sidebar-primary .sidebar-header-items .sidebar-header-items__end .navbar-item {
+    .bd-sidebar-primary .sidebar-header-items .sidebar-header-items__end .navbar-item,
+    .bd-sidebar-primary .sidebar-header-items .sidebar-header-items__end .navbar-icon-links {
         display: flex;
         vertical-align: unset;
-        /* outline: 1px dashed green; */
+        border: 1px dashed green;
     }
 }
 

@@ -43,7 +43,8 @@ arranged horizontally and there is no mixing of flex and block display modes. */
     /* border: 1px solid red; */
 }
 
-/* horizontally stack section links, icon links, search and theme buttons with vertical alignment */
+/* horizontally stack section links, icon links, search and theme buttons with vertical alignment.
+applies to sidebar elements too */
 .navbar-nav li,
 .search-button,
 .theme-switch-button {
