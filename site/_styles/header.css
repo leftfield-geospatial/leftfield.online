@@ -4,6 +4,7 @@
 /* horizontally center the main header container */
 .bd-header {
     display: block;
+    border: 1px solid red;
 }
 
 .bd-header .bd-header__inner {
@@ -18,26 +19,40 @@
     margin-right: 1rem;
 }
 
-/* change header elements with `display: flex` to `display: inline-block` so they are arranged 
-horizontally. */
-.navbar-persistent--mobile,
-.bd-header label.sidebar-toggle,
-.navbar-brand,
+/* the basic approach for header element ayout is taken from the second last example in 
+../tests/header-test.html. vertical centering of elements *within* the main 
+.navbar-header-items container (center and end sections) is done by setting 
+`display: inline-block; vertical-alignment: middle;` on the (near) tip link elements; then, 
+`position: relative; top: 50%; transform: translateY(-50%).` is used on navbar-header-items 
+container itself.  there are other ways of doing it, but this seems the simplest and most 
+efficient. the remaining logo, sidebar toggle, and mobile search button are also vertically 
+centered using with the `position: relative; top: 50%; transform: translateY(-50%).` approach*/
+
+/* change header elements with `display: flex` in the theme to `display: inline-block` so they are 
+arranged horizontally and there is no mixing of flex and block display modes. */
 .bd-header .navbar-header-items__start,
 .bd-header .navbar-header-items__center,
 .bd-header .navbar-header-items__end,
 .bd-header .navbar-nav,
 .bd-header .navbar-item,
-/* nav-item not set in theme but include it here to horizontally stack e.g. section or icon links */
-.bd-header .nav-item {
+.bd-header label.sidebar-toggle, 
+.navbar-brand,
+/* navbar-persistent--mobile not set in theme but included here to horizontally stack */
+.navbar-persistent--mobile {
     display: inline-block;
-    /* `vertical-align: auto` is default but mis-calculates element heights in some browsers,
-    so it is forced to middle here. */
-    vertical-align: middle;
-    outline: 1px solid red;
+    /* border: 1px solid red; */
 }
 
-/* repeat pydata-sphinx-theme rule(s) for turning off "mobile" res sidebar toggle & search button
+/* horizontally stack section links, icon links, search and theme buttons with vertical alignment */
+.navbar-nav li,
+.search-button,
+.theme-switch-button {
+    display: inline-block;
+    vertical-align: middle;
+    border: 1px solid blue;
+}
+
+/* repeat pydata-sphinx-theme rule(s) for turning off sidebar toggle & mobile search button
 (necessary due to its inclusion in the display: inline-block list above) */
 @media(min-width:960px) {
     label.sidebar-toggle.primary-toggle {
@@ -49,7 +64,7 @@ horizontally. */
     }
 }
 
-/* right align section etc link container & "mobile" res search button */
+/* right align section & icon link etc container & mobile search button */
 .bd-header .navbar-header-items,
 .navbar-persistent--mobile {
     float: right;
@@ -60,23 +75,23 @@ horizontally. */
     float: left;
 }
 
-/* float the .navbar-header-items container so it scales to its floated contents */
-/* (unnecessary - heights are set below) */
-/* .bd-header .bd-header__inner {
-    float: left;
-} */
-
-/* pydata-sphinx-theme sets heights in navbar-item & navbar-brand with --pst-header-height
-custom varable. they are re-set here for browsers without custom var support.
-in addition, the heights on parents of centered elements below must also be set, so
-bd-header__inner is included in the list.*/
+/* pydata-sphinx-theme sets heights of navbar-item & navbar-brand with --pst-header-height
+custom varable. navbar-brand is re-set here for browsers without custom var support.  navbar-item
+is handled separately below.  the height on bd-header__inner must also be set as it is the parent 
+of all the vertically `translateY` centered elements below.*/
 .bd-header .bd-header__inner,
-.bd-header .navbar-item,
 .navbar-brand {
     height: 5.6rem;
     height: var(--pst-header-height);
     max-height: 5.6rem;
     max-height: var(--pst-header-height);
+}
+
+/* leave navbar-item to scale to its contents so that it does not inerfere with centering of parent 
+navbar-header-items below*/
+.bd-header .navbar-item {
+    /* TODO: reset to --pst-header-height if flex supported */
+    height: auto;
 }
 
 /* limit logo height for older safari and ie browsers - adapted from numpy docs  */
@@ -86,22 +101,17 @@ bd-header__inner is included in the list.*/
     width: auto;
 }
 
-/* TODO: why don't we see the search button in old browsers? Also, does it work where we do see it? */
-/* vertically center the logo, section and icon links, and "mobile" res sidebar toggle and search button */
+/* vertically center main rhs container etc.  parent elements must have a fixed height */
+.bd-header .navbar-header-items,
 .navbar-persistent--mobile,
-.bd-header label.sidebar-toggle,
-.navbar-brand img,
-/* section and icon links */
-.bd-header .navbar-item>.navbar-nav,
-/* navbar search button */
-.bd-header .navbar-item>button {
+.bd-header label.sidebar-toggle {
     position: relative;
     top: 50%;
     -moz-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
-    outline: 1px solid green;
+    border: 1px solid green; 
 }
 
 /* re-set header elements to their default theme settings if flex is adequately supported */
@@ -116,20 +126,25 @@ bd-header__inner is included in the list.*/
         margin-right: unset;
     }
 
-    .navbar-persistent--mobile,
-    .bd-header label.sidebar-toggle,
-    .navbar-brand,
     .bd-header .navbar-header-items__start,
     .bd-header .navbar-header-items__center,
     .bd-header .navbar-header-items__end,
     .bd-header .navbar-nav,
     .bd-header .navbar-item,
-    /* nav-item not set in theme but include it here to horizontally stack e.g. section or icon links */
-    .bd-header .nav-item {
+    .bd-header label.sidebar-toggle, 
+    .navbar-brand,
+    /* navbar-persistent--mobile not set in theme but included here to horizontally stack */
+    .navbar-persistent--mobile {
         display: flex;
-        float: unset;
+        /* border: 1px solid red; */
+    }
+    
+    .navbar-nav li,
+    .search-button,
+    .theme-switch-button {
+        display: flex;
         vertical-align: unset;
-        outline: 1px dashed red;
+        border: 1px dashed blue;
     }
 
     /* repeat pydata-sphinx-theme rule(s) for turning off "mobile" res sidebar toggle & search button
@@ -146,20 +161,21 @@ bd-header__inner is included in the list.*/
 
     /* `float: *` settings are ignored in `display: flex` so no need to unset here */
 
+    /* reset to navbar-item height */
+    .bd-header .navbar-item {
+        height: var(--pst-header-height);
+    }
+
+    .bd-header .navbar-header-items,
     .navbar-persistent--mobile,
-    .bd-header label.sidebar-toggle,
-    .navbar-brand img,
-    /* section and icon links */
-    .bd-header .navbar-item>.navbar-nav,
-    /* search button */
-    .bd-header .navbar-item>button {
+    .bd-header label.sidebar-toggle {
         position: unset;
         top: unset;
         -moz-transform: unset;
         -ms-transform: unset;
         -webkit-transform: unset;
         transform: unset;
-        outline: 1px dashed green;
+        border: 1px dashed green;
     }
 }
 
