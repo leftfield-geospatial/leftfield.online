@@ -159,7 +159,7 @@
 
 
     <style>
-        .float-container {
+        .block-container {
             /* justify-content: center; */
             background-color: lightblue;
             display: block;
@@ -170,12 +170,16 @@
             top: 0;
             width: 80%;
             height: 5.6rem;
+            max-height: 5.6rem;
             /* float: left; */
             /* z-index: 1030 */
         }
 
-        .float-elem-middle {
-            /* inline-block also works without float */
+        .iblock-elem {
+            display: inline-block;
+        }
+
+        .iblock-elem-middle {
             display: inline-block;
             vertical-align: middle;
             /* display: block;
@@ -183,11 +187,10 @@
             /* position: relative; */
             /* padding: 0;
             margin: 0; */
-            margin-right: 0.5rem;
+            /* margin-right: 0.5rem; */
         }
 
-        .float-elem-top {
-            /* inline-block also works without float */
+        .iblock-elem-top {
             display: inline-block;
             vertical-align: top;
             /* display: block;
@@ -195,10 +198,10 @@
             /* position: relative; */
             /* padding: 0;
             margin: 0; */
-            margin-right: 0.5rem;
+            /* margin-right: 0.5rem; */
         }
 
-        .float-container-right {
+        .block-float-right {
             display: block;
             float: right;
             /* height: 5.6rem; */
@@ -206,11 +209,12 @@
             /* position: absolute; */
             /* right: 0; */
         }
-        .float-container-right-height {
-            display: block;
-            float: right;
+
+        .height {
             height: 5.6rem;
+            max-height: 5.6rem;
         }
+
         div p {
             outline: 1px dashed blue;
         }
@@ -218,25 +222,25 @@
     <div>
         <h1>Left-right vertical-alignment: middle inline-block elements, with float and container centering</h1>
     </div>
-    <div class="float-container outline-blue">
-        <div class="float-elem-middle transform-center-rel outline-red">
+    <div class="block-container outline-blue">
+        <div class="iblock-elem-middle transform-center-rel outline-red">
             <p>Left</p>
         </div>
-        <div class="float-container-right transform-center-rel outline-red">
-            <div class="float-elem-middle outline-green">
+        <div class="block-float-right transform-center-rel outline-red">
+            <div class="iblock-elem-middle outline-green">
                 <p>Right1</p>
             </div>
-            <div class="float-elem-middle outline-green" style="font-size: 1.5rem">
+            <div class="iblock-elem-middle outline-green" style="font-size: 1.5rem">
                 <p>Right2</p>
             </div>
-            <div class="float-container-right outline-green">
-                <div class="float-elem-middle  outline-green">
+            <div class="iblock-elem outline-green">
+                <div class="iblock-elem-middle outline-green">
                     <p>Right3a</p>
                 </div>
-                <div class="float-elem-middle outline-green" style="font-size: 1.5rem">
+                <div class="iblock-elem-middle outline-green" style="font-size: 1.5rem">
                     <p>Right3b</p>
                 </div>
-                <div class="float-elem-middle outline-green">
+                <div class="iblock-elem-middle outline-green">
                     <p>Right3c</p>
                 </div>
             </div>
@@ -246,25 +250,26 @@
     <div>
         <h1>Left-right vertical-alignment: top inline-block elements, with float and element centering</h1>
     </div>
-    <div class="float-container outline-blue">
-        <div class="float-elem-top transform-center-rel outline-red">
+    <div class="block-container outline-blue">
+        <div class="iblock-elem-top transform-center-rel outline-red">
             <p>Left</p>
         </div>
-        <div class="float-container-right-height outline-red">
-            <div class="float-elem-top transform-center-rel outline-green">
+        <div class="block-float-right height outline-red">
+            <div class="iblock-elem-top transform-center-rel outline-green">
                 <p>Right1</p>
             </div>
-            <div class="float-elem-top transform-center-rel outline-green" style="font-size: 1.5rem">
+            <div class="iblock-elem-top transform-center-rel outline-green" style="font-size: 1.5rem">
                 <p>Right2</p>
             </div>
-            <div class="float-container-right-height outline-green">
-                <div class="float-elem-top transform-center-rel  outline-green">
+            <!-- contained container must be inline block, not float block -->
+            <div class="iblock height outline-green">
+                <div class="iblock-elem-top transform-center-rel  outline-green">
                     <p>Right3a</p>
                 </div>
-                <div class="float-elem-top transform-center-rel outline-green" style="font-size: 1.5rem">
+                <div class="iblock-elem-top transform-center-rel outline-green" style="font-size: 1.5rem">
                     <p>Right3b</p>
                 </div>
-                <div class="float-elem-top transform-center-rel outline-green">
+                <div class="iblock-elem-top transform-center-rel outline-green">
                     <p>Right3c</p>
                 </div>
             </div>
