@@ -6,14 +6,14 @@
         body {
             min-height: 100vh;
         }
-        .outline-blue {
-            outline: 1px solid blue;
+        .border-blue {
+            border: 1px solid blue;
         }
-        .outline-red {
-            outline: 1px dashed red;
+        .border-red {
+            border: 1px dashed red;
         }
-        .outline-green {
-            outline: 1px dotted green;
+        .border-green {
+            border: 1px dotted green;
         }
 
         .margin-center {
@@ -44,23 +44,23 @@
     <div>
         <h1>Centering</h1>
     </div>
-    <div class="outline-blue">
-        <h3 style="text-align: center;" class="outline-red">(x) text-align: center;</h3>
+    <div class="border-blue">
+        <h3 style="text-align: center;" class="border-red">(x) text-align: center;</h3>
     </div>
-    <div class="outline-blue">
-        <h3 class="margin-center outline-red">(x) margin: auto;</h3>
+    <div class="border-blue">
+        <h3 class="margin-center border-red">(x) margin: auto;</h3>
     </div>
-    <div style="height: 100px; display: flex;" class="outline-blue">
-        <h3 class="margin-center outline-red">(x,y) display: flex (container); margin: auto auto; (element)</h3>
+    <div style="height: 100px; display: flex;" class="border-blue">
+        <h3 class="margin-center border-red">(x,y) display: flex (container); margin: auto auto; (element)</h3>
     </div>
-    <div style="height: 100px; display: flex; align-items: center; justify-content: center;" class="outline-blue">
-        <h3 class="outline-red">(x,y) display: flex; align-items: center; justify-content: center;</h3>
+    <div style="height: 100px; display: flex; align-items: center; justify-content: center;" class="border-blue">
+        <h3 class="border-red">(x,y) display: flex; align-items: center; justify-content: center;</h3>
     </div>
-    <div style="height: 100px; position: relative;" class="outline-blue">
-        <h3 class="transform-center-abs outline-red">(x,y) position: absolute; transform: translate</h3>
+    <div style="height: 100px; position: relative;" class="border-blue">
+        <h3 class="transform-center-abs border-red">(x,y) position: absolute; transform: translate</h3>
     </div>
-    <div style="height: 100px; width: 100wv;" class="outline-blue">
-        <h3 class="transform-center-rel outline-red">(y) position: relative; transform: translateY</h3>
+    <div style="height: 100px; width: 100wv;" class="border-blue">
+        <h3 class="transform-center-rel border-red">(y) position: relative; transform: translateY</h3>
     </div>
 
 
@@ -89,26 +89,26 @@
     <div>
         <h1>Right alignment</h1>
     </div>
-    <div class="outline-blue">
-        <h3 style="text-align: right;" class="outline-red">(x) text-align: right;</h3>
+    <div class="border-blue">
+        <h3 style="text-align: right;" class="border-red">(x) text-align: right;</h3>
     </div>
-    <div class="outline-blue">
-        <h3 class="margin-right outline-red">(x rhs) margin-left: auto;</h3>
+    <div class="border-blue">
+        <h3 class="margin-right border-red">(x rhs) margin-left: auto;</h3>
     </div>
-    <div style="height: 100px; display: flex;" class="outline-blue">
-        <h3 class="margin-right outline-red">(x,y) display: flex (container); margin-left: auto; (element)</h3>
+    <div style="height: 100px; display: flex;" class="border-blue">
+        <h3 class="margin-right border-red">(x,y) display: flex (container); margin-left: auto; (element)</h3>
     </div>
-    <div style="height: 100px; display: flex; align-items: center; justify-content: right;" class="outline-blue">
-        <h3 class="outline-red">(x,y) display: flex; align-items: center; justify-content: center;</h3>
+    <div style="height: 100px; display: flex; align-items: center; justify-content: right;" class="border-blue">
+        <h3 class="border-red">(x,y) display: flex; align-items: center; justify-content: center;</h3>
     </div>
-    <div style="height: 100px; position: relative;" class="outline-blue">
-        <h3 class="position-rhs-abs outline-red">(x,y) position: absolute; right: 0;</h3>
+    <div style="height: 100px; position: relative;" class="border-blue">
+        <h3 class="position-rhs-abs border-red">(x,y) position: absolute; right: 0;</h3>
     </div>
-    <div style="height: 100px; width: 100wv;" class="outline-blue">
-        <h3 class="position-rhs-rel outline-red">(y) position: relative; right: 0;</h3>
+    <div style="height: 100px; width: 100wv;" class="border-blue">
+        <h3 class="position-rhs-rel border-red">(y) position: relative; right: 0;</h3>
     </div>
-    <div style="height: 100px; width: 100wv;" class="outline-blue">
-        <h3 class="float-rhs outline-red">(y) float: right;</h3>
+    <div style="height: 100px; width: 100wv;" class="border-blue">
+        <h3 class="float-rhs border-red">(y) float: right;</h3>
     </div>
 
 
@@ -143,15 +143,15 @@
     <div>
         <h1>Left-right inline-block elements with absolute positioning</h1>
     </div>
-    <div class="iblock-container outline-blue">
-        <div class="iblock transform-center-rel outline-red">
+    <div class="iblock-container border-blue">
+        <div class="iblock transform-center-rel border-red">
             <p>Left</p>
         </div>
-        <div class="iblock-container-right outline-red  transform-center-rel">
-            <div class="iblock outline-green">
+        <div class="iblock-container-right border-red  transform-center-rel">
+            <div class="iblock border-green">
                 <p>Right1</p>
             </div>
-            <div class="iblock outline-green">
+            <div class="iblock border-green">
                 <p>Right2</p>
             </div>
         </div>
@@ -216,31 +216,31 @@
         }
 
         div p {
-            outline: 1px dashed blue;
+            border: 1px dashed blue;
         }
     </style>
     <div>
         <h1>Left-right vertical-alignment: middle inline-block elements, with float and container centering</h1>
     </div>
-    <div class="block-container outline-blue">
-        <div class="iblock-elem-middle transform-center-rel outline-red">
+    <div class="block-container border-blue">
+        <div class="iblock-elem-middle transform-center-rel border-red">
             <p>Left</p>
         </div>
-        <div class="block-float-right transform-center-rel outline-red">
-            <div class="iblock-elem-middle outline-green">
+        <div class="block-float-right transform-center-rel border-red">
+            <div class="iblock-elem-middle border-green">
                 <p>Right1</p>
             </div>
-            <div class="iblock-elem-middle outline-green" style="font-size: 1.5rem">
+            <div class="iblock-elem-middle border-green" style="font-size: 1.5rem">
                 <p>Right2</p>
             </div>
-            <div class="iblock-elem outline-green">
-                <div class="iblock-elem-middle outline-green">
+            <div class="iblock-elem border-green">
+                <div class="iblock-elem-middle border-green">
                     <p>Right3a</p>
                 </div>
-                <div class="iblock-elem-middle outline-green" style="font-size: 1.5rem">
+                <div class="iblock-elem-middle border-green" style="font-size: 1.5rem">
                     <p>Right3b</p>
                 </div>
-                <div class="iblock-elem-middle outline-green">
+                <div class="iblock-elem-middle border-green">
                     <p>Right3c</p>
                 </div>
             </div>
@@ -250,26 +250,26 @@
     <div>
         <h1>Left-right vertical-alignment: top inline-block elements, with float and element centering</h1>
     </div>
-    <div class="block-container outline-blue">
-        <div class="iblock-elem-top transform-center-rel outline-red">
+    <div class="block-container border-blue">
+        <div class="iblock-elem-top transform-center-rel border-red">
             <p>Left</p>
         </div>
-        <div class="block-float-right height outline-red">
-            <div class="iblock-elem-top transform-center-rel outline-green">
+        <div class="block-float-right height border-red">
+            <div class="iblock-elem-top transform-center-rel border-green">
                 <p>Right1</p>
             </div>
-            <div class="iblock-elem-top transform-center-rel outline-green" style="font-size: 1.5rem">
+            <div class="iblock-elem-top transform-center-rel border-green" style="font-size: 1.5rem">
                 <p>Right2</p>
             </div>
             <!-- contained container must be inline block, not float block -->
-            <div class="iblock height outline-green">
-                <div class="iblock-elem-top transform-center-rel  outline-green">
+            <div class="iblock height border-green">
+                <div class="iblock-elem-top transform-center-rel  border-green">
                     <p>Right3a</p>
                 </div>
-                <div class="iblock-elem-top transform-center-rel outline-green" style="font-size: 1.5rem">
+                <div class="iblock-elem-top transform-center-rel border-green" style="font-size: 1.5rem">
                     <p>Right3b</p>
                 </div>
-                <div class="iblock-elem-top transform-center-rel outline-green">
+                <div class="iblock-elem-top transform-center-rel border-green">
                     <p>Right3c</p>
                 </div>
             </div>
