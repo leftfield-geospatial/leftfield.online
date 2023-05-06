@@ -20,6 +20,7 @@ html[data-theme=dark] {
     --pst-color-text-muted: #a6a6a6;
     --pst-color-link-hover: #f09090;
     --pst-color-border: silver;
+    --pst-color-target: #646464;
 }
 
 :root,
