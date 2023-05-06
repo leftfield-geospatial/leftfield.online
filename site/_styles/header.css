@@ -1,5 +1,19 @@
 /* Header
 -------------------------------------------------------------------------------------------------*/
+/* sticky header for browsers without `position: sticky` support. adapted from 
+https://www.w3schools.com/howto/howto_js_sticky_header.asp.  scroll event handler set in 
+browser-support.js. */
+
+.sticky-header {
+    position: fixed;
+    top: 0;
+    width: 100%    
+}
+
+.sticky-header + .bd-container {
+    padding-top: 5.6rem;
+    padding-top: var(--pst-header-height);
+}
 
 /* horizontally center the main header container */
 .bd-header {

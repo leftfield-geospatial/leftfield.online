@@ -86,8 +86,18 @@ function createScript(scriptFile, scriptLoaded) {
     return script;
 }
 
-function searchSupport(urlRoot) {
+function getUrlRoot() {
+    if (DOCUMENTATION_OPTIONS && ("URL_ROOT" in DOCUMENTATION_OPTIONS)) {
+        return DOCUMENTATION_OPTIONS.URL_ROOT;
+    } else {
+        return document.getElementById("documentation_options").getAttribute('data-url_root');
+    }
+}
+
+function searchSupport() {
     // Disable search buttons if search backend is not supported.
+
+    var urlRoot = getUrlRoot();
 
     // dictionary of scripts that need to successfully load for search to be supported
     var searchDict = {
@@ -145,9 +155,10 @@ function searchSupport(urlRoot) {
     }
 }
 
-function themeSupport(urlRoot) {
+function themeSupport() {
     // Disable theme and search buttons if theme and/or search form is not supported.
 
+    var urlRoot = getUrlRoot();
     var themeFile = "_static/scripts/pydata-sphinx-theme.js";
     var enabled = true;
 
@@ -176,6 +187,42 @@ function themeSupport(urlRoot) {
     window.addEventListener("error", winError);
     var script = createScript(urlRoot + themeFile, scriptLoaded);
     document.body.appendChild(script);
+}
+
+function stickyHeader() {
+    // Make the header sticky if `position: sticky` is not supported.
+    // Adapted from: https://www.w3schools.com/howto/howto_js_sticky_header.asp.
+
+    // test if `position: sticky` is supported
+    var elem = document.createElement('div');
+    elem.style.position = "sticky";
+
+    // return if supported
+    if (elem.style.position == "sticky"){ 
+        console.log("`position: sticky` supported: " + elem.style.position);
+        return;
+    }
+
+    // get the header & offset
+    var header = document.getElementsByClassName("bd-header");
+    if (header.length == 0) return;
+    header = header[0];
+    var headerOffset = null;
+    // add the sticky class to the header when you reach its scroll position. 
+    // remove "sticky" when you leave the scroll position.
+    function scrollHeader () {
+        // header offset is affected by webp announcement which may not have been added yet,
+        // so leave getting its value until a scroll event.
+        if (!headerOffset) headerOffset = header.offsetTop;
+
+        if (window.pageYOffset > headerOffset) {
+            header.classList.add('sticky-header');
+        } else {
+            header.classList.remove('sticky-header');
+        }
+    }
+    window.onscroll = scrollHeader;
+    console.log("`position: sticky` not supported");
 }
 
 // function logEventHandlers() {
@@ -216,20 +263,18 @@ function flexGapSupport() {
     flex.parentNode.removeChild(flex);
   
     return isSupported;
-  }
-  
-
-function browserSupport() {
-    var urlRoot = document.getElementById("documentation_options").getAttribute('data-url_root');
-    webpSupport();
-    searchSupport(urlRoot);
-    themeSupport(urlRoot);
 }
 
-
-if (document.readyState !== "loading") {
-    browserSupport();
-} else {
-    document.addEventListener("DOMContentLoaded", browserSupport);
+function _documentReady(callback) {
+    if (document.readyState !== "loading") {
+        callback();
+    } else {
+        document.addEventListener("DOMContentLoaded", callback);
+    }
 }
 
+// run each support fn in parallel in it's own handler
+_documentReady(webpSupport);
+_documentReady(searchSupport);
+_documentReady(themeSupport);
+_documentReady(stickyHeader);

@@ -13,6 +13,7 @@ html[data-theme=light] {
     --pst-color-text-muted: #646464;
     --pst-color-link-hover: #f08080;
     --pst-color-border: #c9c9c9;
+    --pst-color-on-background: #fff;
 }
 
 html[data-theme=dark] {
@@ -21,6 +22,7 @@ html[data-theme=dark] {
     --pst-color-link-hover: #f09090;
     --pst-color-border: silver;
     --pst-color-target: #646464;
+    --pst-color-on-background: #1e1e1e;
 }
 
 :root,
@@ -151,4 +153,14 @@ html[data-theme=dark] .bd-sidebar {
 .bd-header-announcement:after {
     background-color: #459db9;
     background-color: var(--pst-color-info);
+}
+
+/* header and footer background. */
+.bd-header {
+    background: #fff !important;
+    background: var(--pst-color-on-background) !important;
+}
+html[data-theme=dark] .bd-header {
+    background: #1e1e1e !important;
+    background: var(--pst-color-on-background) !important;
 }
