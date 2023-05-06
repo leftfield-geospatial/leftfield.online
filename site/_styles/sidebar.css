@@ -1,11 +1,26 @@
 /* Sidebar
 -------------------------------------------------------------------------------------------------*/
 
-/* .bd-sidebar-primary {
-    top: 5.6rem;
-    top: var(--pst-header-height);
-} */
+/* size the overlay for browsers without vh & vw support. clicking on overlay collapses the 
+sidebar, so without this the sidebar gets stuck. */
+input#__primary:checked + label.overlay.overlay-primary,
+input#__secondary:checked + label.overlay.overlay-secondary {
+    height: 100%;
+    height: 100vh;
+    width: 100%;
+    width: 100vw;
+}
 
+/* size the sidebar for browsers without vh support*/
+@media (max-width: 959.98px) {
+    .bd-sidebar-primary {
+      height: 100%;
+      height: 100vh;
+      max-height: 100%;
+      max-height: 100vh;
+    }
+}
+  
 /* configre theme `display: flex; flex-direction: column` (i.e. vertically stacked) elements as 
 `display: block` */
 .bd-sidebar-primary,
