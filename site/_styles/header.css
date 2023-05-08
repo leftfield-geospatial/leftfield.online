@@ -1,8 +1,8 @@
 /* Header
 -------------------------------------------------------------------------------------------------*/
 /* sticky header for browsers without `position: sticky` support. adapted from 
-https://www.w3schools.com/howto/howto_js_sticky_header.asp.  scroll event handler set in 
-browser-support.js. */
+https://www.w3schools.com/howto/howto_js_sticky_header.asp.  scroll event handler that applies 
+.sticky-header class is in browser-support.js. */
 
 .sticky-header {
     position: fixed;
@@ -133,6 +133,7 @@ navbar-header-items below*/
 `flex-basis: min-content` is not required, but a work around test for `column-gap: 1rem`, which is
 not possible to test for in it's flex mode directly - see https://ishadeed.com/article/flexbox-gap/
 */
+/* TODO: can we lose the work around? */
 @supports(display: flex) and (align-items: center) and (justify-content: end) and (flex-basis: min-content) {
     .bd-header {
         display: flex;

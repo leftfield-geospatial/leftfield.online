@@ -1,5 +1,18 @@
 /* Footer
 -------------------------------------------------------------------------------------------------*/
+
+/* note that a sticky footer is implemented in browser-support.js for browsers without 
+`flex-grow: 1` support.  it is `flex-grow: 1` on the main content that pushes the footer to the 
+bottom of the view port. */
+/* from https://css-tricks.com/a-clever-sticky-footer-technique/ */
+/* `position: sticky` gets browser support after `flex-grow: 1`, so we don't use this as an option,
+but rather toggle between the `flex-grow: 1` on the main content and the javascript sticky footer */
+/* .bd-footer {
+    position: sticky;
+    top: 100vh;
+    width: 100%    
+} */
+
 /* horizontally center the main footer container */
 .bd-footer,
 .bd-footer .bd-footer__inner {
@@ -24,7 +37,6 @@ horizontally. */
 /* re-set footer elements to their default theme settings if flex is adequately supported */
 @supports(display: flex) and (flex-grow: 1) and (flex-direction: column) and (justify-content: center) {
     /* and (text-align: end)*/
-
     .bd-footer,
     .bd-footer .bd-footer__inner,
     .bd-footer .footer-items__start,
