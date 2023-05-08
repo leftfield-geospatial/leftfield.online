@@ -36,7 +36,7 @@ function webpSupport() {
     // not supported.
     var webpSupported = true;
 
-    var webp_callback = function (feature, isSupported) {
+    var webpCallback = function (feature, isSupported) {
 
         if (!isSupported && webpSupported != false) {
             webpSupported = false;
@@ -45,7 +45,7 @@ function webpSupport() {
     }
     var features = ["lossy", "lossless", "alpha"];
     features.forEach(function (feature, index) {
-        webpFeatureSupport(feature, webp_callback);
+        webpFeatureSupport(feature, webpCallback);
     });
 }
 
@@ -210,19 +210,64 @@ function stickyHeader() {
     var headerOffset = null;
     // add the sticky class to the header when you reach its scroll position. 
     // remove "sticky" when you leave the scroll position.
-    function scrollHeader () {
+    function onWindowScroll () {
         // header offset is affected by webp announcement which may not have been added yet,
         // so leave getting its value until a scroll event.
         if (!headerOffset) headerOffset = header.offsetTop;
 
         if (window.pageYOffset > headerOffset) {
-            header.classList.add('sticky-header');
+            header.classList.add("sticky-header");
         } else {
-            header.classList.remove('sticky-header');
+            header.classList.remove("sticky-header");
         }
     }
-    window.onscroll = scrollHeader;
+    window.onscroll = onWindowScroll;
     console.log("`position: sticky` not supported");
+}
+
+function stickyFooter() {
+    // Make the footer sticky if the main container is not in flex mode with `flex-grow: 1`
+    // (Note that `flex-grow: 1`is what pushes the footer to the bottom of the window)
+
+    // return if main container is in flex mode with `flex-grow: 1` style
+    var content = document.getElementsByClassName("bd-container");
+    if (content.length > 0) {
+        var mainStyle = getComputedStyle(content[0]);
+        if (mainStyle.display == "flex" && "flexGrow" in mainStyle && mainStyle.flexGrow == 1) {
+            console.log("Main content has `flex-grow: 1` style");
+            return;
+        }
+    } else return;
+     
+    // get the footer element
+    var footer = document.getElementsByClassName("bd-footer");
+    if (footer.length == 0) return;
+    footer = footer[0];
+    content = content[0];
+
+    function onWindowResize () {
+        // y co-ord of bottom of main content
+        var contentBottom = content.offsetTop + content.offsetHeight;
+        // y co-ord of top of footer if it was positioned at bottom of view port
+        var footerTop = window.innerHeight - footer.offsetHeight;
+        
+        console.log("contentBottom: " + String(contentBottom));
+        console.log("footerTop: " + String(footerTop));
+
+        // if footer fits in view port, fix it to the bottom, else leave it in normal flow, 
+        // positioned after the main content. 
+        if (footer.style.position != "fixed" && contentBottom < footerTop) {
+            footer.style.position = "fixed";
+            footer.style.bottom = 0;
+            fixed = true;
+        } else if (footer.style.position != "static" && contentBottom >= footerTop) {
+            footer.style.position = "static";
+            fixed = false;
+        }
+    }
+    onWindowResize();   // run it once before any events to initialise
+    window.onresize = onWindowResize;
+    console.log("Main content has no `flex-grow: 1` style");
 }
 
 // function logEventHandlers() {
@@ -278,3 +323,4 @@ _documentReady(webpSupport);
 _documentReady(searchSupport);
 _documentReady(themeSupport);
 _documentReady(stickyHeader);
+_documentReady(stickyFooter);
