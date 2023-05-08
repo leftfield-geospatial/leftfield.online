@@ -1,3 +1,16 @@
+function dispatchEvent(type) {
+    // Cross browser event dispatch, adapted from 
+    // https://stackoverflow.com/questions/26596123/internet-explorer-9-10-11-event-constructor-doesnt-work
+    var event;
+    if (typeof(Event) === 'function') {
+        event = new Event(type);
+    } else {
+        event = document.createEvent('Event');
+        event.initEvent(type, true, true);
+    }
+    document.dispatchEvent(event);
+}
+
 function webpFeatureSupport(feature, callback) {
     // Test webp feature.
     //   'feature' can be one of 'lossy', 'lossless', 'alpha' or 'animation'.
@@ -41,6 +54,9 @@ function webpSupport() {
         if (!isSupported && webpSupported != false) {
             webpSupported = false;
             document.body.insertBefore(createAnnouncement(), document.body.firstChild);
+            // trigger a resize event in case there is a sticky footer that needs to
+            // be repositioned - see stickyFoter()
+            dispatchEvent("resize");
         }
     }
     var features = ["lossy", "lossless", "alpha"];
