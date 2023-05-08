@@ -81,6 +81,7 @@ must come after related colour style(s) which turn borders on. */
     display: block;
 }
 
+/* horizontally center the main content */
 .bd-container .bd-container__inner,
 .bd-main .bd-content .bd-article-container {
     display: block;
@@ -88,7 +89,7 @@ must come after related colour style(s) which turn borders on. */
     margin-right: auto;
 }
 
-@supports(display: flex) and (justify-content: center) and (flex-direction: column) and (justify-content: start) {
+@supports(display: flex) and (justify-content: center) and (flex-direction: column) and (flex-grow: 1) {
     .bd-container,
     .bd-main .bd-content {
         display: flex;
