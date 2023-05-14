@@ -14,6 +14,7 @@ html[data-theme=light] {
     --pst-color-link-hover: #f08080;
     --pst-color-border: #c9c9c9;
     --pst-color-on-background: #fff;
+    --pst-color-shadow: #d8d8d8;
 }
 
 html[data-theme=dark] {
@@ -23,6 +24,7 @@ html[data-theme=dark] {
     --pst-color-border: silver;
     --pst-color-target: #646464;
     --pst-color-on-background: #1e1e1e;
+    --pst-color-shadow: #212121;
 }
 
 :root,
@@ -155,12 +157,25 @@ html[data-theme=dark] .bd-sidebar {
     background-color: var(--pst-color-info);
 }
 
-/* header and footer background. */
+/* header and footer background & border */
 .bd-header {
     background: #fff !important;
     background: var(--pst-color-on-background) !important;
+    box-shadow: 0 0.125rem 0.25rem 0 #d8d8d8;
+    box-shadow: 0 0.125rem 0.25rem 0 var(--pst-color-shadow);
 }
 html[data-theme=dark] .bd-header {
     background: #1e1e1e !important;
     background: var(--pst-color-on-background) !important;
+    box-shadow: 0 0.125rem 0.25rem 0 #212121;
+    box-shadow: 0 0.125rem 0.25rem 0 var(--pst-color-shadow);
+}
+
+.bd-footer {
+    border-top: 1px solid #c9c9c9;
+    border-top: 1px solid var(--pst-color-border);
+}
+html[data-theme=dark] .bd-footer {
+    border-top: 1px solid silver;
+    border-top: 1px solid var(--pst-color-border);
 }
