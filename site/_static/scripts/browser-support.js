@@ -1,16 +1,3 @@
-function dispatchEvent(type) {
-    // Cross browser event dispatch, adapted from 
-    // https://stackoverflow.com/questions/26596123/internet-explorer-9-10-11-event-constructor-doesnt-work
-    var event;
-    if (typeof(Event) === 'function') {
-        event = new Event(type);
-    } else {
-        event = document.createEvent('Event');
-        event.initEvent(type, true, true);
-    }
-    document.dispatchEvent(event);
-}
-
 function webpFeatureSupport(feature, callback) {
     // Test webp feature.
     //   'feature' can be one of 'lossy', 'lossless', 'alpha' or 'animation'.
@@ -44,6 +31,19 @@ function createAnnouncement(innerHtml) {
     return ann;
 }
 
+function dispatchEvent(type) {
+    // Cross browser event dispatch, adapted from 
+    // https://stackoverflow.com/questions/26596123/internet-explorer-9-10-11-event-constructor-doesnt-work
+    var event;
+    if (typeof(Event) === 'function') {
+        event = new Event(type);
+    } else {
+        event = document.createEvent('Event');
+        event.initEvent(type, true, true);
+    }
+    document.dispatchEvent(event);
+}
+
 function webpSupport() {
     // General test for webp support over required features.  Adds an announcement if any feature 
     // not supported.
@@ -57,6 +57,7 @@ function webpSupport() {
             // trigger a resize event in case there is a sticky footer that needs to
             // be repositioned - see stickyFoter()
             dispatchEvent("resize");
+            // window.resizeBy(0, 0);
         }
     }
     var features = ["lossy", "lossless", "alpha"];
@@ -69,8 +70,8 @@ function disableSearch() {
     // Disable search buttons
     var searchElems = document.getElementsByClassName("search-button");
     for (var i = 0; i < searchElems.length; i++) {
-        searchElems[i].style.backgroundColor = "red";
-        // searchElems[i].style.display = "none";
+        // searchElems[i].style.backgroundColor = "red";
+        searchElems[i].style.display = "none";
     }
 }
 
@@ -78,8 +79,8 @@ function disableTheme() {
     // Disable theme buttons
     var themeElems = document.getElementsByClassName("theme-switch-button");
     for (var i = 0; i < themeElems.length; i++) {
-        themeElems[i].style.backgroundColor = "red";
-        // searchElems[i].style.display = "none";
+        // themeElems[i].style.backgroundColor = "red";
+        searchElems[i].style.display = "none";
     }
 }
 
@@ -224,6 +225,7 @@ function stickyHeader() {
     if (header.length == 0) return;
     header = header[0];
     var headerOffset = null;
+
     // add the sticky class to the header when you reach its scroll position. 
     // remove "sticky" when you leave the scroll position.
     function onWindowScroll () {
@@ -243,7 +245,7 @@ function stickyHeader() {
 
 function stickyFooter() {
     // Make the footer sticky if the main container is not in flex mode with `flex-grow: 1`
-    // (Note that `flex-grow: 1`is what pushes the footer to the bottom of the window)
+    // (`flex-grow: 1`is what pushes the footer to the bottom of the window).
 
     // return if main container is in flex mode with `flex-grow: 1` style
     var content = document.getElementsByClassName("bd-container");
@@ -266,7 +268,7 @@ function stickyFooter() {
         var contentBottom = content.offsetTop + content.offsetHeight;
         // y co-ord of top of footer if it was positioned at bottom of view port
         var footerTop = window.innerHeight - footer.offsetHeight;
-        
+        // var footerTop = document.documentElement.clientHeight - footer.offsetHeight;
         console.log("contentBottom: " + String(contentBottom));
         console.log("footerTop: " + String(footerTop));
 
@@ -275,10 +277,8 @@ function stickyFooter() {
         if (footer.style.position != "fixed" && contentBottom < footerTop) {
             footer.style.position = "fixed";
             footer.style.bottom = 0;
-            fixed = true;
         } else if (footer.style.position != "static" && contentBottom >= footerTop) {
             footer.style.position = "static";
-            fixed = false;
         }
     }
     onWindowResize();   // run it once before any events to initialise
@@ -327,7 +327,7 @@ function flexGapSupport() {
 }
 
 function _documentReady(callback) {
-    if (document.readyState !== "loading") {
+    if (document.readyState == "complete") {
         callback();
     } else {
         document.addEventListener("DOMContentLoaded", callback);
