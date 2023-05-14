@@ -33,7 +33,7 @@ input#__secondary:checked + label.overlay.overlay-secondary {
 .bd-sidebar-primary .sidebar-header-items .sidebar-header-items__center .navbar-nav li,
 .bd-sidebar-primary .sidebar-header-items .sidebar-header-items__end {
     display: block;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 /* stack end theme button & icon link elements horizontally */
@@ -57,7 +57,7 @@ not possible to test for in it's flex mode directly - see https://ishadeed.com/a
     .bd-sidebar-primary .sidebar-header-items .sidebar-header-items__center .navbar-nav li,
     .bd-sidebar-primary .sidebar-header-items .sidebar-header-items__end {
         display: flex;
-        border: 1px dashed red;
+        /* border: 1px dashed red; */
     }
     
     /* stack horizontally */
@@ -65,7 +65,7 @@ not possible to test for in it's flex mode directly - see https://ishadeed.com/a
     .bd-sidebar-primary .sidebar-header-items .sidebar-header-items__end .navbar-icon-links {
         display: flex;
         vertical-align: unset;
-        border: 1px dashed green;
+        /* border: 1px dashed green; */
     }
 }
 
