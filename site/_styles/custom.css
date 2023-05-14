@@ -113,6 +113,9 @@ h2 {
 overflow the viewport width */
 .bd-header-announcement, 
 .bd-header__inner,
+.bd-container__inner,
+.bd-article-container,
+.bd-artile,
 .bd-footer__inner {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
