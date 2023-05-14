@@ -14,7 +14,7 @@
 **Portfolio**
 =============
 
-.. grid:: 1 1 2 2
+.. grid:: 1 2 2 2
     :gutter: 2
 
     .. grid-item-card::
@@ -27,6 +27,7 @@
         .. image:: ../_images/homonim-thumbnail.webp
             :align: center
             :class: dark-light
+            :width: 100 %
             :alt: Thumbnail
 
         An end-user and research tool for harmonisation and surface reflectance correction of remotely sensed imagery.
@@ -40,7 +41,7 @@
 
         .. image:: ../_images/geedim-thumbnail.webp
             :align: left
-            :width: 150
+            :width: 45 %
             :class: dark-light
             :alt: Thumbnail
 
@@ -55,7 +56,7 @@
 
         .. image:: ../_images/simple_ortho-thumbnail.webp
             :align: center
-            :height: 90
+            :width: 85 %
             :class: dark-light
             :alt: Thumbnail
 
@@ -71,7 +72,7 @@
         .. image:: ../_images/thicket_agc-thumbnail.webp
             :align: center
             :class: dark-light
-            :height: 90
+            :width: 80 %
             :alt: Thumbnail
 
         A machine learning method for mapping aboveground carbon in thicket, developed on data from a small site in the Baviaanskloof, South Africa.
@@ -85,7 +86,7 @@
 
         .. image:: ../_images/biome_wide_thicket_agc-thumbnail.webp
             :align: center
-            :height: 90
+            :width: 65 %
             :class: dark-light
             :alt: Thumbnail
 
