@@ -1,5 +1,13 @@
 /* Header
 -------------------------------------------------------------------------------------------------*/
+/* force firefox versions ~20-28 to use `border-box: border` to prevent header element padding 
+overlflowing the viewport width */
+.bd-header-announcement, .bd-header__inner {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 /* sticky header for browsers without `position: sticky` support. adapted from 
 https://www.w3schools.com/howto/howto_js_sticky_header.asp.  scroll event handler that applies 
 .sticky-header class is in browser-support.js. */
@@ -7,7 +15,7 @@ https://www.w3schools.com/howto/howto_js_sticky_header.asp.  scroll event handle
 .sticky-header {
     position: fixed;
     top: 0;
-    width: 100%    
+    /* width: 100%     */
 }
 
 .sticky-header + .bd-container {
@@ -18,7 +26,8 @@ https://www.w3schools.com/howto/howto_js_sticky_header.asp.  scroll event handle
 /* horizontally center the main header container */
 .bd-header {
     display: block;
-    border: 1px solid red;
+    /* width: 100%; */
+    /* border: 1px solid red; */
 }
 
 .bd-header .bd-header__inner {
@@ -64,7 +73,7 @@ applies to sidebar elements too */
 .theme-switch-button {
     display: inline-block;
     vertical-align: middle;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
 }
 
 /* repeat pydata-sphinx-theme rule(s) for turning off sidebar toggle & mobile search button
@@ -126,7 +135,7 @@ navbar-header-items below*/
     -ms-transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
-    border: 1px solid green; 
+    /* border: 1px solid green;  */
 }
 
 /* re-set header elements to their theme settings if flex is adequately supported.  
@@ -163,7 +172,7 @@ not possible to test for in it's flex mode directly - see https://ishadeed.com/a
     .theme-switch-button {
         display: flex;
         vertical-align: unset;
-        border: 1px dashed blue;
+        /* border: 1px dashed blue; */
     }
 
     /* repeat pydata-sphinx-theme rule(s) for turning off "mobile" res sidebar toggle & search button
@@ -194,7 +203,7 @@ not possible to test for in it's flex mode directly - see https://ishadeed.com/a
         -ms-transform: unset;
         -webkit-transform: unset;
         transform: unset;
-        border: 1px dashed green;
+        /* border: 1px dashed green; */
     }
 }
 
