@@ -26,6 +26,16 @@
     /* outline: 1px solid red; */
 }
 
+/* spacing for browsers without custom var support */
+.sd-row>* {
+    padding-right: 0.25rem;
+    padding-right: calc(var(--sd-gutter-x) * 0.5);
+    padding-left: 0.25rem;
+    padding-left: calc(var(--sd-gutter-x) * 0.5);
+    margin-top: 0.5rem;
+    margin-top: var(--sd-gutter-y);
+}
+
 /* for no flex wrap support, turn card borders off as adjacent cards will not have the same height.  
 must come after related colour style(s) which turn borders on. */
 .bd-content .sd-card {
