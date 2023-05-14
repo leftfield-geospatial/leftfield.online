@@ -17,7 +17,7 @@ but rather toggle between the `flex-grow: 1` on the main content and the javascr
 .bd-footer,
 .bd-footer .bd-footer__inner {
     display: block;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 /* change footer elements with `display: flex` to `display: inline-block` so they are arranged 
@@ -42,7 +42,7 @@ horizontally. */
     .bd-footer .footer-items__start,
     .bd-footer .footer-items__end {
         display: flex;
-        border: 1px dashed red;
+        /* border: 1px dashed red; */
     }
 
     .bd-footer .footer-items__end {
