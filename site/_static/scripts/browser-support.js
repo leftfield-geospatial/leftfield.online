@@ -80,7 +80,7 @@ function disableTheme() {
     var themeElems = document.getElementsByClassName("theme-switch-button");
     for (var i = 0; i < themeElems.length; i++) {
         // themeElems[i].style.backgroundColor = "red";
-        searchElems[i].style.display = "none";
+        themeElems[i].style.display = "none";
     }
 }
 
@@ -330,7 +330,7 @@ function _documentReady(callback) {
     if (document.readyState == "complete") {
         callback();
     } else {
-        document.addEventListener("DOMContentLoaded", callback);
+        document.addEventListener("DOMContentLoaded", callback, false);
     }
 }
 
