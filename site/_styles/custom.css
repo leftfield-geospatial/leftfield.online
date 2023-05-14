@@ -109,3 +109,12 @@ h2 {
     padding: .5rem 2%;
 }
 
+/* force firefox versions ~20-28 to use `border-box: border` so that element padding doesn't
+overflow the viewport width */
+.bd-header-announcement, 
+.bd-header__inner,
+.bd-footer__inner {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}

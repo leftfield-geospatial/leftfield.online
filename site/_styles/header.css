@@ -1,13 +1,5 @@
 /* Header
 -------------------------------------------------------------------------------------------------*/
-/* force firefox versions ~20-28 to use `border-box: border` to prevent header element padding 
-overlflowing the viewport width */
-.bd-header-announcement, .bd-header__inner {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
 /* sticky header for browsers without `position: sticky` support. adapted from 
 https://www.w3schools.com/howto/howto_js_sticky_header.asp.  scroll event handler that applies 
 .sticky-header class is in browser-support.js. */
