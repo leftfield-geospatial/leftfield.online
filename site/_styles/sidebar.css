@@ -1,6 +1,12 @@
 /* Sidebar
 -------------------------------------------------------------------------------------------------*/
 
+/* remove rtd footer which creates vertical scroll 
+(https://github.com/pydata/pydata-sphinx-theme/issues/1065) */
+#rtd-footer-container {
+    display: none;
+}
+
 /* size the overlay for browsers without vh & vw support. clicking on overlay collapses the 
 sidebar, so without this the sidebar gets stuck. */
 input#__primary:checked + label.overlay.overlay-primary,
@@ -40,10 +46,16 @@ input#__secondary:checked + label.overlay.overlay-secondary {
 .bd-sidebar-primary .sidebar-header-items .sidebar-header-items__end .navbar-item,
 .bd-sidebar-primary .sidebar-header-items .sidebar-header-items__end .navbar-icon-links {
     display: inline-block;
+    /* set font size of all elements in the end section to that of the theme button, so that 
+    inline-block spacing is equal (ish) */
+    font-size: 1.4rem;
+    font-size: calc(var(--pst-font-size-icon) - .1rem);
+    /* vertical-align: top; */
     /* border: 1px solid green; */
 }    
 
 /* styles for icon link elements are set in header.css */
+
 
 /* re-set sidebar elements to their default theme settings if flex is adequately supported. 
 `flex-basis: min-content` is not required, but a work around test for `gap: 0.5rem`, which is
@@ -66,6 +78,13 @@ not possible to test for in it's flex mode directly - see https://ishadeed.com/a
         display: flex;
         vertical-align: unset;
         /* border: 1px dashed green; */
+    }
+
+    /* the theme has more spacing between icon link elements than between the icon links container 
+    and theme button.  overwrite that so the spacing is equal */
+    .bd-sidebar-primary .sidebar-header-items .sidebar-header-items__end,
+    .bd-sidebar-primary .sidebar-header-items .sidebar-header-items__end .navbar-icon-links {
+        column-gap: 0.5rem;
     }
 }
 
