@@ -269,20 +269,28 @@ function stickyFooter() {
         // y co-ord of top of footer if it was positioned at bottom of view port
         var footerTop = window.innerHeight - footer.offsetHeight;
         // var footerTop = document.documentElement.clientHeight - footer.offsetHeight;
-        console.log("contentBottom: " + String(contentBottom));
-        console.log("footerTop: " + String(footerTop));
+        // console.log("contentBottom: " + String(contentBottom));
+        // console.log("footerTop: " + String(footerTop));
 
         // if footer fits in view port, fix it to the bottom, else leave it in normal flow, 
         // positioned after the main content. 
         if (footer.style.position != "fixed" && contentBottom < footerTop) {
             footer.style.position = "fixed";
             footer.style.bottom = 0;
+            // console.log("onWindowResize - fixed");
         } else if (footer.style.position != "static" && contentBottom >= footerTop) {
             footer.style.position = "static";
+            // console.log("onWindowResize - static");
         }
     }
-    onWindowResize();   // run it once before any events to initialise
     window.onresize = onWindowResize;
+
+    // initialise footer when all content (incl images etc) is finished loading
+    if (document.readyState == "complete") {
+        onWindowResize();
+    } else {
+        window.addEventListener("load", onWindowResize, false);
+    }
     console.log("Main content has no `flex-grow: 1` style");
 }
 
@@ -327,7 +335,7 @@ function flexGapSupport() {
 }
 
 function _documentReady(callback) {
-    if (document.readyState == "complete") {
+    if (document.readyState != "loading") {
         callback();
     } else {
         document.addEventListener("DOMContentLoaded", callback, false);
