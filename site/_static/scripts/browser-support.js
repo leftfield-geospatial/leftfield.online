@@ -290,6 +290,8 @@ function stickyFooter() {
         onWindowResize();
     } else {
         window.addEventListener("load", onWindowResize, false);
+        // also initialise now to prevent it jumping on "load" where content < view height
+        onWindowResize();  
     }
     console.log("Main content has no `flex-grow: 1` style");
 }
@@ -335,7 +337,9 @@ function flexGapSupport() {
 }
 
 function _documentReady(callback) {
-    if (document.readyState != "loading") {
+    // ... document.body != null is a work around for an IE 10 issue where 
+    // document.readyState == "interactive" but there are no elements in the body
+    if (document.readyState != "loading" & document.body != null) {
         callback();
     } else {
         document.addEventListener("DOMContentLoaded", callback, false);
