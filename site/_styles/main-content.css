@@ -1,13 +1,14 @@
 /* Sphinx-design grids
 -------------------------------------------------------------------------------------------------*/
-/* see https://tylercipriani.com/blog/2012/08/01/display-inline-block-extra-margin. */
-.bd-main {
-    display: block;
-    /* outline: 1px solid green; */
+/* work around for un-clickable sd card text in ie 10 - see 
+https://stackoverflow.com/questions/6438048/css-problem-link-positionabsolute-above-a-box-not-work-in-ie-opera */
+.sd-stretched-link::after {
+    background-color: rgba(255, 255, 255, 0);
 }
 
 /* sphinx-design styles for no `flex-wrap: wrap` support */
 /* column style (not "row" as it says) */
+/* see https://tylercipriani.com/blog/2012/08/01/display-inline-block-extra-margin. */
 .sd-d-flex-row {
     /* override `display: flex !important` in sphinx-design sd-d-flex-row */
     display: inline-block !important;
@@ -85,6 +86,11 @@ must come after related colour style(s) which turn borders on. */
 
 /* Main body
 -------------------------------------------------------------------------------------------------*/
+.bd-main {
+    display: block;
+    /* outline: 1px solid green; */
+}
+
 /* display body content in safari 9-10 & chrome 29 (+?) */
 .bd-container,
 .bd-main .bd-content {
