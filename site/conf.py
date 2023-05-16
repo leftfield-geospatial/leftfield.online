@@ -106,6 +106,12 @@ favicons = [
     {'name': 'msapplication-TileImage', 'content': 'favicons/mstile-150x150.png'},
 ]
 
+# -- work around for links which fail on linkcheck ---------------------
+# see https://github.com/sphinx-doc/sphinx/issues/10343, https://github.com/sphinx-doc/sphinx/issues/7369 &
+# https://github.com/sphinx-doc/sphinx/issues/5051
+user_agent = 'Mozilla/5.0 (X11; Linux x86_64; rv:25.0) Gecko/20100101 Firefox/25.0'
+linkcheck_ignore = ['https://doi.org/10.1080/01431161.2018.1528404']
+
 # -- concatenate css files into one  ------------------------------------------
 css_paths = [
     '_styles/colours.css', '_styles/custom.css', '_styles/header.css', '_styles/main-content.css',
