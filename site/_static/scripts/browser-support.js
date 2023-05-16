@@ -138,10 +138,12 @@ function searchSupport() {
         // tested.  Disables search button on failure.  
 
         var allLoaded = true;
-        console.log("Script loaded:" + event.currentTarget.src);
 
         for (var scriptFile in searchDict) {
-            if (event.currentTarget.src.indexOf(scriptFile) >= 0) {
+            // use script element directly rather than event.currentTarget which is not supported in
+            // all browsers
+            if (searchDict[scriptFile].scriptElement.src.indexOf(scriptFile) >= 0) {
+                console.log("Script loaded:" + scriptFile);
                 searchDict[scriptFile].loaded = true;
             }
             allLoaded = allLoaded && searchDict[scriptFile].loaded;
@@ -183,8 +185,8 @@ function themeSupport() {
         // Global error event listener - disables search and theme buttons if themeFile raises
         // an error.
 
-        // avoid using event `filename` and `message` properties which are not supported in 
-        // all browsers
+        // avoid using event `filename` and `message` properties exclusively, which are not 
+        // supported in all browsers
         if (enabled && (!("filename" in event) || event.filename.indexOf(themeFile) >= 0)) {
             disableSearch();
             disableTheme();
@@ -193,9 +195,11 @@ function themeSupport() {
     }
     var scriptLoaded = function (event) {
         // Script loaded event handler - removes test script from document.
-        event.currentTarget.parentNode.removeChild(event.currentTarget);
         window.removeEventListener("error", winError);
-        console.log("Script loaded:" + event.currentTarget.src);
+        // use script element directly rather than event.currentTarget which is not supported in
+        // all browsers
+        script.parentNode.removeChild(script);
+        console.log("Script loaded:" + script.src);
         enabled ? console.log("Themes & search form supported.") : 
             console.log("Themes & search form not supported.");
     }
