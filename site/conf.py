@@ -81,12 +81,6 @@ html_theme_options = {
             'icon': 'fa-brands fa-github',
             'type': 'fontawesome',
         },
-        {
-            'name': 'GitHub2',
-            'url': 'https://github.com/leftfield-geospatial',
-            'icon': 'fa-brands fa-github',
-            'type': 'fontawesome',
-        },
     ],
     'collapse_navigation': True,
     'show_nav_level': 0,
