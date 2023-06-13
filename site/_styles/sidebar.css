@@ -52,7 +52,7 @@ input#__secondary:checked + label.overlay.overlay-secondary {
     font-size: calc(var(--pst-font-size-icon) - .1rem);
     /* vertical-align: top; */
     /* border: 1px solid green; */
-}    
+}
 
 /* styles for icon link elements are set in header.css */
 
