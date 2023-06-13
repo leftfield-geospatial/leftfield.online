@@ -131,11 +131,11 @@ ul.bd-breadcrumbs li.breadcrumb-item a {
 }
 
 /* breadcrumb divider */
-ul.bd-breadcrumbs li.breadcrumb-item:before {
+ul.bd-breadcrumbs li.breadcrumb-item:not(.breadcrumb-home):before {
     content: ">";
 }
 
 /* clear divider in front of home - work around for early opera version w/o :not support */
-ul.bd-breadcrumbs li.breadcrumb-home:before {
+/* ul.bd-breadcrumbs li.breadcrumb-home:before {
     content: none;
-} 
+}  */

@@ -289,10 +289,12 @@ function stickyFooter() {
     }
     window.onresize = onWindowResize;
 
-    // initialise footer when all content (incl images etc) is finished loading
+    
     if (document.readyState == "complete") {
+        // initialise footer - all content (incl images etc) has already finished loading
         onWindowResize();
     } else {
+        // initialise footer when all content (incl images etc) is finished loading
         window.addEventListener("load", onWindowResize, false);
         // also initialise now to prevent it jumping on "load" where content < view height
         onWindowResize();  
