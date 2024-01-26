@@ -31,7 +31,7 @@
         * Applied research and method design.
         * Documentation and publication.
 
-        Collaborative in nature, and aligned with scientific best practice, Leftfield supports the open source model - using it where appropriate.  Through it's work, Leftfield aims to contribute toward a sane and vibrant living planet.  Please get :doc:`in touch <contact>` if you would like to find out more.
+        Collaborative in nature, and aligned with scientific best practice, Leftfield supports the open source model.  Through it's work, Leftfield aims to contribute toward a sane and vibrant living planet.  Please get :doc:`in touch <contact>` if you would like to find out more.
 
 .. grid:: 1 3 3 3
     :gutter: 2
