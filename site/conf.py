@@ -10,7 +10,7 @@ from datetime import datetime
 year = datetime.now().year
 year_str = str(year) if (year == 2023) else f'2023-{year}'
 project = 'Leftfield Geospatial'
-copyright = f'{year_str}, Leftfield Geospatial.  All rights reserved'
+copyright = f'{year_str}, Leftfield Geospatial'
 author = 'Leftfield Geospatial'
 
 # -- General configuration ---------------------------------------------------
@@ -88,7 +88,7 @@ html_theme_options = {
     # "announcement": "<p>Here's a <a href='https://pydata.org'>PyData Announcement!</a></p>",
 }
 
-# -- favicon extension optionse  ------------------------------------------
+# -- favicon extension options  ------------------------------------------
 # adapted from https://github.com/tcmetzger/sphinx-favicon/blob/main/docs/source/conf.py
 favicons = [
     # generic icons compatible with most browsers
