@@ -32,5 +32,9 @@
             <td class="contact-type fas fa-phone"></td>
             <td class="contact-val"><a href="tel:+27828439679">+27 82 843 9679</a></td>
         </tr>
+        <tr>
+            <td class="contact-type fa-brands fa-github"></td>
+            <td class="contact-val"><a href="https://github.com/leftfield-geospatial">GitHub</a></td>
+        </tr>
     </table>
 

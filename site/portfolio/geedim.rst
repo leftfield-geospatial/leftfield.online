@@ -1,10 +1,6 @@
-Search, composite and download `GEE`_ imagery
----------------------------------------------
+.. include:: ../shared.txt
 
-The |geedim|_ package was developed as a companion to |homonim|_ for sourcing cloud/shadow-free reference imagery.  Beyond the |homonim|_ context, it is generally useful for searching, compositing and downloading GEE_ (Google Earth Engine) imagery.  It works around the `Earth Engine size limit <https://developers.google.com/earth-engine/apidocs/ee-image-getdownloadurl>`_ by downloading images as separate tiles, then re-assembling into an image file on the client.  Cloud/shadow masking, and cloud/shadow-free compositing are implemented for `selected Landsat and Sentinel-2 collections <https://geedim.readthedocs.io/en/latest/index.html#cloud-shadow-support>`_ using bundled quality data, as well as a method based on `cloud probability <https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_CLOUD_PROBABILITY>`_ data for Sentinel-2.  |geedim|_ is distributed as a python package.  The `command line interface (CLI) <https://geedim.readthedocs.io/en/latest/cli.html>`_ provides access to most of the functionality.  See the `online documentation <https://geedim.readthedocs.io/en/latest/index.html>`_ for more detail on its use.
+Earth Engine search and download
+--------------------------------
 
-.. |geedim| replace:: ``geedim``
-.. _geedim: https://github.com/leftfield-geospatial/geedim
-.. |homonim| replace:: ``homonim``
-.. _homonim: https://github.com/leftfield-geospatial/homonim
-.. _GEE: https://earthengine.google.com
+Geedim_ was developed as a companion to :doc:`Homonim <homonim>` for acquiring cloud/shadow-free reference imagery.  It is a command line toolkit and library that allows searching, compositing and downloading `Google Earth Engine <https://earthengine.google.com>`__ satellite imagery.  Cloud/shadow masking and cloud/shadow-free compositing is supported on selected image collections.  It is used for these functions outside of the Homonim context too.  The `online documentation <https://geedim.readthedocs.io/en/latest/index.html>`_ gives more detail on its capabilities and use.

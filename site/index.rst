@@ -3,6 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+.. include:: shared.txt
+
 .. toctree::
    :maxdepth: 1
    :hidden:
@@ -25,13 +27,13 @@
         :fas:`door-open` **Welcome**
         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-        Leftfield is a small research and software development company specialising in geospatial and earth observation applications, and offering assistance with:
+        Leftfield is a small research and software development company specialising in geospatial and earth observation applications.  Expert assistance can be provided with:
 
         * Creating operational software.
         * Applied research and method design.
         * Documentation and publication.
 
-        Collaborative in nature, and aligned with scientific best practice, Leftfield supports the open source model.  Through it's work, Leftfield aims to contribute toward a sane and vibrant living planet.  Please get :doc:`in touch <contact>` if you would like to find out more.
+        Collaborative in nature, Leftfield supports the open source model, and is the creator of the Orthority_, Homonim_ and Geedim_ projects.  Through it's work, Leftfield aims to contribute toward a sane and vibrant living planet.  Please get :doc:`in touch <contact>` if you would like to find out more.
 
 .. grid:: 1 3 3 3
     :gutter: 2

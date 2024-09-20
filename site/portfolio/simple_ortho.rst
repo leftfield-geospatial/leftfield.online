@@ -1,12 +1,9 @@
-Orthorectification of aerial images
------------------------------------
+.. include:: ../shared.txt
 
-|simple-ortho|_ `orthorectifies <https://trac.osgeo.org/ossim/wiki/orthorectification>`_ aerial, and other imagery with known `pinhole camera model <https://en.wikipedia.org/wiki/Pinhole_camera_model>`_, and DEM (digital elevation model).  It works well with NGI_ aerial imagery, and together with |homonim|_ provides an open source processing chain for converting these valuable data into "science ready" surface reflectance imagery.  Currently, |simple-ortho|_ is available as a python library and command line tool via `GitHub <https://github.com/leftfield-geospatial/simple-ortho>`_.  It makes use of the `OpenCV <https://opencv.org/>`_ and `rasterio <https://github.com/rasterio/rasterio>`_ packages for efficient reading, processing and writing of images.
+Orthorectification
+------------------
 
-Example
-^^^^^^^
-
-A mosaic of four NGI_ aerial images captured over the Kouga river in the Baviaanskloof, South Africa: in raw form (*Source*), orthorectified with |simple-ortho|_ (*Orthorectified*), and corrected to surface reflectance with |homonim|_ (*Corrected*).
+Orthority_ is a command line toolkit and library for `orthorectifying <https://trac.osgeo.org/ossim/wiki/orthorectification>`__ remotely sensed imagery.  It was originally developed as a research tool for processing NGI_ aerial imagery.  Since then it has been expanded to support a range of imagery and camera models, and to provide orthorectification related methods like pan-sharpening.  Together with :doc:`Homonim <homonim>`, it provides an open source toolchain for converting remotely sensed images into "science ready" surface reflectance data.
 
 .. figure:: ../_images/simple_ortho-example.webp
     :align: center
@@ -14,9 +11,4 @@ A mosaic of four NGI_ aerial images captured over the Kouga river in the Baviaan
     :target: ../_images/simple_ortho-example.webp
     :alt: Orthorectification and correction example
 
-.. |homonim| replace:: ``homonim``
-.. _homonim: https://github.com/leftfield-geospatial/homonim
-.. |simple-ortho| replace:: ``simple-ortho``
-.. _simple-ortho: https://github.com/leftfield-geospatial/simple-ortho
-.. _NGI: https://ngi.dalrrd.gov.za/index.php/what-we-do/aerial-photography-and-imagery
-
+    A mosaic of four NGI images (*Source*) that has been orthorectified with Orthority (*Orthorectified*), then corrected to surface reflectance with Homonim (*Corrected*).
