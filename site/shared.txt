@@ -1,0 +1,4 @@
+.. _Orthority: https://github.com/leftfield-geospatial/orthority
+.. _Homonim: https://github.com/leftfield-geospatial/homonim
+.. _Geedim: https://github.com/leftfield-geospatial/geedim
+.. _NGI: https://ngi.dalrrd.gov.za/index.php/what-we-do/aerial-photography-and-imagery
