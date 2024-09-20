@@ -1,7 +1,7 @@
 Farm-scale aboveground carbon mapping in thicket
 ------------------------------------------------
 
-As part of the `GEF-5 SLM (sustainable land management) project <https://www.thegef.org/projects-operations/projects/5327>`_, this work developed an aboveground carbon mapping approach for thicket in a ±3000 ha study area in the Baviaanskloof.  Field methods were used to gather AGC ground truth for number of plots:
+As part of the `GEF-5 SLM (sustainable land management) project <https://www.thegef.org/projects-operations/projects/5327>`_, this work developed an aboveground carbon (AGC) mapping approach for thicket in a ±3000 ha study area in the Baviaanskloof.  Field methods were used to gather AGC ground truth for number of plots:
 
 .. _gef5_slm_study_area:
 
